@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testbook App — Product Analytics Specification (v9.11)</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --tag-view: #3b82f6;
+            --tag-click: #10b981;
+            --tag-action: #f59e0b;
+            --tag-state: #8b5cf6;
+            --tag-conversion: #ef4444;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+        header {
+            background: #0f172a;
+            color: white;
+            padding: 1.25rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .brand p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .csv-btn {
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .csv-btn:hover {
+            background: #059669;
+        }
+        .layout {
+            display: flex;
+            max-width: 1600px;
+            margin: 0 auto;
+            min-height: calc(100vh - 75px);
+        }
+        .sidebar {
+            width: 320px;
+            background: white;
+            border-right: 1px solid var(--border);
+            padding: 1.5rem 1rem;
+            overflow-y: auto;
+            height: calc(100vh - 75px);
+            position: sticky;
+            top: 75px;
+        }
+        .search-box {
+            width: 100%;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+        }
+        .journey-filter {
+            margin-bottom: 1.25rem;
+        }
+        .journey-filter label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        .journey-select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            background: white;
+        }
+        .screen-list {
+            list-style: none;
+        }
+        .screen-item {
+            padding: 0.6rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-bottom: 0.25rem;
+            transition: all 0.15s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .screen-item:hover {
+            background: #f1f5f9;
+        }
+        .screen-item.active {
+            background: #eff6ff;
+            color: var(--primary);
+            font-weight: 600;
+            border-left: 3px solid var(--primary);
+        }
+        .screen-badge {
+            font-size: 0.7rem;
+            padding: 0.15rem 0.4rem;
+            background: #e2e8f0;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        .screen-detail-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .screen-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+        .screen-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .wireflow-bar {
+            background: #f1f5f9;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            display: flex;
+            gap: 2rem;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+        .wireflow-bar span {
+            font-weight: 600;
+        }
+        .wireflow-source {
+            color: #d97706;
+        }
+        .wireflow-dest {
+            color: #2563eb;
+        }
+        .split-view {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+        }
+        .screenshot-container {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 0.75rem;
+            text-align: center;
+        }
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            display: block;
+        }
+        .events-table-wrapper {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        th {
+            background: #f8fafc;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        .pin-pill {
+            background: #0f172a;
+            color: white;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            display: inline-block;
+        }
+        .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        .tag-view { background: #dbeafe; color: #1e40af; }
+        .tag-click { background: #d1fae5; color: #065f46; }
+        .tag-action { background: #fef3c7; color: #92400e; }
+        .tag-state { background: #ede9fe; color: #5b21b6; }
+        .tag-conversion { background: #fee2e2; color: #991b1b; }
+        .schema-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 0.75rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        <h1>📱 Testbook Android — Analytics Specification</h1>
+        <p>Unified 6-Event Taxonomy & Wireflow Specification for Version 9.11.x</p>
+    </div>
+    <div class="header-actions">
+        <a href="event_tracking_spec.csv" download class="csv-btn">📥 Download Tracking CSV</a>
+    </div>
+</header>
+
+<div class="layout">
+    <div class="sidebar">
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Filter screens or events...">
+        
+        <div class="journey-filter">
+            <label>Filter By Journey</label>
+            <select id="journeySelect" class="journey-select">
+                <option value="ALL">All Product Journeys (All Screens)</option>
+                <option value="JRN_01_ONBOARDING">Journey 1: Onboarding & Auth</option>
+                <option value="JRN_02_HOME">Journey 2: Home Feed & Discovery</option>
+                <option value="JRN_03_ASSESSMENT">Journey 3: Assessment & Live Testing</option>
+                <option value="JRN_04_MONETIZATION">Journey 4: SuperCoaching & Pass</option>
+                <option value="JRN_05_UTILITIES">Journey 5: Content & Account Utilities</option>
+            </select>
+        </div>
+
+        <ul class="screen-list" id="screenList"></ul>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <!-- Rendered dynamically -->
+    </div>
+</div>
+
+<script>
+    const screensData = [{"screen_id": "SCR_SPLASH", "screen_name": "Splash & Routing Gate", "journey_id": "JRN_01_ONBOARDING", "journey_name": "User Acquisition, Authentication & Goal Selection", "screenshot": "01_launch.png", "previous_screen": "os_launcher", "destination_screen": "login_mobile_input | home_feed", "components": [{"pin": "1", "label": "Full Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when splash screen renders on app cold start", "schema": "{\"screen_name\": \"splash\", \"entry_source\": \"cold_start\", \"is_first_session\": true}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_AUTH_LOGIN", "screen_name": "Mobile Number Entry Screen", "journey_id": "JRN_01_ONBOARDING", "journey_name": "User Acquisition, Authentication & Goal Selection", "screenshot": "02_login_screen.png", "previous_screen": "splash", "destination_screen": "login_otp_verification", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when user lands on mobile number entry screen", "schema": "{\"screen_name\": \"login_mobile_input\", \"entry_source\": \"auth_gate\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Phone Number Input Field", "type": "input", "category": "user_action", "event_name": "user_action", "trigger": "Fires when 10-digit phone number is entered or selected from Google Hint", "schema": "{\"screen_name\": \"login_mobile_input\", \"action_name\": \"phone_entered\", \"method\": \"manual | google_hint\", \"phone_length\": 10}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_AUTH_OTP", "screen_name": "OTP Verification Screen", "journey_id": "JRN_01_ONBOARDING", "journey_name": "User Acquisition, Authentication & Goal Selection", "screenshot": "04_after_otp.png", "previous_screen": "login_mobile_input", "destination_screen": "onboarding_goal_selection | home_feed", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when 6-digit OTP verification screen renders", "schema": "{\"screen_name\": \"login_otp_verification\", \"otp_method\": \"sms\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Resend OTP Button", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps Resend OTP after timer expires", "schema": "{\"screen_name\": \"login_otp_verification\", \"component_name\": \"resend_otp\", \"component_type\": \"button\", \"action\": \"click\", \"resend_count\": 1}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "3", "label": "Change Phone Number Link", "type": "link", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps 'change' phone number link", "schema": "{\"screen_name\": \"login_otp_verification\", \"component_name\": \"change_number\", \"component_type\": \"link\", \"action\": \"click\", \"destination\": \"login_mobile_input\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "4", "label": "OTP Verification Success", "type": "system", "category": "conversion", "event_name": "login_success", "trigger": "Fires upon successful 6-digit OTP verification", "schema": "{\"screen_name\": \"login_otp_verification\", \"auth_method\": \"sms_otp\", \"is_new_user\": false, \"user_id\": \"62382e83...\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_GOAL_ONBOARDING", "screen_name": "Target Exam Selection Screen", "journey_id": "JRN_01_ONBOARDING", "journey_name": "User Acquisition, Authentication & Goal Selection", "screenshot": "57_onboarding_goal_selection.png", "previous_screen": "login_otp_verification | home_feed", "destination_screen": "home_feed", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Goal / Target Exam selection screen renders", "schema": "{\"screen_name\": \"onboarding_goal_selection\", \"entry_source\": \"auth_flow | home_switcher\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Popular Exam Chip (Select / Deselect)", "type": "chip", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps an exam chip (e.g. SSC CGL, RRB NTPC)", "schema": "{\"screen_name\": \"onboarding_goal_selection\", \"component_name\": \"exam_chip\", \"component_type\": \"chip\", \"exam_name\": \"SSC CGL\", \"action\": \"select | deselect\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "3", "label": "Save Goals Sticky Button", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps bottom 'Save' CTA to commit target exams", "schema": "{\"screen_name\": \"onboarding_goal_selection\", \"component_name\": \"save_goals\", \"component_type\": \"button\", \"selected_count\": 2, \"selected_goals\": [\"SSC CGL\", \"RRB NTPC\"], \"destination\": \"home_feed\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_HOME_FEED", "screen_name": "Home Feed Dashboard", "journey_id": "JRN_02_HOME", "journey_name": "Home Feed, Discovery & Navigation", "screenshot": "06_home_feed.png", "previous_screen": "onboarding_goal_selection | splash", "destination_screen": "multiple", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Home feed dashboard renders", "schema": "{\"screen_name\": \"home_feed\", \"active_tab\": \"home\", \"is_paid_user\": false, \"enrolled_goals_count\": 2}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Screen Duration", "type": "system", "category": "screen_duration", "event_name": "screen_duration", "trigger": "Fires when user navigates away or backgrounds the app from Home feed", "schema": "{\"screen_name\": \"home_feed\", \"duration_ms\": 38400}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "3", "label": "Goal Switcher Chip ('My Exams 3 \u2335')", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps 'My Exams \u2335' on top header", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"goal_switcher\", \"component_type\": \"button\", \"action\": \"open\", \"destination\": \"enrolled_exams_sheet\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "4", "label": "Global Search Action Icon", "type": "icon_button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps magnifying glass icon on top header", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"search_icon\", \"component_type\": \"icon_button\", \"action\": \"open\", \"destination\": \"global_search\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "5", "label": "AI Doubt Solver Mascot / FAB", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps Samadhan AI mascot icon or floating action button", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"ai_doubt_solver_fab\", \"component_type\": \"fab\", \"destination\": \"ai_doubt_solver\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "6", "label": "Quick Action Bar Item (QAB)", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps any QAB shortcut (Live Classes, Free Tests, Quizzes)", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"qab_item\", \"component_type\": \"button\", \"item_label\": \"Free Quizzes\", \"destination\": \"free_quizzes\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "7", "label": "Pass Elite \u20b91 Trial Strip", "type": "banner", "category": "component_view", "event_name": "component_view", "trigger": "Fires when \u20b91 trial promotional strip enters user viewport", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"pass_trial_strip\", \"component_type\": \"banner\", \"trial_price\": 1, \"renewal_price\": 799}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "8", "label": "Recommended Coaching Card ('Join Now')", "type": "card", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps 'Join Now' on a recommended coaching course card", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"coaching_card_join\", \"component_type\": \"card\", \"product_name\": \"Courses by Testbook\", \"price\": 69, \"destination\": \"super_plan_selection\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "9", "label": "Bottom Navigation Tab", "type": "tab", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps any tab on bottom navigation rail", "schema": "{\"screen_name\": \"home_feed\", \"component_name\": \"bottom_nav_tab\", \"component_type\": \"tab\", \"tab_name\": \"tests | super | pass | news\", \"destination\": \"tests_tab\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_NAV_DRAWER", "screen_name": "Side Navigation Drawer", "journey_id": "JRN_02_HOME", "journey_name": "Home Feed, Discovery & Navigation", "screenshot": "09_nav_drawer.png", "previous_screen": "home_feed", "destination_screen": "nav_drawer", "components": [{"pin": "1", "label": "Drawer Open Action", "type": "drawer", "category": "user_action", "event_name": "user_action", "trigger": "Fires when user opens hamburger navigation drawer", "schema": "{\"screen_name\": \"home_feed\", \"action_name\": \"drawer_open\", \"method\": \"hamburger_icon | edge_swipe\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Drawer Item Click", "type": "list_item", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps any drawer link (e.g. Current Affairs, Transactions, Pass)", "schema": "{\"screen_name\": \"nav_drawer\", \"component_name\": \"drawer_item\", \"component_type\": \"list_item\", \"item_label\": \"Daily Current Affairs | Transactions | Settings\", \"destination\": \"current_affairs\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_GLOBAL_SEARCH", "screen_name": "Global Search Query Screen", "journey_id": "JRN_02_HOME", "journey_name": "Home Feed, Discovery & Navigation", "screenshot": "SCR_GLOBAL_SEARCH.png", "previous_screen": "home_feed", "destination_screen": "search_results", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when global search input screen renders", "schema": "{\"screen_name\": \"global_search\", \"entry_source\": \"home_header\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Trending Exam Search Chip", "type": "chip", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps a trending search query pill (e.g. SSC CGL)", "schema": "{\"screen_name\": \"global_search\", \"component_name\": \"trending_search_chip\", \"component_type\": \"chip\", \"query\": \"SSC CGL\", \"destination\": \"search_results\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_SEARCH_RESULTS", "screen_name": "Search Results Screen", "journey_id": "JRN_02_HOME", "journey_name": "Home Feed, Discovery & Navigation", "screenshot": "SCR_SEARCH_RESULTS.png", "previous_screen": "global_search", "destination_screen": "multiple", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when search results render for query", "schema": "{\"screen_name\": \"search_results\", \"query\": \"SSC\", \"scope\": \"all | exams | courses | tests\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Search Result Card Click", "type": "card", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps any returned item card (exam, course, or test)", "schema": "{\"screen_name\": \"search_results\", \"component_name\": \"search_result_card\", \"component_type\": \"card\", \"item_type\": \"exam | course\", \"item_title\": \"SSC MTS\", \"destination\": \"test_series_overview\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TESTS_TAB", "screen_name": "Tests Explorer Screen", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "SCR_TESTS_EXPLORE_SCROLLED.png", "previous_screen": "home_feed", "destination_screen": "test_series_overview", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when user switches to 'Tests' bottom tab", "schema": "{\"screen_name\": \"tests_explorer\", \"enrolled_series_count\": 2}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TEST_SERIES_OVERVIEW", "screen_name": "Test Series Sections Overview", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "13_tests_landing.png", "previous_screen": "tests_explorer | search_results", "destination_screen": "test_instructions", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when test series overview page renders", "schema": "{\"screen_name\": \"test_series_overview\", \"series_title\": \"SSC Selection Post\", \"total_tests\": 609, \"free_tests\": 9}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Individual Test 'Start Test' CTA", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps 'Start Test' on a free or unlocked test card", "schema": "{\"screen_name\": \"test_series_overview\", \"component_name\": \"start_test_cta\", \"component_type\": \"button\", \"test_id\": \"6aaa6742...\", \"is_free\": true, \"destination\": \"test_instructions\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_PRE_INSTRUCTIONS", "screen_name": "Test Pre-Instructions Screen", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "15_test_instructions.png", "previous_screen": "test_series_overview", "destination_screen": "test_interface", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when test rules and pre-instructions screen renders", "schema": "{\"screen_name\": \"test_instructions\", \"test_id\": \"6aaa6742...\", \"duration_mins\": 60, \"total_marks\": 200.0}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Pass Upsell Strip ('Get Pass')", "type": "banner", "category": "component_view", "event_name": "component_view", "trigger": "Fires when top Pass promotional strip renders on instructions page", "schema": "{\"screen_name\": \"test_instructions\", \"component_name\": \"instructions_pass_upsell\", \"component_type\": \"banner\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "3", "label": "Language Selector Dropdown", "type": "dropdown", "category": "user_action", "event_name": "user_action", "trigger": "Fires when user selects their test language (English, Hindi)", "schema": "{\"screen_name\": \"test_instructions\", \"action_name\": \"select_test_language\", \"language\": \"English | Hindi\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "4", "label": "Agree & Continue CTA (Start Test)", "type": "button", "category": "conversion", "event_name": "test_started", "trigger": "Fires when user clicks 'Agree and Continue' to launch live test interface", "schema": "{\"test_id\": \"6aaa6742...\", \"test_name\": \"SSC Selection Post Day-01\", \"attempt_no\": 1, \"is_free\": true, \"language\": \"English\", \"max_time_secs\": 3600}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TEST_INTERFACE", "screen_name": "Live Test Taking Interface", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "18_test_interface.png", "previous_screen": "test_instructions", "destination_screen": "test_analysis", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when question surface renders in live exam engine", "schema": "{\"screen_name\": \"test_interface\", \"test_id\": \"6aaa6742...\", \"active_section\": \"General Intelligence\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Save & Next Button", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user submits answer and navigates to next question", "schema": "{\"screen_name\": \"test_interface\", \"component_name\": \"save_and_next\", \"component_type\": \"button\", \"question_id\": \"q_102\", \"time_spent_secs\": 15}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "3", "label": "Mark For Review Button", "type": "button", "category": "state_change", "event_name": "state_change", "trigger": "Fires when user marks or unmarks question for review", "schema": "{\"screen_name\": \"test_interface\", \"state_name\": \"mark_for_review\", \"to_state\": \"marked | unmarked\", \"question_id\": \"q_102\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_QUESTION_PALLET", "screen_name": "Question Pallet Drawer", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "19_question_pallet.png", "previous_screen": "test_interface", "destination_screen": "question_pallet", "components": [{"pin": "1", "label": "Question Pallet Open Action", "type": "drawer", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps top right grid icon to view pallet", "schema": "{\"screen_name\": \"test_interface\", \"component_name\": \"pallet_toggle\", \"component_type\": \"icon_button\", \"action\": \"open\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_SUBMIT_CONFIRM", "screen_name": "Test Submit Confirmation Modal", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "29_test_submit_confirmation.png", "previous_screen": "test_interface", "destination_screen": "test_analysis", "components": [{"pin": "1", "label": "Final Test Submit Action", "type": "modal", "category": "conversion", "event_name": "test_submitted", "trigger": "Fires when user confirms final test submission dialog", "schema": "{\"test_id\": \"6aaa6742...\", \"marks_obtained\": 2.0, \"total_marks\": 200.0, \"accuracy\": 1.0, \"rank\": 19993, \"total_students\": 22112, \"questions_attempted\": 1, \"questions_unattempted\": 99}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TEST_ANALYSIS", "screen_name": "Test Performance Analysis Screen", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "31_test_analysis.png", "previous_screen": "test_interface", "destination_screen": "test_solutions | test_leaderboard", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when test performance scorecard renders", "schema": "{\"screen_name\": \"test_analysis\", \"test_id\": \"6aaa6742...\", \"score\": 2.0, \"rank\": 19993, \"percentile\": 9.59}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Paywall Card ('Restore Now at \u20b9749')", "type": "banner", "category": "component_view", "event_name": "component_view", "trigger": "Fires when Pass subscription expiry renewal card appears on analysis", "schema": "{\"screen_name\": \"test_analysis\", \"component_name\": \"analysis_paywall_card\", \"component_type\": \"banner\", \"renewal_price\": 749}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TEST_SOLUTIONS", "screen_name": "Question Solutions Screen", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "34_test_solutions.png", "previous_screen": "test_analysis", "destination_screen": "test_analysis", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Solutions tab renders", "schema": "{\"screen_name\": \"test_solutions\", \"test_id\": \"6aaa6742...\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TEST_LEADERBOARD", "screen_name": "Test Leaderboard Screen", "journey_id": "JRN_03_ASSESSMENT", "journey_name": "Assessment, Live Testing & Performance Analytics", "screenshot": "35_test_leaderboard.png", "previous_screen": "test_analysis", "destination_screen": "test_analysis", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Leaderboard podium renders", "schema": "{\"screen_name\": \"test_leaderboard\", \"user_rank\": 19993, \"topper_score\": 200.0}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_SUPER_LANDING", "screen_name": "SuperCoaching Landing Page", "journey_id": "JRN_04_MONETIZATION", "journey_name": "Monetization, Pass Subscriptions & SuperCoaching", "screenshot": "38_super_coaching_tab.png", "previous_screen": "home_feed", "destination_screen": "super_plan_selection", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when SuperCoaching sales landing page renders", "schema": "{\"screen_name\": \"super_landing\", \"goal_name\": \"UPSC EPFO APFC 2026\", \"is_paid\": false}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Claim Offer Now Sticky CTA", "type": "button", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps 'Claim Offer Now' sticky CTA", "schema": "{\"screen_name\": \"super_landing\", \"component_name\": \"claim_offer_now\", \"component_type\": \"button\", \"destination\": \"super_plan_selection\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_SUPER_PLANS", "screen_name": "SuperCoaching Plan Selection", "journey_id": "JRN_04_MONETIZATION", "journey_name": "Monetization, Pass Subscriptions & SuperCoaching", "screenshot": "41_super_plan_selection_full.png", "previous_screen": "super_landing", "destination_screen": "payment_gateway", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when SuperCoaching duration and pricing plans render", "schema": "{\"screen_name\": \"super_plan_selection\", \"goal_name\": \"UPSC EPFO APFC 2026\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Coupon Applied Celebratory Dialog", "type": "modal", "category": "component_view", "event_name": "component_view", "trigger": "Fires when 16% off celebratory coupon modal pops up", "schema": "{\"screen_name\": \"super_plan_selection\", \"component_name\": \"coupon_applied_dialog\", \"component_type\": \"modal\", \"coupon_code\": \"EPF026\", \"discount_pct\": 16}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "3", "label": "Proceed to Payment CTA", "type": "button", "category": "conversion", "event_name": "checkout_started", "trigger": "Fires when user initiates checkout for SuperCoaching subscription", "schema": "{\"product_type\": \"super_coaching\", \"product_name\": \"UPSC EPFO APFC 2026\", \"plan_duration\": \"6_months\", \"original_amount\": 4500, \"payable_amount\": 3000, \"coupon_code\": \"EPF026\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_PASS_PAYWALL", "screen_name": "Testbook Pass Renewal & Paywall", "journey_id": "JRN_04_MONETIZATION", "journey_name": "Monetization, Pass Subscriptions & SuperCoaching", "screenshot": "48_pass_landing.png", "previous_screen": "home_feed | nav_drawer", "destination_screen": "dynamic_upi_qr | payment_gateway", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Testbook Pass landing and renewal page renders", "schema": "{\"screen_name\": \"pass_plans\", \"user_status\": \"expired\", \"renewal_price\": 749}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Buy Yearly Pass CTA", "type": "button", "category": "conversion", "event_name": "checkout_started", "trigger": "Fires when user taps 'Buy Yearly Testbook Pass' bottom bar", "schema": "{\"product_type\": \"pass\", \"product_name\": \"Yearly Testbook Pass\", \"payable_amount\": 749, \"original_amount\": 949}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_DYNAMIC_QR", "screen_name": "Dynamic UPI QR Code Payment Modal", "journey_id": "JRN_04_MONETIZATION", "journey_name": "Monetization, Pass Subscriptions & SuperCoaching", "screenshot": "53_pass_checkout.png", "previous_screen": "pass_plans | payment_gateway", "destination_screen": "pass_payment_failure | payment_success", "components": [{"pin": "1", "label": "Screen View", "type": "modal", "category": "component_view", "event_name": "component_view", "trigger": "Fires when on-screen dynamic BharatQR / UPI QR code modal opens", "schema": "{\"screen_name\": \"upi_qr_modal\", \"component_name\": \"dynamic_qr\", \"component_type\": \"modal\", \"expiry_seconds\": 600}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_PASS_FAILURE_PAGE", "screen_name": "Pass Payment Failure Recovery Screen", "journey_id": "JRN_04_MONETIZATION", "journey_name": "Monetization, Pass Subscriptions & SuperCoaching", "screenshot": "54_pass_payment_failure.png", "previous_screen": "dynamic_upi_qr", "destination_screen": "pass_plans | dynamic_upi_qr", "components": [{"pin": "1", "label": "Payment Failed Event", "type": "screen", "category": "conversion", "event_name": "payment_failed", "trigger": "Fires when payment is cancelled or rejected by gateway/UPI", "schema": "{\"product_type\": \"pass\", \"product_name\": \"Yearly Testbook Pass\", \"amount\": 749, \"failure_reason\": \"USER_DISMISSED | BANK_TIMEOUT\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_PAYMENT_GATEWAY", "screen_name": "Consolidated Payment Methods Screen", "journey_id": "JRN_04_MONETIZATION", "journey_name": "Monetization, Pass Subscriptions & SuperCoaching", "screenshot": "42_make_payment_screen.png", "previous_screen": "super_plan_selection", "destination_screen": "upi_intent | payment_success | payment_failure", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when consolidated payment methods screen renders", "schema": "{\"screen_name\": \"payment_gateway\", \"payable_amount\": 3000, \"product_name\": \"UPSC EPFO APFC\"}", "dev_status": "Todo", "qa_status": "Pending"}, {"pin": "2", "label": "Payment Method Card (UPI, Cards, Netbanking)", "type": "card", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user selects a payment partner method", "schema": "{\"screen_name\": \"payment_gateway\", \"component_name\": \"payment_method\", \"component_type\": \"card\", \"method\": \"qr_code | card | netbanking\", \"destination\": \"dynamic_upi_qr\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_CURRENT_AFFAIRS", "screen_name": "Daily Current Affairs Digest", "journey_id": "JRN_05_UTILITIES", "journey_name": "News, Study Material, Account & Utilities", "screenshot": "SCR_CURRENT_AFFAIRS.png", "previous_screen": "nav_drawer", "destination_screen": "saved_news | free_quizzes", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Daily Current Affairs feed renders", "schema": "{\"screen_name\": \"current_affairs_feed\", \"active_date\": \"2026-09-23\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_STUDY_NOTES", "screen_name": "Study Notes Subject List", "journey_id": "JRN_05_UTILITIES", "journey_name": "News, Study Material, Account & Utilities", "screenshot": "SCR_STUDY_NOTES.png", "previous_screen": "tests_explorer", "destination_screen": "chapter_notes", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when Study Notes subject list renders", "schema": "{\"screen_name\": \"study_notes_overview\", \"active_subject\": \"Mathematics\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_CHAPTER_NOTES", "screen_name": "Chapter PDF Notes List", "journey_id": "JRN_05_UTILITIES", "journey_name": "News, Study Material, Account & Utilities", "screenshot": "SCR_CHAPTER_NOTES.png", "previous_screen": "chapter_notes", "destination_screen": "notes_paywall_sheet", "components": [{"pin": "1", "label": "Locked Note Card Click", "type": "card", "category": "component_click", "event_name": "component_click", "trigger": "Fires when user taps a locked note topic with padlock icon", "schema": "{\"screen_name\": \"chapter_notes\", \"component_name\": \"locked_note_card\", \"component_type\": \"card\", \"note_title\": \"Types of Ratios\", \"is_locked\": true, \"destination\": \"notes_paywall_sheet\"}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TRANSACTIONS", "screen_name": "Transactions & Orders Screen", "journey_id": "JRN_05_UTILITIES", "journey_name": "News, Study Material, Account & Utilities", "screenshot": "SCR_TRANSACTIONS.png", "previous_screen": "nav_drawer", "destination_screen": "transaction_receipt", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when transactions history screen renders", "schema": "{\"screen_name\": \"transactions_history\", \"orders_count\": 5}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_TRANSACTION_RECEIPT", "screen_name": "Order Receipt & Invoice Screen", "journey_id": "JRN_05_UTILITIES", "journey_name": "News, Study Material, Account & Utilities", "screenshot": "SCR_TRANSACTION_RECEIPT.png", "previous_screen": "transactions_history", "destination_screen": "transactions_history", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when detailed order receipt renders", "schema": "{\"screen_name\": \"order_receipt\", \"order_id\": \"69eefbd25d...\", \"status\": \"Payment Successful\", \"amount_paid\": 1.0}", "dev_status": "Todo", "qa_status": "Pending"}]}, {"screen_id": "SCR_USER_SETTINGS", "screen_name": "User Account Settings Screen", "journey_id": "JRN_05_UTILITIES", "journey_name": "News, Study Material, Account & Utilities", "screenshot": "SCR_USER_SETTINGS.png", "previous_screen": "nav_drawer", "destination_screen": "home_feed", "components": [{"pin": "1", "label": "Screen View", "type": "screen", "category": "screen_view", "event_name": "screen_view", "trigger": "Fires when User Settings & profile screen renders", "schema": "{\"screen_name\": \"user_settings\"}", "dev_status": "Todo", "qa_status": "Pending"}]}];
+    let currentScreenIndex = 0;
+
+    const screenListEl = document.getElementById('screenList');
+    const mainContentEl = document.getElementById('mainContent');
+    const journeySelectEl = document.getElementById('journeySelect');
+    const searchInputEl = document.getElementById('searchInput');
+
+    function renderScreenList() {
+        const filterJourney = journeySelectEl.value;
+        const query = searchInputEl.value.toLowerCase();
+
+        screenListEl.innerHTML = '';
+        screensData.forEach((s, idx) => {
+            if (filterJourney !== 'ALL' && s.journey_id !== filterJourney) return;
+            if (query && !s.screen_name.toLowerCase().includes(query) && !s.screen_id.toLowerCase().includes(query)) return;
+
+            const li = document.createElement('li');
+            li.className = `screen-item ${idx === currentScreenIndex ? 'active' : ''}`;
+            li.innerHTML = `
+                <span>${s.screen_name}</span>
+                <span class="screen-badge">${s.components.length} Events</span>
+            `;
+            li.onclick = () => {
+                currentScreenIndex = idx;
+                renderScreenList();
+                renderScreenDetail(idx);
+            };
+            screenListEl.appendChild(li);
+        });
+    }
+
+    function renderScreenDetail(idx) {
+        const s = screensData[idx];
+        if (!s) return;
+
+        let tableRows = '';
+        s.components.forEach(c => {
+            let tagClass = 'tag-view';
+            if (c.category === 'component_click') tagClass = 'tag-click';
+            else if (c.category === 'user_action') tagClass = 'tag-action';
+            else if (c.category === 'state_change') tagClass = 'tag-state';
+            else if (c.category === 'conversion') tagClass = 'tag-conversion';
+
+            let formattedSchema = c.schema;
+            try {
+                formattedSchema = JSON.stringify(JSON.parse(c.schema), null, 2);
+            } catch(e) {}
+
+            tableRows += `
+                <tr>
+                    <td><span class="pin-pill">[Pin ${c.pin}]</span></td>
+                    <td><strong>${c.label}</strong><br><span style="color:#64748b;font-size:0.75rem;">Type: ${c.type}</span></td>
+                    <td>
+                        <span class="tag ${tagClass}">${c.category}</span><br>
+                        <code style="font-size:0.8rem;color:#0f172a;font-weight:600;">${c.event_name}</code>
+                    </td>
+                    <td>${c.trigger}</td>
+                    <td><div class="schema-box">${formattedSchema}</div></td>
+                </tr>
+            `;
+        });
+
+        mainContentEl.innerHTML = `
+            <div class="screen-detail-card">
+                <div class="screen-header">
+                    <div>
+                        <h2>${s.screen_name}</h2>
+                        <span style="font-size:0.85rem;color:#64748b;">ID: <code>${s.screen_id}</code> | Journey: ${s.journey_name}</span>
+                    </div>
+                </div>
+
+                <div class="wireflow-bar">
+                    <div>◀ <strong>Came From:</strong> <span class="wireflow-source">${s.previous_screen}</span></div>
+                    <div>▶ <strong>Leads To:</strong> <span class="wireflow-dest">${s.destination_screen}</span></div>
+                </div>
+
+                <div class="split-view">
+                    <div class="screenshot-container">
+                        <img src="screenshots/${s.screenshot}" alt="${s.screen_name}" onerror="this.src='https://via.placeholder.com/320x640?text=Screenshot+Pending'">
+                        <p style="color:#94a3b8;font-size:0.75rem;margin-top:0.5rem;">File: ${s.screenshot}</p>
+                    </div>
+
+                    <div class="events-table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pin #</th>
+                                    <th>UI Element</th>
+                                    <th>Event Taxonomy</th>
+                                    <th>Trigger Condition</th>
+                                    <th>JSON Payload Schema</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${tableRows}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    journeySelectEl.onchange = renderScreenList;
+    searchInputEl.oninput = renderScreenList;
+
+    // Initial render
+    renderScreenList();
+    renderScreenDetail(0);
+</script>
+
+</body>
+</html>
