@@ -1910,11 +1910,27 @@
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
     "screenshot": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN.png",
-    "description": "Subscriber learning workspace for an enrolled batch: Dashboard, Study Plan, Downloads, Doubts, and 'Start Lesson'.",
+    "description": "Comprehensive enrolled course study hub (MISSION DSSSB): Course progress, Resume Lesson CTA, module chapters, and sub-section tabs.",
     "outboundPaths": [
       {
-        "action": "Tap 'Start Lesson'",
-        "target": "COURSES_EXPLORE_SCREEN"
+        "action": "Tap \"Resume Lesson\" / \"Start Lesson\" CTA",
+        "target": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN"
+      },
+      {
+        "action": "Tap \"Study Plan\" tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN"
+      },
+      {
+        "action": "Tap \"Downloads\" tab",
+        "target": "ENROLLED_COURSE_DOWNLOADS_SCREEN"
+      },
+      {
+        "action": "Tap \"Doubts\" tab",
+        "target": "ENROLLED_COURSE_DOUBTS_SCREEN"
+      },
+      {
+        "action": "Tap \"Announcements\" tab",
+        "target": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN"
       },
       {
         "action": "Press back arrow",
@@ -1923,24 +1939,368 @@
     ],
     "keyComponents": [
       {
-        "name": "Batch Header & Progress",
-        "type": "header",
-        "detail": "MISSION DSSSB Live Batch (0% Progress)"
+        "name": "Course Progress Bar",
+        "type": "progress",
+        "detail": "Batch title with percentage indicator (0%)"
       },
       {
-        "name": "Learning Tabs",
+        "name": "Resume Lesson Card",
+        "type": "card",
+        "detail": "Current activity (Intro & Application of Grammar) with Start/Resume CTA"
+      },
+      {
+        "name": "Recent Activity Module",
+        "type": "list",
+        "detail": "Introduction module chapters and completion status"
+      },
+      {
+        "name": "Course Section Tabs",
         "type": "tab",
-        "detail": "Dashboard, Study Plan, Downloads, Doubts"
-      },
-      {
-        "name": "Start Lesson CTA",
-        "type": "button",
-        "detail": "Launches active video lecture"
+        "detail": "Dashboard, Study Plan, Downloads, Doubts, Announcements"
       }
     ]
   },
   {
     "id": "SCR_58",
+    "screenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN.png",
+    "description": "Module lesson timeline displaying class video lectures, practice exercises, and completion progress.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Video \u2022 52 mins\" class item",
+        "target": "COURSE_LESSON_VIDEO_PLAYER_SCREEN"
+      },
+      {
+        "action": "Tap \"Practice \u2022 10 Questions\" exercise item",
+        "target": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN"
+      },
+      {
+        "action": "Press back arrow before completing activities",
+        "target": "LESSON_PROGRESS_LEAVING_MODAL"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Module Header",
+        "type": "header",
+        "detail": "Module title, progress indicator (0%), and bookmark"
+      },
+      {
+        "name": "Class Video Card",
+        "type": "timeline_item",
+        "detail": "Step 1: Video lecture with duration (52 mins)"
+      },
+      {
+        "name": "Practice Exercise Card",
+        "type": "timeline_item",
+        "detail": "Step 2: Topic practice with question count (10 Questions)"
+      }
+    ]
+  },
+  {
+    "id": "SCR_59",
+    "screenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "COURSE_LESSON_VIDEO_PLAYER_SCREEN.png",
+    "description": "Interactive video playback interface with scrubber controls, speed/quality settings, PDF notes, and lesson tools.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Chat Replay\" / \"Notes\" bottom tab",
+        "target": "COURSE_LESSON_CHAT_REPLAY_SHEET"
+      },
+      {
+        "action": "Tap \"Next: Practice \u23ed\" CTA",
+        "target": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN"
+      },
+      {
+        "action": "Tap \"Pdf Notes\" action icon",
+        "target": "CHAPTER_PDF_NOTES_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Video Player Frame",
+        "type": "media_player",
+        "detail": "Controls: 10s rewind/forward, pause, scrubber, quality settings, fullscreen"
+      },
+      {
+        "name": "Lesson Action Strip",
+        "type": "actions",
+        "detail": "Save, PDF Notes, Download offline, Report issue"
+      },
+      {
+        "name": "Faculty Rating Widget",
+        "type": "rating",
+        "detail": "5-star interactive rating for instructor"
+      },
+      {
+        "name": "Next Lesson CTA",
+        "type": "button",
+        "detail": "Top-bar \"Next: Practice\" navigation"
+      }
+    ]
+  },
+  {
+    "id": "SCR_60",
+    "screenName": "COURSE_LESSON_CHAT_REPLAY_SHEET",
+    "referrerScreenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "COURSE_LESSON_CHAT_REPLAY_SHEET.png",
+    "description": "Synchronized live chat replay stream and class notes slide-up sheet during video playback.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Notes\" tab",
+        "target": "COURSE_LESSON_CHAT_REPLAY_SHEET"
+      },
+      {
+        "action": "Swipe down / tap outside to dismiss",
+        "target": "COURSE_LESSON_VIDEO_PLAYER_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Chat Messages Stream",
+        "type": "feed",
+        "detail": "Time-synchronized live session chat messages from students"
+      },
+      {
+        "name": "Chat/Notes Switcher",
+        "type": "tab",
+        "detail": "Toggle between live chat replay and lesson notes"
+      }
+    ]
+  },
+  {
+    "id": "SCR_61",
+    "screenName": "LESSON_PROGRESS_LEAVING_MODAL",
+    "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "LESSON_PROGRESS_LEAVING_MODAL.png",
+    "description": "Retention confirmation modal displaying remaining module activities and progress incentives.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Continue Learning\" CTA",
+        "target": "COURSE_LESSON_VIDEO_PLAYER_SCREEN"
+      },
+      {
+        "action": "Tap \"Will Complete Later\" / \"Mark as Complete\"",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Remaining Activities Checklist",
+        "type": "checklist",
+        "detail": "Only 2 Activities Left - 95% students complete the entire lesson"
+      },
+      {
+        "name": "Continue Learning CTA",
+        "type": "button",
+        "detail": "Primary button resuming the unfinished lesson"
+      },
+      {
+        "name": "Exit Actions",
+        "type": "actions",
+        "detail": "Mark as Complete | Will Complete Later dismissal options"
+      }
+    ]
+  },
+  {
+    "id": "SCR_62",
+    "screenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN.png",
+    "description": "Day-wise daily study plan schedule organized into expandable date accordions.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Subjectwise\" sub-tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN"
+      },
+      {
+        "action": "Tap \"Timetable\" sub-tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN"
+      },
+      {
+        "action": "Tap date accordion item",
+        "target": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN"
+      },
+      {
+        "action": "Tap \"Dashboard\" tab",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Study Plan Sub-Tabs",
+        "type": "tab",
+        "detail": "Daily Plan, Subjectwise, Timetable"
+      },
+      {
+        "name": "Daily Date Accordions",
+        "type": "accordion",
+        "detail": "Schedule cards for 15th Jan, 16th Jan, 17th Jan, 18th Jan with module completion counts"
+      }
+    ]
+  },
+  {
+    "id": "SCR_63",
+    "screenName": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN.png",
+    "description": "Structured curriculum syllabus broken down by subjects, chapters, and topic counts.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Daily Plan\" sub-tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN"
+      },
+      {
+        "action": "Tap \"Timetable\" sub-tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN"
+      },
+      {
+        "action": "Tap any subject topic item",
+        "target": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Subject Topic Cards",
+        "type": "list",
+        "detail": "Mental Ability & Reasoning (19 Topics), Hindi (25 Topics), Computer (16 Topics), English (4 Topics)"
+      }
+    ]
+  },
+  {
+    "id": "SCR_64",
+    "screenName": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN.png",
+    "description": "Weekly calendar timetable with hourly class schedule grid for live lecture attendance.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Daily Plan\" sub-tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN"
+      },
+      {
+        "action": "Tap \"Subjectwise\" sub-tab",
+        "target": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Date Header Columns",
+        "type": "calendar",
+        "detail": "Days of the week (Sat 01 Jun, Sun 02 Jun, Mon 03 Jun)"
+      },
+      {
+        "name": "Hourly Timetable Grid",
+        "type": "grid",
+        "detail": "Class slots mapped by time (11 AM, 12 PM, 1 PM, 2 PM, 3 PM, 4 PM)"
+      }
+    ]
+  },
+  {
+    "id": "SCR_65",
+    "screenName": "ENROLLED_COURSE_DOWNLOADS_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_DOWNLOADS_SCREEN.png",
+    "description": "Offline download storage manager for saved video lectures, class PDFs, and practice tests.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Dashboard\" tab",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Downloads Empty Graphic",
+        "type": "illustration",
+        "detail": "Oops! You don\"t have any downloads empty state"
+      },
+      {
+        "name": "Downloads Tab Indicator",
+        "type": "tab",
+        "detail": "Active Downloads tab selection"
+      }
+    ]
+  },
+  {
+    "id": "SCR_66",
+    "screenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_DOUBTS_SCREEN.png",
+    "description": "Collaborative course doubt discussion forum with camera photo upload and peer/mentor answers.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Dashboard\" tab",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Ask Doubt Input",
+        "type": "input",
+        "detail": "Ask your Doubt query box with camera capture icon"
+      },
+      {
+        "name": "Doubts Filter Bar",
+        "type": "chips",
+        "detail": "All Doubts, Your Doubts, Your Answers"
+      },
+      {
+        "name": "Doubt Post Card",
+        "type": "card",
+        "detail": "Question text, student photo attachment, Upvote, Answer, Share actions"
+      }
+    ]
+  },
+  {
+    "id": "SCR_67",
+    "screenName": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN.png",
+    "description": "Official batch announcements feed displaying faculty notices, schedule changes, and updates.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Dashboard\" tab",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Announcements Broadcast Feed",
+        "type": "feed",
+        "detail": "Megaphone illustration and official batch notice bulletin"
+      }
+    ]
+  },
+  {
+    "id": "SCR_68",
     "screenName": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1970,7 +2330,7 @@
     ]
   },
   {
-    "id": "SCR_59",
+    "id": "SCR_69",
     "screenName": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2000,7 +2360,7 @@
     ]
   },
   {
-    "id": "SCR_60",
+    "id": "SCR_70",
     "screenName": "MY_SUPER_PASS_PRACTICE_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2025,7 +2385,7 @@
     ]
   },
   {
-    "id": "SCR_61",
+    "id": "SCR_71",
     "screenName": "MY_SUPER_PASS_TEACHERS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2050,7 +2410,7 @@
     ]
   },
   {
-    "id": "SCR_62",
+    "id": "SCR_72",
     "screenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2079,7 +2439,7 @@
     ]
   },
   {
-    "id": "SCR_63",
+    "id": "SCR_73",
     "screenName": "SAVED_NEWS_BOOKMARKS_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2100,7 +2460,7 @@
     ]
   },
   {
-    "id": "SCR_64",
+    "id": "SCR_74",
     "screenName": "BLOG_ARTICLE_READER_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2126,7 +2486,7 @@
     ]
   },
   {
-    "id": "SCR_65",
+    "id": "SCR_75",
     "screenName": "REFER_AND_EARN_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2152,7 +2512,7 @@
     ]
   },
   {
-    "id": "SCR_66",
+    "id": "SCR_76",
     "screenName": "TRANSACTIONS_LIST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2177,7 +2537,7 @@
     ]
   },
   {
-    "id": "SCR_67",
+    "id": "SCR_77",
     "screenName": "ORDER_RECEIPT_SCREEN",
     "referrerScreenName": "TRANSACTIONS_LIST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2203,7 +2563,7 @@
     ]
   },
   {
-    "id": "SCR_68",
+    "id": "SCR_78",
     "screenName": "APP_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2233,7 +2593,7 @@
     ]
   },
   {
-    "id": "SCR_69",
+    "id": "SCR_79",
     "screenName": "SETTINGS_PASS_TAB_SCREEN",
     "referrerScreenName": "APP_SETTINGS_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2263,7 +2623,7 @@
     ]
   },
   {
-    "id": "SCR_70",
+    "id": "SCR_80",
     "screenName": "USER_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2289,7 +2649,7 @@
     ]
   },
   {
-    "id": "SCR_71",
+    "id": "SCR_81",
     "screenName": "APP_LANGUAGE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
