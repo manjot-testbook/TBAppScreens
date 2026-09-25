@@ -3,9 +3,9 @@
     "id": "SCR_01",
     "screenName": "LAUNCH_SPLASH_SCREEN",
     "referrerScreenName": "OS_LAUNCHER",
-    "flow": "Acquisition & Auth",
+    "flow": "1. Acquisition, Auth & Onboarding",
     "screenshot": "01_launch.png",
-    "description": "Initial loading and routing gate evaluating authentication state, remote config, and deferred deep links.",
+    "description": "Initial loading gate evaluating authentication state, remote config, and deferred deep links.",
     "outboundPaths": [
       {
         "action": "Unauthenticated user detected",
@@ -32,7 +32,7 @@
     "id": "SCR_02",
     "screenName": "AUTH_MOBILE_LOGIN_SCREEN",
     "referrerScreenName": "LAUNCH_SPLASH_SCREEN",
-    "flow": "Acquisition & Auth",
+    "flow": "1. Acquisition, Auth & Onboarding",
     "screenshot": "02_login_screen.png",
     "description": "Mobile number entry with Google Play Services assisted phone number picker.",
     "outboundPaths": [
@@ -58,7 +58,7 @@
     "id": "SCR_03",
     "screenName": "AUTH_OTP_VERIFICATION_SCREEN",
     "referrerScreenName": "AUTH_MOBILE_LOGIN_SCREEN",
-    "flow": "Acquisition & Auth",
+    "flow": "1. Acquisition, Auth & Onboarding",
     "screenshot": "04_after_otp.png",
     "description": "6-digit OTP verification with countdown timer, SMS auto-detection, and resend CTA.",
     "outboundPaths": [
@@ -85,11 +85,6 @@
         "name": "Resend Timer",
         "type": "timer",
         "detail": "45-second countdown with resend CTA"
-      },
-      {
-        "name": "Change Number Link",
-        "type": "link",
-        "detail": "Returns to mobile input"
       }
     ]
   },
@@ -97,7 +92,7 @@
     "id": "SCR_04",
     "screenName": "ONBOARDING_GOAL_SELECTION_SCREEN",
     "referrerScreenName": "AUTH_OTP_VERIFICATION_SCREEN",
-    "flow": "Acquisition & Auth",
+    "flow": "1. Acquisition, Auth & Onboarding",
     "screenshot": "57_onboarding_goal_selection.png",
     "description": "Target exam selection with Govt vs Private prep toggle, search, and category rails.",
     "outboundPaths": [
@@ -132,7 +127,7 @@
     "id": "SCR_05",
     "screenName": "HOME_FEED_DASHBOARD_SCREEN",
     "referrerScreenName": "ONBOARDING_GOAL_SELECTION_SCREEN",
-    "flow": "Home & Navigation",
+    "flow": "2. Home Hub & Navigation",
     "screenshot": "06_home_feed.png",
     "description": "Central application dashboard with promotional carousels, QAB, and feed items.",
     "outboundPaths": [
@@ -161,6 +156,10 @@
         "target": "TESTBOOK_PASS_LANDING_PAYWALL"
       },
       {
+        "action": "Tap bottom tab 'Super Pass'",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      },
+      {
         "action": "Tap QAB 'Free Quizzes'",
         "target": "FREE_DAILY_QUIZZES_SCREEN"
       },
@@ -185,11 +184,6 @@
         "detail": "Live Classes, Free Quizzes, Free Tests, Notes, Practice"
       },
       {
-        "name": "Promotional Banner Carousel",
-        "type": "carousel",
-        "detail": "Auto-scrolling campaigns"
-      },
-      {
         "name": "Pass Expiry Card",
         "type": "card",
         "detail": "Urgent renewal pitch (\u20b9749)"
@@ -205,7 +199,7 @@
     "id": "SCR_06",
     "screenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Home & Navigation",
+    "flow": "2. Home Hub & Navigation",
     "screenshot": "HAMBURGER_DRAWER_NAVIGATION_SCREEN.png",
     "description": "Full-screen slide-out navigation menu with user profile header and 16 primary feature destinations.",
     "outboundPaths": [
@@ -263,7 +257,7 @@
     "id": "SCR_07",
     "screenName": "ENROLLED_EXAMS_MODAL",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Home & Navigation",
+    "flow": "2. Home Hub & Navigation",
     "screenshot": "56_my_exams_sheet.png",
     "description": "Quick bottom sheet to filter active home feed exams or launch full goal management.",
     "outboundPaths": [
@@ -293,7 +287,7 @@
     "id": "SCR_08",
     "screenName": "ENROLLED_EXAMS_MANAGEMENT_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Home & Navigation",
+    "flow": "2. Home Hub & Navigation",
     "screenshot": "ENROLLED_EXAMS_MANAGEMENT_SCREEN.png",
     "description": "Comprehensive target exams manager showing enrolled exams, student metrics, and popular exam additions.",
     "outboundPaths": [
@@ -323,7 +317,7 @@
     "id": "SCR_09",
     "screenName": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Home & Navigation",
+    "flow": "2. Home Hub & Navigation",
     "screenshot": "SCR_NOTIFICATIONS.png",
     "description": "AI-powered exam preparation assistant and doubt solver conversational interface.",
     "outboundPaths": [
@@ -349,7 +343,7 @@
     "id": "SCR_10",
     "screenName": "GLOBAL_SEARCH_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Discovery & Search",
+    "flow": "3. Discovery & Search Sections",
     "screenshot": "SCR_GLOBAL_SEARCH.png",
     "description": "Global search input with auto-complete and trending exams suggestions.",
     "outboundPaths": [
@@ -379,7 +373,7 @@
     "id": "SCR_11",
     "screenName": "SEARCH_RESULTS_SCREEN",
     "referrerScreenName": "GLOBAL_SEARCH_SCREEN",
-    "flow": "Discovery & Search",
+    "flow": "3. Discovery & Search Sections",
     "screenshot": "SCR_SEARCH_RESULTS.png",
     "description": "Search results multi-category view partitioned into Exams and Courses with 'View All' links.",
     "outboundPaths": [
@@ -426,7 +420,7 @@
     "id": "SCR_12",
     "screenName": "SEARCH_SECTIONS_EXAMS_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
-    "flow": "Discovery & Search",
+    "flow": "3. Discovery & Search Sections",
     "screenshot": "SEARCH_SECTIONS_EXAMS_SCREEN.png",
     "description": "Filtered search results showing matching target exams with student counts and preparation links.",
     "outboundPaths": [
@@ -447,7 +441,7 @@
     "id": "SCR_13",
     "screenName": "SEARCH_SECTIONS_COURSES_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
-    "flow": "Discovery & Search",
+    "flow": "3. Discovery & Search Sections",
     "screenshot": "SEARCH_SECTIONS_COURSES_SCREEN.png",
     "description": "Filtered search results displaying coaching batches, free demo links, and live batches.",
     "outboundPaths": [
@@ -468,7 +462,7 @@
     "id": "SCR_14",
     "screenName": "SEARCH_SECTIONS_TESTS_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
-    "flow": "Discovery & Search",
+    "flow": "3. Discovery & Search Sections",
     "screenshot": "SEARCH_SECTIONS_TESTS_SCREEN.png",
     "description": "Filtered search results showing test series packages with total test counts and free test badges.",
     "outboundPaths": [
@@ -489,10 +483,22 @@
     "id": "SCR_15",
     "screenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Exam Portals",
+    "flow": "4. Exam Portals & Preparation",
     "screenshot": "EXAM_PAGE_OVERVIEW_SCREEN.png",
-    "description": "Comprehensive exam hub (e.g. RRB NTPC): Study plans, notifications, PYPs, rank prediction, and test series.",
+    "description": "Comprehensive exam hub (e.g. RRB NTPC): Top action tiles, notification details, syllabus, PYPs, and test series.",
     "outboundPaths": [
+      {
+        "action": "Tap 'testbook LIVE' section tab",
+        "target": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN"
+      },
+      {
+        "action": "Tap 'Study Notes' section tab",
+        "target": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN"
+      },
+      {
+        "action": "Tap 'Quizzes' section tab",
+        "target": "EXAM_PAGE_QUIZZES_TAB_SCREEN"
+      },
       {
         "action": "Tap 'ShowPyp' tile",
         "target": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN"
@@ -510,25 +516,120 @@
       {
         "name": "Exam Header & Crest",
         "type": "header",
-        "detail": "RRB NTPC (7.9M+ Enrolled)"
+        "detail": "RRB Group D (6.1M+ Enrolled)"
       },
       {
-        "name": "Quick Action Tiles",
+        "name": "Top Action Tiles",
         "type": "tiles",
-        "detail": "CBT-2 Study Plan, ShowInfoAndUpdates, ShowPyp"
+        "detail": "Free Test, 25 Days Study Plan, ShowPyp, Exam Rank"
       },
       {
         "name": "Exam Tabs Rail",
         "type": "tab",
-        "detail": "Test Series, testbook LIVE, Study Notes"
+        "detail": "Test Series, testbook LIVE, Study Notes, Quizzes"
+      },
+      {
+        "name": "Free Tests Section",
+        "type": "cards",
+        "detail": "SSC CGL 2026: Officer's Friday Mega Live Test"
       }
     ]
   },
   {
     "id": "SCR_16",
+    "screenName": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN",
+    "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
+    "flow": "4. Exam Portals & Preparation",
+    "screenshot": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN.png",
+    "description": "The dedicated SuperPass / LIVE tab on the Exam Page showing coaching batches and Pass benefits.",
+    "outboundPaths": [
+      {
+        "action": "Tap any coaching batch card",
+        "target": "COURSES_EXPLORE_SCREEN"
+      },
+      {
+        "action": "Tap 'Study Notes' tab",
+        "target": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "testbook LIVE Banner",
+        "type": "banner",
+        "detail": "Includes everything for 495+ exams"
+      },
+      {
+        "name": "Pass Inclusion Pill",
+        "type": "badge",
+        "detail": "Includes FREE Pass"
+      },
+      {
+        "name": "Crash Course Batch Cards",
+        "type": "cards",
+        "detail": "RRB Group D \u091c\u0941\u0928\u0942\u0928 Live Batch (250+ Videos)"
+      }
+    ]
+  },
+  {
+    "id": "SCR_17",
+    "screenName": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN",
+    "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
+    "flow": "4. Exam Portals & Preparation",
+    "screenshot": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN.png",
+    "description": "The Study Notes tab on the Exam Page featuring chapter notes, PDF summaries, and renewal strips.",
+    "outboundPaths": [
+      {
+        "action": "Tap any chapter notes card",
+        "target": "CHAPTER_PDF_NOTES_SCREEN"
+      },
+      {
+        "action": "Tap 'Quizzes' tab",
+        "target": "EXAM_PAGE_QUIZZES_TAB_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Recently Viewed Chapters",
+        "type": "list",
+        "detail": "Resume study notes cards"
+      },
+      {
+        "name": "Paywall Urgency Strip",
+        "type": "timer",
+        "detail": "Your subscription is ending in 02 days"
+      }
+    ]
+  },
+  {
+    "id": "SCR_18",
+    "screenName": "EXAM_PAGE_QUIZZES_TAB_SCREEN",
+    "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
+    "flow": "4. Exam Portals & Preparation",
+    "screenshot": "EXAM_PAGE_QUIZZES_TAB_SCREEN.png",
+    "description": "The Quizzes section on the Exam Page featuring daily topic tests and speed quizzes.",
+    "outboundPaths": [
+      {
+        "action": "Tap any quiz card",
+        "target": "PRACTICE_QUESTION_INTERFACE_SCREEN"
+      },
+      {
+        "action": "Tap 'Test Series' tab",
+        "target": "EXAM_PAGE_OVERVIEW_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Daily Quizzes Directory",
+        "type": "list",
+        "detail": "Subject-wise mini quizzes with Start CTA"
+      }
+    ]
+  },
+  {
+    "id": "SCR_19",
     "screenName": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
-    "flow": "Exam Portals",
+    "flow": "4. Exam Portals & Preparation",
     "screenshot": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN.png",
     "description": "Year-wise historical question papers with online attempt mode, PDF download tags, and pass paywalls.",
     "outboundPaths": [
@@ -564,10 +665,10 @@
     ]
   },
   {
-    "id": "SCR_17",
+    "id": "SCR_20",
     "screenName": "TESTS_EXPLORER_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "SCR_TESTS_EXPLORE_SCROLLED.png",
     "description": "Test series exploration hub with enrolled test progress, toppers streak, and quick filter pills.",
     "outboundPaths": [
@@ -595,17 +696,17 @@
         "detail": "SSC Selection Post (1/609), SSC MTS (1/2002)"
       },
       {
-        "name": "Toppers Streak Card",
+        "name": "Toppers Streak Widget",
         "type": "card",
         "detail": "Kickstarter badge with 7-day attempt streak"
       }
     ]
   },
   {
-    "id": "SCR_18",
+    "id": "SCR_21",
     "screenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "referrerScreenName": "TESTS_EXPLORER_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "13_tests_landing.png",
     "description": "Test series package landing with 600+ test breakdowns, exam level filter, and free test cards.",
     "outboundPaths": [
@@ -641,10 +742,10 @@
     ]
   },
   {
-    "id": "SCR_19",
+    "id": "SCR_22",
     "screenName": "EXAM_LEVEL_MODAL",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "12_tests_tab.png",
     "description": "Educational qualification branch selector modal for test series eligibility.",
     "outboundPaths": [
@@ -667,10 +768,10 @@
     ]
   },
   {
-    "id": "SCR_20",
+    "id": "SCR_23",
     "screenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "15_test_instructions.png",
     "description": "Exam pre-flight check with rules, sectional timers, marking scheme, and language picker.",
     "outboundPaths": [
@@ -702,10 +803,10 @@
     ]
   },
   {
-    "id": "SCR_21",
+    "id": "SCR_24",
     "screenName": "LIVE_TEST_TAKING_INTERFACE",
     "referrerScreenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "18_test_interface.png",
     "description": "Real-time assessment engine with countdown timer, sectional tabs, and question cards.",
     "outboundPaths": [
@@ -741,10 +842,10 @@
     ]
   },
   {
-    "id": "SCR_22",
+    "id": "SCR_25",
     "screenName": "QUESTION_PALLET_DRAWER",
     "referrerScreenName": "LIVE_TEST_TAKING_INTERFACE",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "19_question_pallet.png",
     "description": "Full matrix overview of all 25-100 questions partitioned by sections and attempt states.",
     "outboundPaths": [
@@ -775,10 +876,10 @@
     ]
   },
   {
-    "id": "SCR_23",
+    "id": "SCR_26",
     "screenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "referrerScreenName": "QUESTION_PALLET_DRAWER",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "29_test_submit_confirmation.png",
     "description": "Confirmation dialog summarizing attempted and unattempted questions before final submit.",
     "outboundPaths": [
@@ -805,10 +906,10 @@
     ]
   },
   {
-    "id": "SCR_24",
+    "id": "SCR_27",
     "screenName": "TEST_ANALYSIS_SCREEN",
     "referrerScreenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "31_test_analysis.png",
     "description": "Post-exam scorecard with Rank, Score, Percentile, Accuracy, and paywall renewal cards.",
     "outboundPaths": [
@@ -843,10 +944,10 @@
     ]
   },
   {
-    "id": "SCR_25",
+    "id": "SCR_28",
     "screenName": "QUESTION_SOLUTIONS_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "34_test_solutions.png",
     "description": "Question-by-question review with community accuracy rates and full explanations.",
     "outboundPaths": [
@@ -873,10 +974,10 @@
     ]
   },
   {
-    "id": "SCR_26",
+    "id": "SCR_29",
     "screenName": "TEST_LEADERBOARD_PODIUM_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
-    "flow": "Assessment & Testing",
+    "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "35_test_leaderboard.png",
     "description": "Comparative rank leaderboard showing top 3 test rankers and student's relative score.",
     "outboundPaths": [
@@ -903,13 +1004,17 @@
     ]
   },
   {
-    "id": "SCR_27",
+    "id": "SCR_30",
     "screenName": "FREE_DAILY_QUIZZES_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Practice & Quizzes",
+    "flow": "6. Practice & Free Quizzes",
     "screenshot": "SCR_FREE_QUIZZES.png",
     "description": "Subject-wise daily quiz directory with exam filter chips and attempt tracking.",
     "outboundPaths": [
+      {
+        "action": "Tap any quiz card",
+        "target": "PRACTICE_QUESTION_INTERFACE_SCREEN"
+      },
       {
         "action": "Press back arrow",
         "target": "HOME_FEED_DASHBOARD_SCREEN"
@@ -929,13 +1034,17 @@
     ]
   },
   {
-    "id": "SCR_28",
+    "id": "SCR_31",
     "screenName": "FREE_PRACTICE_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Practice & Quizzes",
+    "flow": "6. Practice & Free Quizzes",
     "screenshot": "SCR_FREE_PRACTICE.png",
     "description": "Adaptive topic-wise practice directory by subject (Quant, Reasoning, English, GK).",
     "outboundPaths": [
+      {
+        "action": "Tap subject to browse chapters",
+        "target": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN"
+      },
       {
         "action": "Press back arrow",
         "target": "HOME_FEED_DASHBOARD_SCREEN"
@@ -950,10 +1059,91 @@
     ]
   },
   {
-    "id": "SCR_29",
+    "id": "SCR_32",
+    "screenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+    "referrerScreenName": "FREE_PRACTICE_SCREEN",
+    "flow": "6. Practice & Free Quizzes",
+    "screenshot": "ADAPTIVE_PRACTICE_INTERFACE.png",
+    "description": "Chapter-level practice tests (Practice 1, 2, 3) with question count and completion badges.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Start Practice \u2794'",
+        "target": "PRACTICE_QUESTION_INTERFACE_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "FREE_PRACTICE_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Practice Modules List",
+        "type": "cards",
+        "detail": "Analogy - Practice 1 (20 Qs) with Start Practice CTA"
+      }
+    ]
+  },
+  {
+    "id": "SCR_33",
+    "screenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
+    "referrerScreenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+    "flow": "6. Practice & Free Quizzes",
+    "screenshot": "PRACTICE_QUESTION_INTERFACE_CLEAN.png",
+    "description": "Live practice engine with instant question feedback, question stepper, and explanation drawer.",
+    "outboundPaths": [
+      {
+        "action": "Select option",
+        "target": "PRACTICE_QUESTION_ANSWERED_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Question Stepper",
+        "type": "stepper",
+        "detail": "1 to 20 question bubbles"
+      },
+      {
+        "name": "Instant Feedback Radio Cards",
+        "type": "radio",
+        "detail": "Immediate validation upon selection"
+      },
+      {
+        "name": "Bottom Nav Buttons",
+        "type": "buttons",
+        "detail": "Previous and Next CTAs"
+      }
+    ]
+  },
+  {
+    "id": "SCR_34",
+    "screenName": "PRACTICE_QUESTION_ANSWERED_SCREEN",
+    "referrerScreenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
+    "flow": "6. Practice & Free Quizzes",
+    "screenshot": "PRACTICE_QUESTION_ANSWERED_SCREEN.png",
+    "description": "The answered state showing green checkmark / red cross and full explanatory solution.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Next \u2794'",
+        "target": "PRACTICE_QUESTION_INTERFACE_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Correct Answer Badge",
+        "type": "badge",
+        "detail": "Green checkmark on selected correct option"
+      }
+    ]
+  },
+  {
+    "id": "SCR_35",
     "screenName": "STUDY_NOTES_OVERVIEW_SCREEN",
     "referrerScreenName": "TESTS_EXPLORER_SCREEN",
-    "flow": "Practice & Quizzes",
+    "flow": "6. Practice & Free Quizzes",
     "screenshot": "SCR_STUDY_NOTES.png",
     "description": "Subject-wise study notes directory with chapter counts and pass renewal paywall strips.",
     "outboundPaths": [
@@ -980,10 +1170,10 @@
     ]
   },
   {
-    "id": "SCR_30",
+    "id": "SCR_36",
     "screenName": "CHAPTER_PDF_NOTES_SCREEN",
     "referrerScreenName": "STUDY_NOTES_OVERVIEW_SCREEN",
-    "flow": "Practice & Quizzes",
+    "flow": "6. Practice & Free Quizzes",
     "screenshot": "SCR_CHAPTER_NOTES.png",
     "description": "Individual chapter PDF topic list with padlocked premium study materials.",
     "outboundPaths": [
@@ -1005,10 +1195,10 @@
     ]
   },
   {
-    "id": "SCR_31",
+    "id": "SCR_37",
     "screenName": "NOTES_LOCKED_PAYWALL_MODAL",
     "referrerScreenName": "CHAPTER_PDF_NOTES_SCREEN",
-    "flow": "Practice & Quizzes",
+    "flow": "6. Practice & Free Quizzes",
     "screenshot": "SCR_NOTES_LOCKED_PAYWALL.png",
     "description": "Paywall bottom sheet triggered when attempting to access locked study notes.",
     "outboundPaths": [
@@ -1035,10 +1225,10 @@
     ]
   },
   {
-    "id": "SCR_32",
+    "id": "SCR_38",
     "screenName": "COURSES_EXPLORE_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
-    "flow": "Courses & Live Classes",
+    "flow": "7. Courses & Masterclasses",
     "screenshot": "COURSES_EXPLORE_SCREEN.png",
     "description": "Full video coaching batch catalog with video preview, syllabus roadmap, and enrollment CTA.",
     "outboundPaths": [
@@ -1070,10 +1260,10 @@
     ]
   },
   {
-    "id": "SCR_33",
+    "id": "SCR_39",
     "screenName": "DAILY_LIVE_CLASSES_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
-    "flow": "Courses & Live Classes",
+    "flow": "7. Courses & Masterclasses",
     "screenshot": "DAILY_LIVE_CLASSES_SCREEN.png",
     "description": "Timeline schedule of upcoming and completed masterclasses with teacher tags and 'Watch Now' CTA.",
     "outboundPaths": [
@@ -1100,10 +1290,10 @@
     ]
   },
   {
-    "id": "SCR_34",
+    "id": "SCR_40",
     "screenName": "TEACHER_PROFILE_PAGE",
     "referrerScreenName": "DAILY_LIVE_CLASSES_SCREEN",
-    "flow": "Courses & Live Classes",
+    "flow": "7. Courses & Masterclasses",
     "screenshot": "TEACHER_PROFILE_PAGE.png",
     "description": "Teacher profile directory showing students taught, selection counts, and full course catalog.",
     "outboundPaths": [
@@ -1125,10 +1315,10 @@
     ]
   },
   {
-    "id": "SCR_35",
+    "id": "SCR_41",
     "screenName": "INDIVIDUAL_TEACHER_DETAILS_SCREEN",
     "referrerScreenName": "TEACHER_PROFILE_PAGE",
-    "flow": "Courses & Live Classes",
+    "flow": "7. Courses & Masterclasses",
     "screenshot": "INDIVIDUAL_TEACHER_DETAILS_SCREEN.png",
     "description": "Detailed faculty biography, exams cleared, student ratings, and trial booking CTA.",
     "outboundPaths": [
@@ -1160,10 +1350,10 @@
     ]
   },
   {
-    "id": "SCR_36",
+    "id": "SCR_42",
     "screenName": "SMARTBOOKS_STORE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "SmartBooks Commerce",
+    "flow": "8. SmartBooks Store",
     "screenshot": "SCR_SMARTBOOKS_HOME.png",
     "description": "Physical book store for government exam preparation with discounts and language filters.",
     "outboundPaths": [
@@ -1195,10 +1385,10 @@
     ]
   },
   {
-    "id": "SCR_37",
+    "id": "SCR_43",
     "screenName": "SMARTBOOK_DETAILS_SCREEN",
     "referrerScreenName": "SMARTBOOKS_STORE_SCREEN",
-    "flow": "SmartBooks Commerce",
+    "flow": "8. SmartBooks Store",
     "screenshot": "SMARTBOOK_DETAILS_SCREEN.png",
     "description": "Product details page for printed books with customer ratings, preview, and Buy Now CTA.",
     "outboundPaths": [
@@ -1230,10 +1420,10 @@
     ]
   },
   {
-    "id": "SCR_38",
+    "id": "SCR_44",
     "screenName": "SUPERCOACHING_LANDING_PAGE",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Monetization & Plans",
+    "flow": "9. SuperCoaching Pre-Purchase",
     "screenshot": "38_super_coaching_tab.png",
     "description": "Sales landing page for coaching goals with faculty videos and limited-time offer timers.",
     "outboundPaths": [
@@ -1265,10 +1455,10 @@
     ]
   },
   {
-    "id": "SCR_39",
+    "id": "SCR_45",
     "screenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "referrerScreenName": "SUPERCOACHING_LANDING_PAGE",
-    "flow": "Monetization & Plans",
+    "flow": "9. SuperCoaching Pre-Purchase",
     "screenshot": "41_super_plan_selection_full.png",
     "description": "Subscription duration picker (6 Months, 12 Months), EMI switch, and coupon discount code.",
     "outboundPaths": [
@@ -1304,10 +1494,10 @@
     ]
   },
   {
-    "id": "SCR_40",
+    "id": "SCR_46",
     "screenName": "PROMO_CODE_APPLY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
-    "flow": "Monetization & Plans",
+    "flow": "9. SuperCoaching Pre-Purchase",
     "screenshot": "PROMO_CODE_APPLY_SCREEN.png",
     "description": "Dedicated coupon voucher code entry modal with validation and list of eligible discount cards.",
     "outboundPaths": [
@@ -1335,10 +1525,10 @@
     ]
   },
   {
-    "id": "SCR_41",
+    "id": "SCR_47",
     "screenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
-    "flow": "Monetization & Plans",
+    "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "48_pass_landing.png",
     "description": "Testbook Pass renewal and purchase paywall with benefit grid and price escalation timers.",
     "outboundPaths": [
@@ -1374,10 +1564,10 @@
     ]
   },
   {
-    "id": "SCR_42",
+    "id": "SCR_48",
     "screenName": "TESTBOOK_PASS_PLANS_SCREEN",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
-    "flow": "Monetization & Plans",
+    "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "50_pass_plan_durations.png",
     "description": "Included test series preview and social proof breakdown for Pass subscriptions.",
     "outboundPaths": [
@@ -1400,10 +1590,10 @@
     ]
   },
   {
-    "id": "SCR_43",
+    "id": "SCR_49",
     "screenName": "DYNAMIC_UPI_QR_MODAL",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
-    "flow": "Monetization & Plans",
+    "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "53_pass_checkout.png",
     "description": "On-screen dynamic BharatQR / UPI QR code modal with 10-minute expiry clock.",
     "outboundPaths": [
@@ -1430,10 +1620,10 @@
     ]
   },
   {
-    "id": "SCR_44",
+    "id": "SCR_50",
     "screenName": "PAYMENT_GATEWAY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
-    "flow": "Monetization & Plans",
+    "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "42_make_payment_screen.png",
     "description": "Consolidated checkout screen supporting UPI, Credit/Debit Cards, and Netbanking.",
     "outboundPaths": [
@@ -1464,10 +1654,10 @@
     ]
   },
   {
-    "id": "SCR_45",
+    "id": "SCR_51",
     "screenName": "PAYMENT_FAILURE_RECOVERY_SCREEN",
     "referrerScreenName": "DYNAMIC_UPI_QR_MODAL",
-    "flow": "Monetization & Plans",
+    "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "54_pass_payment_failure.png",
     "description": "Transaction failure recovery screen with retry CTA and feature reminders.",
     "outboundPaths": [
@@ -1498,20 +1688,330 @@
     ]
   },
   {
-    "id": "SCR_46",
+    "id": "SCR_52",
+    "screenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_DASHBOARD_SCREEN.png",
+    "description": "Active subscriber dashboard for Super Pass Live: Manage exams chip, Enrolled live courses with 'Start Learning', and 'Other Offerings'.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Manage Exams' pencil",
+        "target": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL"
+      },
+      {
+        "action": "Tap 'Start Learning' on live batch",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Tap 'My Test Series'",
+        "target": "MY_SUPER_PASS_TEST_SERIES_SCREEN"
+      },
+      {
+        "action": "Tap 'My Study Notes'",
+        "target": "MY_SUPER_PASS_STUDY_NOTES_SCREEN"
+      },
+      {
+        "action": "Tap 'My Practice'",
+        "target": "MY_SUPER_PASS_PRACTICE_SCREEN"
+      },
+      {
+        "action": "Tap 'My Teachers'",
+        "target": "MY_SUPER_PASS_TEACHERS_SCREEN"
+      },
+      {
+        "action": "Scroll down for full offerings",
+        "target": "MY_SUPER_PASS_OFFERINGS_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Goal Chip ('DSSSB Junior Assistant')",
+        "type": "chip",
+        "detail": "Active exam selection"
+      },
+      {
+        "name": "Manage Exams Action CTA",
+        "type": "button",
+        "detail": "Pencil icon opening exam management"
+      },
+      {
+        "name": "Enrolled Course Card",
+        "type": "card",
+        "detail": "MISSION DSSSB Live Batch with Start Learning CTA"
+      },
+      {
+        "name": "Other Offerings Grid",
+        "type": "grid",
+        "detail": "My Test Series, Notes, Practice, Teachers"
+      }
+    ]
+  },
+  {
+    "id": "SCR_53",
+    "screenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_OFFERINGS_SCREEN.png",
+    "description": "Full view of the 'Other Offerings' 4-tile grid (Test Series, Study Notes, Practice, Teachers) under Super Pass Live.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'My Test Series'",
+        "target": "MY_SUPER_PASS_TEST_SERIES_SCREEN"
+      },
+      {
+        "action": "Tap 'My Study Notes'",
+        "target": "MY_SUPER_PASS_STUDY_NOTES_SCREEN"
+      },
+      {
+        "action": "Tap 'My Practice'",
+        "target": "MY_SUPER_PASS_PRACTICE_SCREEN"
+      },
+      {
+        "action": "Tap 'My Teachers'",
+        "target": "MY_SUPER_PASS_TEACHERS_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "My Test Series Tile",
+        "type": "card",
+        "detail": "2 Test Series with direct arrow"
+      },
+      {
+        "name": "My Study Notes Tile",
+        "type": "card",
+        "detail": "450 Notes with direct arrow"
+      },
+      {
+        "name": "My Practice Tile",
+        "type": "card",
+        "detail": "13.1K Practice with direct arrow"
+      },
+      {
+        "name": "My Teachers Tile",
+        "type": "card",
+        "detail": "7 Faculty with direct arrow"
+      }
+    ]
+  },
+  {
+    "id": "SCR_54",
+    "screenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL.png",
+    "description": "Bottom sheet allowing subscribers to switch between enrolled Super Pass exams or add more exams.",
+    "outboundPaths": [
+      {
+        "action": "Tap '+ Add More Exam'",
+        "target": "CREATE_SUPER_PASS_SELECTION_SCREEN"
+      },
+      {
+        "action": "Dismiss sheet",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Enrolled Exams Radio List",
+        "type": "radio",
+        "detail": "DSSSB Junior Assistant (active selection)"
+      },
+      {
+        "name": "Add More Exam CTA",
+        "type": "button",
+        "detail": "Opens Super Pass exam picker"
+      }
+    ]
+  },
+  {
+    "id": "SCR_55",
+    "screenName": "CREATE_SUPER_PASS_SELECTION_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "CREATE_SUPER_PASS_SELECTION_SCREEN.png",
+    "description": "The initial setup and selection screen for Super Pass: Exam picker, language selector, and 'Find Courses' CTA.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Find Courses'",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Select First Exam Card",
+        "type": "card",
+        "detail": "DSSSB Junior Assistant [Change]"
+      },
+      {
+        "name": "Course Language Card",
+        "type": "card",
+        "detail": "Hinglish [Change]"
+      },
+      {
+        "name": "Find Courses CTA",
+        "type": "button",
+        "detail": "Searches and binds best coaching batch"
+      }
+    ]
+  },
+  {
+    "id": "SCR_56",
+    "screenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN.png",
+    "description": "Subscriber learning workspace for an enrolled batch: Dashboard, Study Plan, Downloads, Doubts, and 'Start Lesson'.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Start Lesson'",
+        "target": "COURSES_EXPLORE_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Batch Header & Progress",
+        "type": "header",
+        "detail": "MISSION DSSSB Live Batch (0% Progress)"
+      },
+      {
+        "name": "Learning Tabs",
+        "type": "tab",
+        "detail": "Dashboard, Study Plan, Downloads, Doubts"
+      },
+      {
+        "name": "Start Lesson CTA",
+        "type": "button",
+        "detail": "Launches active video lecture"
+      }
+    ]
+  },
+  {
+    "id": "SCR_57",
+    "screenName": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_TEST_SERIES_SCREEN.png",
+    "description": "All test series unlocked under the active Super Pass subscription.",
+    "outboundPaths": [
+      {
+        "action": "Tap any test series card",
+        "target": "TEST_SERIES_OVERVIEW_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Super Pass Test Series Tabs",
+        "type": "tab",
+        "detail": "Test Series, PYP"
+      },
+      {
+        "name": "Unlocked Test Series List",
+        "type": "list",
+        "detail": "DSSSB Non-Teaching (158 Tests), Junior Assistant (989 Tests)"
+      }
+    ]
+  },
+  {
+    "id": "SCR_58",
+    "screenName": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_STUDY_NOTES_SCREEN.png",
+    "description": "Unlocked study notes directory under Super Pass with recently viewed chapters and 'Resume' CTAs.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Resume' on chapter",
+        "target": "CHAPTER_PDF_NOTES_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Recently Viewed Chapters",
+        "type": "cards",
+        "detail": "Analogy (1 PDFs) [Resume], Chemistry [Resume]"
+      },
+      {
+        "name": "All Subjects Tabs",
+        "type": "tab",
+        "detail": "Reasoning, General Science"
+      }
+    ]
+  },
+  {
+    "id": "SCR_59",
+    "screenName": "MY_SUPER_PASS_PRACTICE_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_PRACTICE_SCREEN.png",
+    "description": "Unlocked practice questions under Super Pass with resume state and subject filters.",
+    "outboundPaths": [
+      {
+        "action": "Tap 'Resume' on chapter",
+        "target": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Recent Chapters Practice",
+        "type": "cards",
+        "detail": "Analogy (80 Qs) [Resume], Chemistry (184 Qs) [Resume]"
+      }
+    ]
+  },
+  {
+    "id": "SCR_60",
+    "screenName": "MY_SUPER_PASS_TEACHERS_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live",
+    "screenshot": "MY_SUPER_PASS_TEACHERS_SCREEN.png",
+    "description": "Faculty directory under Super Pass showing assigned teachers for the enrolled goal.",
+    "outboundPaths": [
+      {
+        "action": "Tap teacher card",
+        "target": "INDIVIDUAL_TEACHER_DETAILS_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Super Teachers List",
+        "type": "cards",
+        "detail": "Assigned faculty profiles with live schedules"
+      }
+    ]
+  },
+  {
+    "id": "SCR_61",
     "screenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_CURRENT_AFFAIRS.png",
     "description": "Daily national and international news digest with bookmarking and daily quiz CTA.",
     "outboundPaths": [
       {
         "action": "Tap 'Saved News'",
         "target": "SAVED_NEWS_BOOKMARKS_SCREEN"
-      },
-      {
-        "action": "Tap 'Attempt Quiz'",
-        "target": "FREE_DAILY_QUIZZES_SCREEN"
       },
       {
         "action": "Tap news card to read full article",
@@ -1526,20 +2026,15 @@
       {
         "name": "Daily News Digest Card",
         "type": "card",
-        "detail": "23rd September curated bullets"
-      },
-      {
-        "name": "Bookmark News CTA",
-        "type": "icon_button",
-        "detail": "Saves news item to local bookmarks"
+        "detail": "Curated news bullets with Save CTA"
       }
     ]
   },
   {
-    "id": "SCR_47",
+    "id": "SCR_62",
     "screenName": "SAVED_NEWS_BOOKMARKS_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_CA_BOOKMARKS.png",
     "description": "List of user-saved articles and daily news bookmarks.",
     "outboundPaths": [
@@ -1552,15 +2047,15 @@
       {
         "name": "Bookmarked News List",
         "type": "list",
-        "detail": "Saved news cards with save date"
+        "detail": "Saved news cards with date"
       }
     ]
   },
   {
-    "id": "SCR_48",
+    "id": "SCR_63",
     "screenName": "BLOG_ARTICLE_READER_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "BLOG_ARTICLE_READER_SCREEN.png",
     "description": "Full long-form editorial and exam vacancy article reader with offline save and share actions.",
     "outboundPaths": [
@@ -1576,11 +2071,6 @@
         "detail": "SSC JE Vacancy 2025-26 Out PDF Download"
       },
       {
-        "name": "Follow Category Button",
-        "type": "button",
-        "detail": "Follow Exams topic"
-      },
-      {
         "name": "Save Offline Button",
         "type": "button",
         "detail": "Saves article to local vault"
@@ -1588,10 +2078,10 @@
     ]
   },
   {
-    "id": "SCR_49",
+    "id": "SCR_64",
     "screenName": "REFER_AND_EARN_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_REFER_AND_EARN.png",
     "description": "Referral dashboard with cashback terms, referral code, and WhatsApp share CTA.",
     "outboundPaths": [
@@ -1614,10 +2104,10 @@
     ]
   },
   {
-    "id": "SCR_50",
+    "id": "SCR_65",
     "screenName": "TRANSACTIONS_LIST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_TRANSACTIONS.png",
     "description": "Full billing and transaction history showing success, pending, and failed orders.",
     "outboundPaths": [
@@ -1634,15 +2124,15 @@
       {
         "name": "Transaction Cards",
         "type": "cards",
-        "detail": "Pass, SuperCoaching orders with status badges"
+        "detail": "Orders list with status badges (SUCCESS, PENDING, FAILURE)"
       }
     ]
   },
   {
-    "id": "SCR_51",
+    "id": "SCR_66",
     "screenName": "ORDER_RECEIPT_SCREEN",
     "referrerScreenName": "TRANSACTIONS_LIST_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_TRANSACTION_RECEIPT.png",
     "description": "Detailed order receipt with order ID, date, amount paid, and invoice download CTA.",
     "outboundPaths": [
@@ -1655,7 +2145,7 @@
       {
         "name": "Order ID & Status",
         "type": "card",
-        "detail": "ID: 69eefbd25d... Status: Payment Successful"
+        "detail": "Status: Payment Successful, Amount Paid: \u20b91.0"
       },
       {
         "name": "Download Invoice CTA",
@@ -1665,10 +2155,10 @@
     ]
   },
   {
-    "id": "SCR_52",
+    "id": "SCR_67",
     "screenName": "APP_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "APP_SETTINGS_SCREEN.png",
     "description": "Application settings: General account settings, Theme switcher, WhatsApp updates toggle, and Pass tab.",
     "outboundPaths": [
@@ -1691,19 +2181,14 @@
         "name": "Theme Toggle",
         "type": "radio",
         "detail": "Light / Dark mode selection"
-      },
-      {
-        "name": "WhatsApp Updates Toggle",
-        "type": "switch",
-        "detail": "Receive updates on WhatsApp"
       }
     ]
   },
   {
-    "id": "SCR_53",
+    "id": "SCR_68",
     "screenName": "SETTINGS_PASS_TAB_SCREEN",
     "referrerScreenName": "APP_SETTINGS_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SETTINGS_PASS_TAB_SCREEN.png",
     "description": "User subscription status view within settings showing remaining validity and renewal CTA.",
     "outboundPaths": [
@@ -1730,10 +2215,10 @@
     ]
   },
   {
-    "id": "SCR_54",
+    "id": "SCR_69",
     "screenName": "USER_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_USER_SETTINGS.png",
     "description": "User profile editor with full name, email, mobile number, and avatar updater.",
     "outboundPaths": [
@@ -1749,17 +2234,17 @@
         "detail": "SK avatar with edit overlay"
       },
       {
-        "name": "Full Name / Email / Phone Inputs",
+        "name": "Full Name / Email Inputs",
         "type": "input",
         "detail": "Editable profile fields"
       }
     ]
   },
   {
-    "id": "SCR_55",
+    "id": "SCR_70",
     "screenName": "APP_LANGUAGE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
-    "flow": "Retention & Settings",
+    "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_APP_LANGUAGE.png",
     "description": "Global application language switcher supporting 7 Indian languages.",
     "outboundPaths": [
