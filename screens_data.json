@@ -318,8 +318,8 @@
     "screenName": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "2. Home Hub & Navigation",
-    "screenshot": "SCR_NOTIFICATIONS.png",
-    "description": "AI-powered exam preparation assistant and doubt solver conversational interface.",
+    "screenshot": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN.png",
+    "description": "AI-powered exam preparation assistant with interactive performance graphs, study metrics, and TopperAI chat.",
     "outboundPaths": [
       {
         "action": "Press back arrow",
@@ -330,12 +330,17 @@
       {
         "name": "AI Mascot Header",
         "type": "branding",
-        "detail": "Study like a Topper with AI"
+        "detail": "Good Morning greeting + Start Chat CTA"
       },
       {
-        "name": "Chat Prompt Input",
+        "name": "Performance Graph",
+        "type": "chart",
+        "detail": "Attempts vs score trendline with 4% avg score & 28 tests"
+      },
+      {
+        "name": "AI Mentor Prompt",
         "type": "input",
-        "detail": "Placeholder: Ask anything... with send CTA"
+        "detail": "Ask anything... with attachment & send CTA"
       }
     ]
   },
@@ -485,8 +490,12 @@
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "4. Exam Portals & Preparation",
     "screenshot": "EXAM_PAGE_OVERVIEW_SCREEN.png",
-    "description": "Comprehensive exam hub (e.g. RRB NTPC): Top action tiles, notification details, syllabus, PYPs, and test series.",
+    "description": "Comprehensive SSC CGL exam hub: Top action buttons (Exam Info, PYP, Free Test, Tricky Test), section tabs, and live mock tests.",
     "outboundPaths": [
+      {
+        "action": "Tap [Exam Info] action button",
+        "target": "EXAM_INFO_AND_UPDATES_SCREEN"
+      },
       {
         "action": "Tap 'testbook LIVE' section tab",
         "target": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN"
@@ -516,12 +525,12 @@
       {
         "name": "Exam Header & Crest",
         "type": "header",
-        "detail": "RRB Group D (6.1M+ Enrolled)"
+        "detail": "SSC CGL (14M+ Enrolled)"
       },
       {
-        "name": "Top Action Tiles",
+        "name": "Top Action Buttons",
         "type": "tiles",
-        "detail": "Free Test, 25 Days Study Plan, ShowPyp, Exam Rank"
+        "detail": "Exam Info, Previous Year Papers, Free Test, Tricky Test"
       },
       {
         "name": "Exam Tabs Rail",
@@ -531,12 +540,51 @@
       {
         "name": "Free Tests Section",
         "type": "cards",
-        "detail": "SSC CGL 2026: Officer's Friday Mega Live Test"
+        "detail": "SSC CGL 2026 Officer Friday Mega Live Test"
       }
     ]
   },
   {
     "id": "SCR_16",
+    "screenName": "EXAM_INFO_AND_UPDATES_SCREEN",
+    "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
+    "flow": "4. Exam Portals & Preparation",
+    "screenshot": "EXAM_INFO_AND_UPDATES_SCREEN.png",
+    "description": "Official exam updates, eligibility criteria, vacancies count (10,731), registration dates, and downloadable notification PDF.",
+    "outboundPaths": [
+      {
+        "action": "Tap [Download Notification]",
+        "target": "BLOG_ARTICLE_READER_SCREEN"
+      },
+      {
+        "action": "Tap social share icons (WhatsApp/FB)",
+        "target": "EXAM_INFO_AND_UPDATES_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "EXAM_PAGE_OVERVIEW_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Exam Overview Card",
+        "type": "card",
+        "detail": "Registration Dates, Tier 1 Exam Date, 10731 Vacancies, Salary range"
+      },
+      {
+        "name": "Notification Download Card",
+        "type": "card",
+        "detail": "Official Notification for SSC CGL has been released"
+      },
+      {
+        "name": "Social Share Bar",
+        "type": "actions",
+        "detail": "WhatsApp, Facebook, native share sheet"
+      }
+    ]
+  },
+  {
+    "id": "SCR_17",
     "screenName": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -571,7 +619,7 @@
     ]
   },
   {
-    "id": "SCR_17",
+    "id": "SCR_18",
     "screenName": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -601,7 +649,7 @@
     ]
   },
   {
-    "id": "SCR_18",
+    "id": "SCR_19",
     "screenName": "EXAM_PAGE_QUIZZES_TAB_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -626,7 +674,7 @@
     ]
   },
   {
-    "id": "SCR_19",
+    "id": "SCR_20",
     "screenName": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -665,7 +713,7 @@
     ]
   },
   {
-    "id": "SCR_20",
+    "id": "SCR_21",
     "screenName": "TESTS_EXPLORER_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -703,7 +751,7 @@
     ]
   },
   {
-    "id": "SCR_21",
+    "id": "SCR_22",
     "screenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "referrerScreenName": "TESTS_EXPLORER_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -742,7 +790,7 @@
     ]
   },
   {
-    "id": "SCR_22",
+    "id": "SCR_23",
     "screenName": "EXAM_LEVEL_MODAL",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -768,7 +816,7 @@
     ]
   },
   {
-    "id": "SCR_23",
+    "id": "SCR_24",
     "screenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -803,7 +851,7 @@
     ]
   },
   {
-    "id": "SCR_24",
+    "id": "SCR_25",
     "screenName": "LIVE_TEST_TAKING_INTERFACE",
     "referrerScreenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -842,7 +890,7 @@
     ]
   },
   {
-    "id": "SCR_25",
+    "id": "SCR_26",
     "screenName": "QUESTION_PALLET_DRAWER",
     "referrerScreenName": "LIVE_TEST_TAKING_INTERFACE",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -876,7 +924,7 @@
     ]
   },
   {
-    "id": "SCR_26",
+    "id": "SCR_27",
     "screenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "referrerScreenName": "QUESTION_PALLET_DRAWER",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -906,7 +954,7 @@
     ]
   },
   {
-    "id": "SCR_27",
+    "id": "SCR_28",
     "screenName": "TEST_ANALYSIS_SCREEN",
     "referrerScreenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -944,7 +992,7 @@
     ]
   },
   {
-    "id": "SCR_28",
+    "id": "SCR_29",
     "screenName": "QUESTION_SOLUTIONS_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -974,7 +1022,7 @@
     ]
   },
   {
-    "id": "SCR_29",
+    "id": "SCR_30",
     "screenName": "TEST_LEADERBOARD_PODIUM_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1004,7 +1052,7 @@
     ]
   },
   {
-    "id": "SCR_30",
+    "id": "SCR_31",
     "screenName": "FREE_DAILY_QUIZZES_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1034,7 +1082,7 @@
     ]
   },
   {
-    "id": "SCR_31",
+    "id": "SCR_32",
     "screenName": "FREE_PRACTICE_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1059,7 +1107,7 @@
     ]
   },
   {
-    "id": "SCR_32",
+    "id": "SCR_33",
     "screenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
     "referrerScreenName": "FREE_PRACTICE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1084,7 +1132,7 @@
     ]
   },
   {
-    "id": "SCR_33",
+    "id": "SCR_34",
     "screenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
     "referrerScreenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1119,7 +1167,7 @@
     ]
   },
   {
-    "id": "SCR_34",
+    "id": "SCR_35",
     "screenName": "PRACTICE_QUESTION_ANSWERED_SCREEN",
     "referrerScreenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1140,7 +1188,7 @@
     ]
   },
   {
-    "id": "SCR_35",
+    "id": "SCR_36",
     "screenName": "STUDY_NOTES_OVERVIEW_SCREEN",
     "referrerScreenName": "TESTS_EXPLORER_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1170,7 +1218,7 @@
     ]
   },
   {
-    "id": "SCR_36",
+    "id": "SCR_37",
     "screenName": "CHAPTER_PDF_NOTES_SCREEN",
     "referrerScreenName": "STUDY_NOTES_OVERVIEW_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1195,7 +1243,7 @@
     ]
   },
   {
-    "id": "SCR_37",
+    "id": "SCR_38",
     "screenName": "NOTES_LOCKED_PAYWALL_MODAL",
     "referrerScreenName": "CHAPTER_PDF_NOTES_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1225,7 +1273,7 @@
     ]
   },
   {
-    "id": "SCR_38",
+    "id": "SCR_39",
     "screenName": "COURSES_EXPLORE_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -1260,7 +1308,7 @@
     ]
   },
   {
-    "id": "SCR_39",
+    "id": "SCR_40",
     "screenName": "DAILY_LIVE_CLASSES_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -1290,7 +1338,7 @@
     ]
   },
   {
-    "id": "SCR_40",
+    "id": "SCR_41",
     "screenName": "TEACHER_PROFILE_PAGE",
     "referrerScreenName": "DAILY_LIVE_CLASSES_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -1315,7 +1363,7 @@
     ]
   },
   {
-    "id": "SCR_41",
+    "id": "SCR_42",
     "screenName": "INDIVIDUAL_TEACHER_DETAILS_SCREEN",
     "referrerScreenName": "TEACHER_PROFILE_PAGE",
     "flow": "7. Courses & Masterclasses",
@@ -1350,7 +1398,7 @@
     ]
   },
   {
-    "id": "SCR_42",
+    "id": "SCR_43",
     "screenName": "SMARTBOOKS_STORE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -1385,7 +1433,7 @@
     ]
   },
   {
-    "id": "SCR_43",
+    "id": "SCR_44",
     "screenName": "SMARTBOOK_DETAILS_SCREEN",
     "referrerScreenName": "SMARTBOOKS_STORE_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -1420,7 +1468,7 @@
     ]
   },
   {
-    "id": "SCR_44",
+    "id": "SCR_45",
     "screenName": "SUPERCOACHING_LANDING_PAGE",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1455,7 +1503,7 @@
     ]
   },
   {
-    "id": "SCR_45",
+    "id": "SCR_46",
     "screenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "referrerScreenName": "SUPERCOACHING_LANDING_PAGE",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1494,7 +1542,7 @@
     ]
   },
   {
-    "id": "SCR_46",
+    "id": "SCR_47",
     "screenName": "PROMO_CODE_APPLY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1525,7 +1573,7 @@
     ]
   },
   {
-    "id": "SCR_47",
+    "id": "SCR_48",
     "screenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1564,7 +1612,7 @@
     ]
   },
   {
-    "id": "SCR_48",
+    "id": "SCR_49",
     "screenName": "TESTBOOK_PASS_PLANS_SCREEN",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1590,7 +1638,7 @@
     ]
   },
   {
-    "id": "SCR_49",
+    "id": "SCR_50",
     "screenName": "DYNAMIC_UPI_QR_MODAL",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1620,7 +1668,7 @@
     ]
   },
   {
-    "id": "SCR_50",
+    "id": "SCR_51",
     "screenName": "PAYMENT_GATEWAY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1654,7 +1702,7 @@
     ]
   },
   {
-    "id": "SCR_51",
+    "id": "SCR_52",
     "screenName": "PAYMENT_FAILURE_RECOVERY_SCREEN",
     "referrerScreenName": "DYNAMIC_UPI_QR_MODAL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1688,7 +1736,7 @@
     ]
   },
   {
-    "id": "SCR_52",
+    "id": "SCR_53",
     "screenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1748,7 +1796,7 @@
     ]
   },
   {
-    "id": "SCR_53",
+    "id": "SCR_54",
     "screenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1796,7 +1844,7 @@
     ]
   },
   {
-    "id": "SCR_54",
+    "id": "SCR_55",
     "screenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1826,7 +1874,7 @@
     ]
   },
   {
-    "id": "SCR_55",
+    "id": "SCR_56",
     "screenName": "CREATE_SUPER_PASS_SELECTION_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1857,7 +1905,7 @@
     ]
   },
   {
-    "id": "SCR_56",
+    "id": "SCR_57",
     "screenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1892,7 +1940,7 @@
     ]
   },
   {
-    "id": "SCR_57",
+    "id": "SCR_58",
     "screenName": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1922,7 +1970,7 @@
     ]
   },
   {
-    "id": "SCR_58",
+    "id": "SCR_59",
     "screenName": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1952,7 +2000,7 @@
     ]
   },
   {
-    "id": "SCR_59",
+    "id": "SCR_60",
     "screenName": "MY_SUPER_PASS_PRACTICE_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1977,7 +2025,7 @@
     ]
   },
   {
-    "id": "SCR_60",
+    "id": "SCR_61",
     "screenName": "MY_SUPER_PASS_TEACHERS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2002,7 +2050,7 @@
     ]
   },
   {
-    "id": "SCR_61",
+    "id": "SCR_62",
     "screenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2031,7 +2079,7 @@
     ]
   },
   {
-    "id": "SCR_62",
+    "id": "SCR_63",
     "screenName": "SAVED_NEWS_BOOKMARKS_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2052,7 +2100,7 @@
     ]
   },
   {
-    "id": "SCR_63",
+    "id": "SCR_64",
     "screenName": "BLOG_ARTICLE_READER_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2078,7 +2126,7 @@
     ]
   },
   {
-    "id": "SCR_64",
+    "id": "SCR_65",
     "screenName": "REFER_AND_EARN_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2104,7 +2152,7 @@
     ]
   },
   {
-    "id": "SCR_65",
+    "id": "SCR_66",
     "screenName": "TRANSACTIONS_LIST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2129,7 +2177,7 @@
     ]
   },
   {
-    "id": "SCR_66",
+    "id": "SCR_67",
     "screenName": "ORDER_RECEIPT_SCREEN",
     "referrerScreenName": "TRANSACTIONS_LIST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2155,7 +2203,7 @@
     ]
   },
   {
-    "id": "SCR_67",
+    "id": "SCR_68",
     "screenName": "APP_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2185,7 +2233,7 @@
     ]
   },
   {
-    "id": "SCR_68",
+    "id": "SCR_69",
     "screenName": "SETTINGS_PASS_TAB_SCREEN",
     "referrerScreenName": "APP_SETTINGS_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2215,7 +2263,7 @@
     ]
   },
   {
-    "id": "SCR_69",
+    "id": "SCR_70",
     "screenName": "USER_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2241,7 +2289,7 @@
     ]
   },
   {
-    "id": "SCR_70",
+    "id": "SCR_71",
     "screenName": "APP_LANGUAGE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
