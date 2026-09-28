@@ -4,7 +4,7 @@
 **Application Version:** 9.11.x  
 **Author:** Product & Analytics Core Team  
 **Live Interactive Hub:** [https://manjot-testbook.github.io/TBAppScreens/](https://manjot-testbook.github.io/TBAppScreens/)  
-**Specification Spreadsheet:** [`event_tracking_spec.csv`](./event_tracking_spec.csv) (71 screens)  
+**Specification Spreadsheet:** [`event_tracking_spec.csv`](./event_tracking_spec.csv) (86 screens)  
 **Single Source of Truth Catalog:** [`screens_data.json`](./screens_data.json)  
 **How to Add/Update Screens:** [See CONTRIBUTING.md](./CONTRIBUTING.md)  
 
@@ -14,9 +14,9 @@
 
 This repository provides an authoritative, interactive visual screen wireflow tree and event tracking specification for the **Testbook Android App (v9.11.x)**.
 
-It organizes **71 unique production screens** into **12 structured product flow lanes**:
+It organizes **86 unique production screens** into **12 structured product flow lanes**:
 1. **Acquisition, Auth & Onboarding (4)** — Launch splash, phone login, OTP verification, goal onboarding.
-2. **Home Hub & Navigation (5)** — Personalized dashboard, hamburger drawer (16 destinations), enrolled exam switcher, enrolled exams manager, Samadhan AI Doubt Solver & performance dashboard.
+2. **Home Hub & Navigation (6)** — Personalized dashboard, Notifications center, hamburger drawer (16 destinations), enrolled exam switcher, enrolled exams manager, Samadhan AI Doubt Solver & performance dashboard.
 3. **Discovery & Search Sections (5)** — Global search input, multi-category results, and dedicated filtered category tabs (Exams, Courses, Test Series).
 4. **Exam Portals & Preparation (6)** — SSC CGL / RRB NTPC hubs, top action buttons (`Exam Info`, `Previous Year Papers`, `Free Test`, `Tricky Test`), section tabs (`Test Series`, `testbook LIVE`, `Study Notes`, `Quizzes`), and official notification updates.
 5. **Assessment & Live Testing Funnel (10)** — Tests explorer, test series overview, difficulty modal, pre-test instructions, live exam engine, question pallet drawer, submit confirmation, comprehensive analysis, question solutions, and rank podium leaderboard.
@@ -25,7 +25,7 @@ It organizes **71 unique production screens** into **12 structured product flow 
 8. **SmartBooks Store (2)** — Physical printed smart books storefront and product details.
 9. **SuperCoaching Pre-Purchase (3)** — SuperCoaching value proposition, multi-tier plan picker, and coupon discount engine.
 10. **Pass Paywalls & QR Checkout (5)** — Pass landing paywall, plan duration switcher, dynamic UPI QR modal, payment gateway, and failure recovery.
-11. **Post-Purchase Super Pass Live Ecosystem (9)** — Active subscriber dashboard ("My Super Pass for DSSSB"), enrolled courses ("MISSION DSSSB"), manage exams switcher, course selector, study plan dashboard, post-purchase test series, study notes, practice, and faculty directory.
+11. **Post-Purchase Super Pass Live Ecosystem (23)** — Active subscriber dashboard ("My Super Pass for DSSSB"), Explore Courses ("+ Add Course"), Manage Exams switcher, Course Language & Tier Selector, Enrolled Course Study Hub ("MISSION DSSSB"), Course In-Module Search, Lessons & Activities Timeline ("Alphabet Test"), Upcoming Live Class Reminder ("Latest Budget - Live at 3 PM"), Interactive Video Lecture Player (Kaustubh Mahadik, scrubber, 10s controls), Synchronized Chat Replay Sheet, Lesson Progress Leaving Modal ("Only 2 Activities Left"), Study Plan Daily date-wise schedule, Study Plan Subjectwise curriculum, Study Plan Weekly Timetable calendar, Offline Downloads storage manager, Course Doubt Discussion forum, Ask a Doubt Editor (`📎` photo capture), Batch Announcements bulletin, post-purchase test series, study notes, practice, and faculty directory.
 12. **Daily Retention & Utilities (10)** — Current affairs digest, saved news bookmarks, blog reader, refer & earn cashback, transactions list, order receipt, app settings, Pass settings tab, user settings, and app language selector.
 
 ---

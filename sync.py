@@ -124,6 +124,10 @@ def main():
             "screen_name": s["screenName"],
             "referrer_screen_name": s.get("referrerScreenName", "UNKNOWN")
         }
+        if "attributes" in s and isinstance(s["attributes"], dict):
+            for k, v in s["attributes"].items():
+                schema_dict[k] = v
+
         schema_str = json.dumps(schema_dict)
         sc_file = s.get("screenshot", "")
         screenshot_url = f"https://github.com/manjot-testbook/TBAppScreens/blob/main/screenshots/{sc_file}"

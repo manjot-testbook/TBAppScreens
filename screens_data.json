@@ -26,7 +26,12 @@
         "type": "branding",
         "detail": "Animated Testbook launch logo"
       }
-    ]
+    ],
+    "attributes": {
+      "app_version": "9.11.2",
+      "platform": "android",
+      "device_language": "en"
+    }
   },
   {
     "id": "SCR_02",
@@ -52,7 +57,11 @@
         "type": "modal",
         "detail": "Native Android assisted auto-fill"
       }
-    ]
+    ],
+    "attributes": {
+      "auth_method": "phone",
+      "has_google_hint_used": false
+    }
   },
   {
     "id": "SCR_03",
@@ -86,7 +95,12 @@
         "type": "timer",
         "detail": "45-second countdown with resend CTA"
       }
-    ]
+    ],
+    "attributes": {
+      "auth_method": "otp",
+      "otp_length": 6,
+      "is_auto_read_enabled": true
+    }
   },
   {
     "id": "SCR_04",
@@ -121,7 +135,13 @@
         "type": "button",
         "detail": "Commits exam goals to profile"
       }
-    ]
+    ],
+    "attributes": {
+      "target_id": "string",
+      "target_name": "string",
+      "category_name": "string",
+      "is_first_time": true
+    }
   },
   {
     "id": "SCR_05",
@@ -170,6 +190,10 @@
       {
         "action": "Tap AI Doubt Solver FAB",
         "target": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN"
+      },
+      {
+        "action": "Tap top bell icon",
+        "target": "NOTIFICATIONS_CENTER_SCREEN"
       }
     ],
     "keyComponents": [
@@ -193,7 +217,14 @@
         "type": "tab_bar",
         "detail": "Home, Tests, Super, Pass, Super Pass, News"
       }
-    ]
+    ],
+    "attributes": {
+      "primary_exam_id": "string",
+      "primary_exam_name": "string",
+      "enrolled_exams_count": 3,
+      "subscription_status": "super_pass_active",
+      "days_to_expiry": 2
+    }
   },
   {
     "id": "SCR_06",
@@ -251,10 +282,45 @@
         "type": "list",
         "detail": "Pass, Previous Papers, Test Series, Books, Refer & Earn"
       }
-    ]
+    ],
+    "attributes": {
+      "user_id": "string",
+      "is_paid_user": true,
+      "subscription_type": "super_pass_live"
+    }
   },
   {
     "id": "SCR_07",
+    "screenName": "NOTIFICATIONS_CENTER_SCREEN",
+    "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
+    "flow": "2. Home Hub & Navigation",
+    "screenshot": "NOTIFICATIONS_CENTER_SCREEN.png",
+    "description": "User notifications center with system alerts, batch reminders, and test announcements.",
+    "outboundPaths": [
+      {
+        "action": "Press back arrow",
+        "target": "HOME_FEED_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Notification Header",
+        "type": "header",
+        "detail": "Header title and back arrow"
+      },
+      {
+        "name": "Empty Box Graphic",
+        "type": "illustration",
+        "detail": "It is Empty! empty state graphic"
+      }
+    ],
+    "attributes": {
+      "unread_count": 0,
+      "notification_type": "all"
+    }
+  },
+  {
+    "id": "SCR_08",
     "screenName": "ENROLLED_EXAMS_MODAL",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "2. Home Hub & Navigation",
@@ -281,10 +347,16 @@
         "type": "link",
         "detail": "Launches onboarding category picker"
       }
-    ]
+    ],
+    "attributes": {
+      "selected_exam_id": "string",
+      "enrolled_exam_ids": [
+        "string"
+      ]
+    }
   },
   {
-    "id": "SCR_08",
+    "id": "SCR_09",
     "screenName": "ENROLLED_EXAMS_MANAGEMENT_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "2. Home Hub & Navigation",
@@ -311,10 +383,14 @@
         "type": "carousel",
         "detail": "Trending exams available to enroll"
       }
-    ]
+    ],
+    "attributes": {
+      "total_enrolled_count": 3,
+      "category": "all"
+    }
   },
   {
-    "id": "SCR_09",
+    "id": "SCR_10",
     "screenName": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "2. Home Hub & Navigation",
@@ -342,10 +418,16 @@
         "type": "input",
         "detail": "Ask anything... with attachment & send CTA"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "string",
+      "total_tests_taken": 28,
+      "user_avg_score_pct": 4
+    }
   },
   {
-    "id": "SCR_10",
+    "id": "SCR_11",
     "screenName": "GLOBAL_SEARCH_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "3. Discovery & Search Sections",
@@ -372,10 +454,14 @@
         "type": "grid",
         "detail": "SSC CGL, RRB NTPC, SSC CHSL cards"
       }
-    ]
+    ],
+    "attributes": {
+      "search_entry_point": "home_top_bar",
+      "recent_searches_count": 1
+    }
   },
   {
-    "id": "SCR_11",
+    "id": "SCR_12",
     "screenName": "SEARCH_RESULTS_SCREEN",
     "referrerScreenName": "GLOBAL_SEARCH_SCREEN",
     "flow": "3. Discovery & Search Sections",
@@ -419,10 +505,15 @@
         "type": "cards",
         "detail": "SSC CGL \u092c\u094d\u0930\u0939\u094d\u092e\u093e\u0938\u094d\u0924\u094d\u0930 2026 Batch"
       }
-    ]
+    ],
+    "attributes": {
+      "search_term": "string",
+      "active_tab": "all",
+      "total_results_count": 12
+    }
   },
   {
-    "id": "SCR_12",
+    "id": "SCR_13",
     "screenName": "SEARCH_SECTIONS_EXAMS_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "3. Discovery & Search Sections",
@@ -440,10 +531,15 @@
         "type": "list",
         "detail": "SSC MTS (2.1M+), SSC CHSL (2.4M+), SSC CGL (5.1M+)"
       }
-    ]
+    ],
+    "attributes": {
+      "search_term": "string",
+      "category": "exams",
+      "view_count": 4
+    }
   },
   {
-    "id": "SCR_13",
+    "id": "SCR_14",
     "screenName": "SEARCH_SECTIONS_COURSES_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "3. Discovery & Search Sections",
@@ -461,10 +557,15 @@
         "type": "cards",
         "detail": "SSC CGL \u092c\u094d\u0930\u0939\u094d\u092e\u093e\u0938\u094d\u0924\u094d\u0930, Stenographer Free Demo"
       }
-    ]
+    ],
+    "attributes": {
+      "search_term": "string",
+      "category": "courses",
+      "view_count": 6
+    }
   },
   {
-    "id": "SCR_14",
+    "id": "SCR_15",
     "screenName": "SEARCH_SECTIONS_TESTS_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "3. Discovery & Search Sections",
@@ -482,10 +583,15 @@
         "type": "cards",
         "detail": "SSC MTS (2002 Tests, 27 Free Tests)"
       }
-    ]
+    ],
+    "attributes": {
+      "search_term": "string",
+      "category": "test_series",
+      "view_count": 8
+    }
   },
   {
-    "id": "SCR_15",
+    "id": "SCR_16",
     "screenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -542,10 +648,16 @@
         "type": "cards",
         "detail": "SSC CGL 2026 Officer Friday Mega Live Test"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "students_enrolled_count": "14M+",
+      "is_user_enrolled": true
+    }
   },
   {
-    "id": "SCR_16",
+    "id": "SCR_17",
     "screenName": "EXAM_INFO_AND_UPDATES_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -581,10 +693,16 @@
         "type": "actions",
         "detail": "WhatsApp, Facebook, native share sheet"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "vacancies_count": 10731,
+      "has_notification_pdf": true
+    }
   },
   {
-    "id": "SCR_17",
+    "id": "SCR_18",
     "screenName": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -616,10 +734,16 @@
         "type": "cards",
         "detail": "RRB Group D \u091c\u0941\u0928\u0942\u0928 Live Batch (250+ Videos)"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "active_tab": "SuperPass",
+      "live_batches_count": 4
+    }
   },
   {
-    "id": "SCR_18",
+    "id": "SCR_19",
     "screenName": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -646,10 +770,16 @@
         "type": "timer",
         "detail": "Your subscription is ending in 02 days"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "active_tab": "Study Notes",
+      "subjects_count": 6
+    }
   },
   {
-    "id": "SCR_19",
+    "id": "SCR_20",
     "screenName": "EXAM_PAGE_QUIZZES_TAB_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -671,10 +801,16 @@
         "type": "list",
         "detail": "Subject-wise mini quizzes with Start CTA"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "active_tab": "Quizzes",
+      "quizzes_count": 24
+    }
   },
   {
-    "id": "SCR_20",
+    "id": "SCR_21",
     "screenName": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN",
     "referrerScreenName": "EXAM_PAGE_OVERVIEW_SCREEN",
     "flow": "4. Exam Portals & Preparation",
@@ -710,10 +846,17 @@
         "type": "banner",
         "detail": "Unlock All PYPs with Testbook Pass"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "selected_tier": "Tier II",
+      "selected_year": "2026",
+      "is_pdf_available": true
+    }
   },
   {
-    "id": "SCR_21",
+    "id": "SCR_22",
     "screenName": "TESTS_EXPLORER_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -748,10 +891,15 @@
         "type": "card",
         "detail": "Kickstarter badge with 7-day attempt streak"
       }
-    ]
+    ],
+    "attributes": {
+      "selected_category": "all",
+      "total_series_count": 45,
+      "user_type": "paid"
+    }
   },
   {
-    "id": "SCR_22",
+    "id": "SCR_23",
     "screenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "referrerScreenName": "TESTS_EXPLORER_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -787,10 +935,18 @@
         "type": "button",
         "detail": "Launches test instructions"
       }
-    ]
+    ],
+    "attributes": {
+      "test_series_id": "string",
+      "test_series_name": "string",
+      "exam_id": "string",
+      "total_tests": 158,
+      "free_tests_count": 12,
+      "is_enrolled": true
+    }
   },
   {
-    "id": "SCR_23",
+    "id": "SCR_24",
     "screenName": "EXAM_LEVEL_MODAL",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -813,10 +969,14 @@
         "type": "button",
         "detail": "Applies level filter to test list"
       }
-    ]
+    ],
+    "attributes": {
+      "test_series_id": "string",
+      "selected_level": "all"
+    }
   },
   {
-    "id": "SCR_24",
+    "id": "SCR_25",
     "screenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -848,10 +1008,20 @@
         "type": "button",
         "detail": "Initializes live test session"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "test_name": "string",
+      "test_series_id": "string",
+      "duration_mins": 15,
+      "total_marks": 25.0,
+      "total_questions": 25,
+      "is_free": true,
+      "selected_language": "English"
+    }
   },
   {
-    "id": "SCR_25",
+    "id": "SCR_26",
     "screenName": "LIVE_TEST_TAKING_INTERFACE",
     "referrerScreenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -887,10 +1057,18 @@
         "type": "button",
         "detail": "Saves response and advances to next question"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "test_name": "string",
+      "current_question_index": 1,
+      "section_name": "General Science",
+      "test_type": "sectional",
+      "selected_language": "Hindi"
+    }
   },
   {
-    "id": "SCR_26",
+    "id": "SCR_27",
     "screenName": "QUESTION_PALLET_DRAWER",
     "referrerScreenName": "LIVE_TEST_TAKING_INTERFACE",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -921,10 +1099,17 @@
         "type": "button",
         "detail": "Triggers submission modal"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "active_section": "General Science",
+      "attempted_count": 1,
+      "unattempted_count": 24,
+      "marked_count": 0
+    }
   },
   {
-    "id": "SCR_27",
+    "id": "SCR_28",
     "screenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "referrerScreenName": "QUESTION_PALLET_DRAWER",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -951,10 +1136,16 @@
         "type": "button",
         "detail": "Finalizes attempt and generates scorecard"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "time_left_secs": 848,
+      "attempted_count": 1,
+      "unattempted_count": 24
+    }
   },
   {
-    "id": "SCR_28",
+    "id": "SCR_29",
     "screenName": "TEST_ANALYSIS_SCREEN",
     "referrerScreenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -989,10 +1180,19 @@
         "type": "scorecard",
         "detail": "Rank: 19993, Score: 2/200, Percentile: 9.59%"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "test_name": "string",
+      "user_score": -0.33,
+      "total_marks": 25.0,
+      "user_rank": 207614,
+      "accuracy_pct": 0,
+      "percentile": 12.4
+    }
   },
   {
-    "id": "SCR_29",
+    "id": "SCR_30",
     "screenName": "QUESTION_SOLUTIONS_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1019,10 +1219,17 @@
         "type": "cards",
         "detail": "Question snippet with % got it right stat"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "active_filter": "all",
+      "question_id": "string",
+      "subject_name": "General Science",
+      "is_correct": false
+    }
   },
   {
-    "id": "SCR_30",
+    "id": "SCR_31",
     "screenName": "TEST_LEADERBOARD_PODIUM_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1049,10 +1256,18 @@
         "type": "bar",
         "detail": "User rank (19993) and score (2.0/200.0)"
       }
-    ]
+    ],
+    "attributes": {
+      "test_id": "string",
+      "user_rank": 207614,
+      "user_score": -0.33,
+      "rank_1_score": 25.0,
+      "rank_2_score": 24.0,
+      "rank_3_score": 23.5
+    }
   },
   {
-    "id": "SCR_31",
+    "id": "SCR_32",
     "screenName": "FREE_DAILY_QUIZZES_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1079,10 +1294,15 @@
         "type": "banner",
         "detail": "All Your Attempted Quizzes"
       }
-    ]
+    ],
+    "attributes": {
+      "selected_exam_id": "string",
+      "selected_exam_name": "SSC CGL",
+      "total_quizzes_count": 18
+    }
   },
   {
-    "id": "SCR_32",
+    "id": "SCR_33",
     "screenName": "FREE_PRACTICE_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1104,10 +1324,16 @@
         "type": "chips",
         "detail": "SSC CGL, RRB NTPC practice modules"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "last_attempted_chapter": "Analogy",
+      "total_subjects": 4
+    }
   },
   {
-    "id": "SCR_33",
+    "id": "SCR_34",
     "screenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
     "referrerScreenName": "FREE_PRACTICE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1129,10 +1355,16 @@
         "type": "cards",
         "detail": "Analogy - Practice 1 (20 Qs) with Start Practice CTA"
       }
-    ]
+    ],
+    "attributes": {
+      "subject_name": "General Intelligence",
+      "chapter_name": "Analogy",
+      "total_practice_questions": 80,
+      "user_accuracy_pct": 100
+    }
   },
   {
-    "id": "SCR_34",
+    "id": "SCR_35",
     "screenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
     "referrerScreenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1164,10 +1396,16 @@
         "type": "buttons",
         "detail": "Previous and Next CTAs"
       }
-    ]
+    ],
+    "attributes": {
+      "chapter_name": "Analogy",
+      "practice_set": "Practice 2",
+      "question_index": 1,
+      "total_questions": 20
+    }
   },
   {
-    "id": "SCR_35",
+    "id": "SCR_36",
     "screenName": "PRACTICE_QUESTION_ANSWERED_SCREEN",
     "referrerScreenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1185,10 +1423,16 @@
         "type": "badge",
         "detail": "Green checkmark on selected correct option"
       }
-    ]
+    ],
+    "attributes": {
+      "chapter_name": "Analogy",
+      "question_id": "string",
+      "is_correct": true,
+      "time_spent_secs": 33
+    }
   },
   {
-    "id": "SCR_36",
+    "id": "SCR_37",
     "screenName": "STUDY_NOTES_OVERVIEW_SCREEN",
     "referrerScreenName": "TESTS_EXPLORER_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1215,10 +1459,15 @@
         "type": "cards",
         "detail": "Number System (9 PDFs), Percentage (12 PDFs)"
       }
-    ]
+    ],
+    "attributes": {
+      "exam_id": "string",
+      "exam_name": "SSC CGL",
+      "total_subjects_count": 5
+    }
   },
   {
-    "id": "SCR_37",
+    "id": "SCR_38",
     "screenName": "CHAPTER_PDF_NOTES_SCREEN",
     "referrerScreenName": "STUDY_NOTES_OVERVIEW_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1240,10 +1489,17 @@
         "type": "cards",
         "detail": "Topic notes with Lock icon indicator"
       }
-    ]
+    ],
+    "attributes": {
+      "note_id": "string",
+      "note_title": "Analogy Summary Notes",
+      "subject_name": "Reasoning",
+      "total_pages": 12,
+      "is_locked": false
+    }
   },
   {
-    "id": "SCR_38",
+    "id": "SCR_39",
     "screenName": "NOTES_LOCKED_PAYWALL_MODAL",
     "referrerScreenName": "CHAPTER_PDF_NOTES_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -1270,10 +1526,16 @@
         "type": "button",
         "detail": "Buy Yearly Pass @ \u20b9749"
       }
-    ]
+    ],
+    "attributes": {
+      "note_id": "string",
+      "note_title": "string",
+      "required_pass": "pass_pro",
+      "plan_price": 749
+    }
   },
   {
-    "id": "SCR_39",
+    "id": "SCR_40",
     "screenName": "COURSES_EXPLORE_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -1305,10 +1567,17 @@
         "type": "button",
         "detail": "Enrolls into coaching batch"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_name": "SSC CGL Raftaar 2026 Crash Course",
+      "goal_id": "string",
+      "faculty_name": "Ananya Singh Ma'am",
+      "total_videos": 150
+    }
   },
   {
-    "id": "SCR_40",
+    "id": "SCR_41",
     "screenName": "DAILY_LIVE_CLASSES_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -1335,10 +1604,15 @@
         "type": "tab",
         "detail": "Daily Live Class, TEACHERS, Supercoaching"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "SSC CGL",
+      "live_classes_today_count": 8
+    }
   },
   {
-    "id": "SCR_41",
+    "id": "SCR_42",
     "screenName": "TEACHER_PROFILE_PAGE",
     "referrerScreenName": "DAILY_LIVE_CLASSES_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -1360,10 +1634,15 @@
         "type": "cards",
         "detail": "Ananya Singh (10k+ Taught), Shanu Rawat (100k+ Taught)"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "SSC CGL",
+      "total_educators": 18
+    }
   },
   {
-    "id": "SCR_42",
+    "id": "SCR_43",
     "screenName": "INDIVIDUAL_TEACHER_DETAILS_SCREEN",
     "referrerScreenName": "TEACHER_PROFILE_PAGE",
     "flow": "7. Courses & Masterclasses",
@@ -1395,10 +1674,17 @@
         "type": "list",
         "detail": "Exams cleared, teaching methodologies"
       }
-    ]
+    ],
+    "attributes": {
+      "teacher_id": "string",
+      "teacher_name": "Ananya Singh Ma'am",
+      "subject": "Reasoning",
+      "students_count": "10,000+",
+      "selections_count": "1,000+"
+    }
   },
   {
-    "id": "SCR_43",
+    "id": "SCR_44",
     "screenName": "SMARTBOOKS_STORE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -1430,10 +1716,14 @@
         "type": "cards",
         "detail": "SSC General Awareness SmartBook (36% OFF)"
       }
-    ]
+    ],
+    "attributes": {
+      "store_category": "SSC Books",
+      "featured_books_count": 12
+    }
   },
   {
-    "id": "SCR_44",
+    "id": "SCR_45",
     "screenName": "SMARTBOOK_DETAILS_SCREEN",
     "referrerScreenName": "SMARTBOOKS_STORE_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -1465,10 +1755,18 @@
         "type": "button",
         "detail": "Purchases book for \u20b9505"
       }
-    ]
+    ],
+    "attributes": {
+      "book_id": "string",
+      "book_name": "General Science 4000 Smart Question Bank",
+      "selling_price": 499,
+      "mrp": 799,
+      "language": "English",
+      "is_pre_order": false
+    }
   },
   {
-    "id": "SCR_45",
+    "id": "SCR_46",
     "screenName": "SUPERCOACHING_LANDING_PAGE",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1500,10 +1798,17 @@
         "type": "button",
         "detail": "Launches duration and pricing selector"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "SSC CGL",
+      "category_name": "SSC Exams",
+      "version": "v3",
+      "is_paid_subscriber": false
+    }
   },
   {
-    "id": "SCR_46",
+    "id": "SCR_47",
     "screenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "referrerScreenName": "SUPERCOACHING_LANDING_PAGE",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1539,10 +1844,19 @@
         "type": "button",
         "detail": "Initiates payment gateway with \u20b93000"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "SSC CGL",
+      "product_id": "string",
+      "product_name": "SSC CGL 12 Months",
+      "selected_plan_duration": "12 Months",
+      "discounted_price": 1499,
+      "has_emi_option": true
+    }
   },
   {
-    "id": "SCR_47",
+    "id": "SCR_48",
     "screenName": "PROMO_CODE_APPLY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1570,10 +1884,17 @@
         "type": "cards",
         "detail": "Offer Closing Soon (Code: EPF026)"
       }
-    ]
+    ],
+    "attributes": {
+      "product_id": "string",
+      "product_name": "SSC CGL 12 Months",
+      "cart_value": 1499,
+      "product_type": "supercoaching",
+      "available_coupons_count": 3
+    }
   },
   {
-    "id": "SCR_48",
+    "id": "SCR_49",
     "screenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1609,10 +1930,16 @@
         "type": "button",
         "detail": "Launches UPI QR payment modal"
       }
-    ]
+    ],
+    "attributes": {
+      "user_type": "free",
+      "active_pass_tier": "none",
+      "lowest_pass_price": 749,
+      "days_left": 2
+    }
   },
   {
-    "id": "SCR_49",
+    "id": "SCR_50",
     "screenName": "TESTBOOK_PASS_PLANS_SCREEN",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1635,10 +1962,15 @@
         "type": "banner",
         "detail": "4,23,891+ Students Selected"
       }
-    ]
+    ],
+    "attributes": {
+      "selected_tier": "Pass Pro",
+      "default_duration": "Yearly",
+      "plan_price": 749
+    }
   },
   {
-    "id": "SCR_50",
+    "id": "SCR_51",
     "screenName": "DYNAMIC_UPI_QR_MODAL",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1665,10 +1997,16 @@
         "type": "timer",
         "detail": "Valid for another 9:49 Minutes"
       }
-    ]
+    ],
+    "attributes": {
+      "transaction_id": "string",
+      "plan_id": "string",
+      "payable_amount": 749,
+      "qr_expiry_seconds": 300
+    }
   },
   {
-    "id": "SCR_51",
+    "id": "SCR_52",
     "screenName": "PAYMENT_GATEWAY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1699,10 +2037,17 @@
         "type": "card",
         "detail": "Scan QR Code / Installed UPI Apps"
       }
-    ]
+    ],
+    "attributes": {
+      "transaction_id": "string",
+      "product_id": "string",
+      "product_type": "test_pass",
+      "payable_amount": 749,
+      "coupon_applied": "none"
+    }
   },
   {
-    "id": "SCR_52",
+    "id": "SCR_53",
     "screenName": "PAYMENT_FAILURE_RECOVERY_SCREEN",
     "referrerScreenName": "DYNAMIC_UPI_QR_MODAL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1733,10 +2078,16 @@
         "type": "button",
         "detail": "Quick retry CTA for \u20b9749"
       }
-    ]
+    ],
+    "attributes": {
+      "transaction_id": "string",
+      "failure_reason": "payment_declined",
+      "payable_amount": 749,
+      "retry_option_default": "upi_qr"
+    }
   },
   {
-    "id": "SCR_53",
+    "id": "SCR_54",
     "screenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1746,6 +2097,10 @@
       {
         "action": "Tap 'Manage Exams' pencil",
         "target": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL"
+      },
+      {
+        "action": "Tap \"Add\" on Courses Enrolled",
+        "target": "SUPER_PASS_EXPLORE_COURSES_SCREEN"
       },
       {
         "action": "Tap 'Start Learning' on live batch",
@@ -1793,10 +2148,64 @@
         "type": "grid",
         "detail": "My Test Series, Notes, Practice, Teachers"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "DSSSB Junior Assistant",
+      "subscribed_exam_name": "DSSSB Junior Assistant",
+      "enrolled_courses_count": 1,
+      "primary_course_id": "string",
+      "primary_course_title": "MISSION DSSSB Complete Live Batch"
+    }
   },
   {
-    "id": "SCR_54",
+    "id": "SCR_55",
+    "screenName": "SUPER_PASS_EXPLORE_COURSES_SCREEN",
+    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "SUPER_PASS_EXPLORE_COURSES_SCREEN.png",
+    "description": "Explore and add coaching courses for target exam (SSC CGL) with multi-criteria filters for Language, Course Type, and Faculty.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"View Course \u2794\"",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Tap \"+ Add Course\"",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Course Filters Bar",
+        "type": "filters",
+        "detail": "Language, Course Type, Teachers dropdown filters"
+      },
+      {
+        "name": "Course Batch Cards",
+        "type": "card",
+        "detail": "SSC CGL Raftaar 2026, Antim Prahar, Final Selection, Dahad Live Batch"
+      },
+      {
+        "name": "Add Course Actions",
+        "type": "actions",
+        "detail": "+ Add Course and View Course buttons"
+      }
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "SSC CGL",
+      "exam_name": "SSC CGL",
+      "available_courses_count": 4,
+      "filter_language": "all"
+    }
+  },
+  {
+    "id": "SCR_56",
     "screenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1841,10 +2250,18 @@
         "type": "card",
         "detail": "7 Faculty with direct arrow"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "DSSSB Junior Assistant",
+      "test_series_count": 2,
+      "notes_count": 450,
+      "practice_count": 13100,
+      "faculty_count": 7
+    }
   },
   {
-    "id": "SCR_55",
+    "id": "SCR_57",
     "screenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1871,10 +2288,15 @@
         "type": "button",
         "detail": "Opens Super Pass exam picker"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "active_exam_name": "DSSSB Junior Assistant",
+      "enrolled_targets_count": 1
+    }
   },
   {
-    "id": "SCR_56",
+    "id": "SCR_58",
     "screenName": "CREATE_SUPER_PASS_SELECTION_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -1902,16 +2324,26 @@
         "type": "button",
         "detail": "Searches and binds best coaching batch"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "exam_name": "DSSSB Junior Assistant",
+      "selected_language": "Hinglish",
+      "selected_tier": "Junior Assistant"
+    }
   },
   {
-    "id": "SCR_57",
+    "id": "SCR_59",
     "screenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
     "screenshot": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN.png",
     "description": "Comprehensive enrolled course study hub (MISSION DSSSB): Course progress, Resume Lesson CTA, module chapters, and sub-section tabs.",
     "outboundPaths": [
+      {
+        "action": "Tap top search icon",
+        "target": "ENROLLED_COURSE_SEARCH_SCREEN"
+      },
       {
         "action": "Tap \"Resume Lesson\" / \"Start Lesson\" CTA",
         "target": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN"
@@ -1958,10 +2390,54 @@
         "type": "tab",
         "detail": "Dashboard, Study Plan, Downloads, Doubts, Announcements"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "batch_type": "live",
+      "completion_percentage": 0,
+      "next_activity_title": "Intro & Application of Grammar",
+      "active_tab": "Dashboard"
+    }
   },
   {
-    "id": "SCR_58",
+    "id": "SCR_60",
+    "screenName": "ENROLLED_COURSE_SEARCH_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "ENROLLED_COURSE_SEARCH_SCREEN.png",
+    "description": "In-module search interface to find specific video lectures, PDF notes, and practice quizzes within an enrolled course.",
+    "outboundPaths": [
+      {
+        "action": "Tap search result lesson",
+        "target": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Search Query Input",
+        "type": "input",
+        "detail": "Search text box with clear icon"
+      },
+      {
+        "name": "Empty Search State",
+        "type": "illustration",
+        "detail": "No result found for keyword prompt"
+      }
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "search_term": "string",
+      "results_count": 0
+    }
+  },
+  {
+    "id": "SCR_61",
     "screenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -1997,10 +2473,60 @@
         "type": "timeline_item",
         "detail": "Step 2: Topic practice with question count (10 Questions)"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "module_id": "string",
+      "module_title": "Alphabet Test",
+      "activities_completed": 0,
+      "total_activities": 2
+    }
   },
   {
-    "id": "SCR_59",
+    "id": "SCR_62",
+    "screenName": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN.png",
+    "description": "Upcoming scheduled live class preview with schedule time (Live at Today | 03:00 PM), Coming Soon status, and push notification reminder CTA.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Remind Me \ud83d\udd14\" button",
+        "target": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Live Lesson Badges",
+        "type": "badges",
+        "detail": "LIVE and Lesson tags with scheduled start time"
+      },
+      {
+        "name": "Class Coming Soon Card",
+        "type": "card",
+        "detail": "Step 1: Class (50 mins) Coming Soon"
+      },
+      {
+        "name": "Practice Reminder Card",
+        "type": "card",
+        "detail": "Step 2: Practice Coming Soon with Remind Me CTA"
+      }
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "lesson_title": "Latest Budget",
+      "scheduled_start_time": "15:00",
+      "is_reminder_set": false
+    }
+  },
+  {
+    "id": "SCR_63",
     "screenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2045,10 +2571,19 @@
         "type": "button",
         "detail": "Top-bar \"Next: Practice\" navigation"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "lesson_id": "string",
+      "lesson_title": "Intro & Application of Grammar",
+      "faculty_name": "Kaustubh Mahadik",
+      "video_duration_seconds": 3132,
+      "is_live_stream": false
+    }
   },
   {
-    "id": "SCR_60",
+    "id": "SCR_64",
     "screenName": "COURSE_LESSON_CHAT_REPLAY_SHEET",
     "referrerScreenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2075,10 +2610,16 @@
         "type": "tab",
         "detail": "Toggle between live chat replay and lesson notes"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "lesson_id": "string",
+      "is_chat_replay_enabled": true,
+      "total_messages_count": 184
+    }
   },
   {
-    "id": "SCR_61",
+    "id": "SCR_65",
     "screenName": "LESSON_PROGRESS_LEAVING_MODAL",
     "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2110,10 +2651,16 @@
         "type": "actions",
         "detail": "Mark as Complete | Will Complete Later dismissal options"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "lesson_id": "string",
+      "remaining_activities_count": 2,
+      "percent_students_completed": 95
+    }
   },
   {
-    "id": "SCR_62",
+    "id": "SCR_66",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2148,10 +2695,17 @@
         "type": "accordion",
         "detail": "Schedule cards for 15th Jan, 16th Jan, 17th Jan, 18th Jan with module completion counts"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "active_subtab": "Daily Plan",
+      "selected_date": "15th Jan, 2024",
+      "daily_modules_count": 5
+    }
   },
   {
-    "id": "SCR_63",
+    "id": "SCR_67",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2177,10 +2731,16 @@
         "type": "list",
         "detail": "Mental Ability & Reasoning (19 Topics), Hindi (25 Topics), Computer (16 Topics), English (4 Topics)"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "active_subtab": "Subjectwise",
+      "total_subjects_count": 6
+    }
   },
   {
-    "id": "SCR_64",
+    "id": "SCR_68",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2207,10 +2767,16 @@
         "type": "grid",
         "detail": "Class slots mapped by time (11 AM, 12 PM, 1 PM, 2 PM, 3 PM, 4 PM)"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "active_subtab": "Timetable",
+      "active_week_range": "01 Jun - 07 Jun"
+    }
   },
   {
-    "id": "SCR_65",
+    "id": "SCR_69",
     "screenName": "ENROLLED_COURSE_DOWNLOADS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2237,16 +2803,26 @@
         "type": "tab",
         "detail": "Active Downloads tab selection"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "total_downloads_count": 0,
+      "offline_storage_bytes": 0
+    }
   },
   {
-    "id": "SCR_66",
+    "id": "SCR_70",
     "screenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
     "screenshot": "ENROLLED_COURSE_DOUBTS_SCREEN.png",
     "description": "Collaborative course doubt discussion forum with camera photo upload and peer/mentor answers.",
     "outboundPaths": [
+      {
+        "action": "Tap \"Ask your Doubt\" [\ud83d\udcf7]",
+        "target": "COURSE_ASK_A_DOUBT_SCREEN"
+      },
       {
         "action": "Tap \"Dashboard\" tab",
         "target": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN"
@@ -2272,10 +2848,57 @@
         "type": "card",
         "detail": "Question text, student photo attachment, Upvote, Answer, Share actions"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "active_doubt_filter": "All Doubts",
+      "total_doubts_count": 48
+    }
   },
   {
-    "id": "SCR_67",
+    "id": "SCR_71",
+    "screenName": "COURSE_ASK_A_DOUBT_SCREEN",
+    "referrerScreenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
+    "flow": "11. Post-Purchase Super Pass Live Ecosystem",
+    "screenshot": "COURSE_ASK_A_DOUBT_SCREEN.png",
+    "description": "Rich doubt authoring editor allowing students to type questions and attach textbook photos or file attachments.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"NEXT\" submit CTA",
+        "target": "ENROLLED_COURSE_DOUBTS_SCREEN"
+      },
+      {
+        "action": "Tap close icon [\u2715]",
+        "target": "ENROLLED_COURSE_DOUBTS_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Doubt Text Editor",
+        "type": "input",
+        "detail": "Multi-line text editor with Ask a Doubt placeholder"
+      },
+      {
+        "name": "Media Attachment Actions",
+        "type": "actions",
+        "detail": "Paperclip file attachment and camera photo upload icons"
+      },
+      {
+        "name": "Next Submit CTA",
+        "type": "button",
+        "detail": "Primary button navigating to subject/topic tagging"
+      }
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "subject_name": "Quantitative aptitude",
+      "has_image_attached": false
+    }
+  },
+  {
+    "id": "SCR_72",
     "screenName": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2297,10 +2920,15 @@
         "type": "feed",
         "detail": "Megaphone illustration and official batch notice bulletin"
       }
-    ]
+    ],
+    "attributes": {
+      "course_id": "string",
+      "course_title": "MISSION DSSSB Complete Live Batch",
+      "total_announcements_count": 0
+    }
   },
   {
-    "id": "SCR_68",
+    "id": "SCR_73",
     "screenName": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2327,10 +2955,16 @@
         "type": "list",
         "detail": "DSSSB Non-Teaching (158 Tests), Junior Assistant (989 Tests)"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "DSSSB Junior Assistant",
+      "test_series_count": 2,
+      "pyp_count": 1
+    }
   },
   {
-    "id": "SCR_69",
+    "id": "SCR_74",
     "screenName": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2357,10 +2991,16 @@
         "type": "tab",
         "detail": "Reasoning, General Science"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "DSSSB Junior Assistant",
+      "recently_viewed_chapter": "Analogy",
+      "total_subjects": 4
+    }
   },
   {
-    "id": "SCR_70",
+    "id": "SCR_75",
     "screenName": "MY_SUPER_PASS_PRACTICE_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2382,10 +3022,17 @@
         "type": "cards",
         "detail": "Analogy (80 Qs) [Resume], Chemistry (184 Qs) [Resume]"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "DSSSB Junior Assistant",
+      "active_chapter": "Analogy",
+      "user_accuracy_pct": 100,
+      "user_speed_seconds": 33
+    }
   },
   {
-    "id": "SCR_71",
+    "id": "SCR_76",
     "screenName": "MY_SUPER_PASS_TEACHERS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2407,10 +3054,15 @@
         "type": "cards",
         "detail": "Assigned faculty profiles with live schedules"
       }
-    ]
+    ],
+    "attributes": {
+      "goal_id": "string",
+      "goal_name": "DSSSB Junior Assistant",
+      "faculty_count": 7
+    }
   },
   {
-    "id": "SCR_72",
+    "id": "SCR_77",
     "screenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2436,10 +3088,15 @@
         "type": "card",
         "detail": "Curated news bullets with Save CTA"
       }
-    ]
+    ],
+    "attributes": {
+      "selected_date": "Today",
+      "language": "English",
+      "total_articles_count": 10
+    }
   },
   {
-    "id": "SCR_73",
+    "id": "SCR_78",
     "screenName": "SAVED_NEWS_BOOKMARKS_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2457,10 +3114,14 @@
         "type": "list",
         "detail": "Saved news cards with date"
       }
-    ]
+    ],
+    "attributes": {
+      "total_bookmarks_count": 3,
+      "category": "all"
+    }
   },
   {
-    "id": "SCR_74",
+    "id": "SCR_79",
     "screenName": "BLOG_ARTICLE_READER_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2483,10 +3144,16 @@
         "type": "button",
         "detail": "Saves article to local vault"
       }
-    ]
+    ],
+    "attributes": {
+      "article_id": "string",
+      "article_title": "SSC JE Vacancy 2025-26",
+      "category_name": "SSC Exams",
+      "read_time_mins": 5
+    }
   },
   {
-    "id": "SCR_75",
+    "id": "SCR_80",
     "screenName": "REFER_AND_EARN_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2509,10 +3176,16 @@
         "type": "button",
         "detail": "Direct intent to WhatsApp messaging"
       }
-    ]
+    ],
+    "attributes": {
+      "is_paid_user": true,
+      "referral_code": "TESTBOOK10",
+      "total_cashback_earned": 250,
+      "payout_pending": 0
+    }
   },
   {
-    "id": "SCR_76",
+    "id": "SCR_81",
     "screenName": "TRANSACTIONS_LIST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2534,10 +3207,14 @@
         "type": "cards",
         "detail": "Orders list with status badges (SUCCESS, PENDING, FAILURE)"
       }
-    ]
+    ],
+    "attributes": {
+      "total_orders_count": 2,
+      "has_pending_transaction": false
+    }
   },
   {
-    "id": "SCR_77",
+    "id": "SCR_82",
     "screenName": "ORDER_RECEIPT_SCREEN",
     "referrerScreenName": "TRANSACTIONS_LIST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2560,10 +3237,17 @@
         "type": "button",
         "detail": "Downloads tax invoice PDF"
       }
-    ]
+    ],
+    "attributes": {
+      "order_id": "string",
+      "transaction_id": "string",
+      "product_name": "Yearly Testbook Pass",
+      "amount_paid": 749,
+      "payment_method": "UPI QR"
+    }
   },
   {
-    "id": "SCR_78",
+    "id": "SCR_83",
     "screenName": "APP_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2590,10 +3274,15 @@
         "type": "radio",
         "detail": "Light / Dark mode selection"
       }
-    ]
+    ],
+    "attributes": {
+      "app_version": "9.11.2",
+      "theme_mode": "dark",
+      "app_language": "English"
+    }
   },
   {
-    "id": "SCR_79",
+    "id": "SCR_84",
     "screenName": "SETTINGS_PASS_TAB_SCREEN",
     "referrerScreenName": "APP_SETTINGS_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2620,10 +3309,16 @@
         "type": "button",
         "detail": "Opens Pass renewal paywall"
       }
-    ]
+    ],
+    "attributes": {
+      "active_pass_tier": "Pass Pro",
+      "pass_expiry_date": "2026-10-01",
+      "days_left": 2,
+      "auto_renewal_enabled": false
+    }
   },
   {
-    "id": "SCR_80",
+    "id": "SCR_85",
     "screenName": "USER_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2646,10 +3341,15 @@
         "type": "input",
         "detail": "Editable profile fields"
       }
-    ]
+    ],
+    "attributes": {
+      "user_id": "string",
+      "is_phone_verified": true,
+      "is_email_verified": true
+    }
   },
   {
-    "id": "SCR_81",
+    "id": "SCR_86",
     "screenName": "APP_LANGUAGE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -2667,6 +3367,10 @@
         "type": "radio",
         "detail": "English, Hindi, Marathi, Bengali, Telugu, Tamil, Gujarati"
       }
-    ]
+    ],
+    "attributes": {
+      "current_language": "English",
+      "available_languages_count": 10
+    }
   }
 ]
