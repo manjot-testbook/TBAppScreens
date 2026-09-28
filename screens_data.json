@@ -1728,11 +1728,11 @@
     "referrerScreenName": "SMARTBOOKS_STORE_SCREEN",
     "flow": "8. SmartBooks Store",
     "screenshot": "SMARTBOOK_DETAILS_SCREEN.png",
-    "description": "Product details page for printed books with customer ratings, preview, and Buy Now CTA.",
+    "description": "Product details page for printed smart books with cover carousel, 5.0 star rating, automatic coupon discount, savings indicator, and Buy Now CTA.",
     "outboundPaths": [
       {
-        "action": "Tap 'Buy Now' button",
-        "target": "PAYMENT_GATEWAY_SCREEN"
+        "action": "Tap \"Buy Now\" button",
+        "target": "SMARTBOOK_DELIVERY_ADDRESS_SCREEN"
       },
       {
         "action": "Press back arrow",
@@ -1741,32 +1741,88 @@
     ],
     "keyComponents": [
       {
-        "name": "Book Title & 5-Star Rating",
+        "name": "Book Cover Carousel",
+        "type": "carousel",
+        "detail": "SSC Exams General Awareness 5000+ PYQs & MCQs SmartBook cover preview"
+      },
+      {
+        "name": "Book Title & 5.0 Rating",
         "type": "header",
-        "detail": "5000+ Chapterwise PYQs & MCQs"
+        "detail": "5000+ Chapterwise PYQs & MCQs | The Ultimate Guide (5.0 stars)"
       },
       {
-        "name": "Savings Card",
+        "name": "Savings & Coupon Strip",
         "type": "banner",
-        "detail": "Your total savings: \u20b9294"
+        "detail": "Your total savings: \u20b9294 with Coupon Applied: Get Maximum Disc! [Remove]"
       },
       {
-        "name": "Buy Now CTA",
-        "type": "button",
-        "detail": "Purchases book for \u20b9505"
+        "name": "Buy Now Bottom Bar",
+        "type": "actions",
+        "detail": "Total Price: \u20b9505 (MRP \u20b9799) with [ Buy Now ] CTA"
       }
     ],
     "attributes": {
       "book_id": "string",
-      "book_name": "General Science 4000 Smart Question Bank",
-      "selling_price": 499,
+      "book_name": "SSC General Awareness SmartBook with 5000+ Chapterwise PYQs & MCQs",
+      "selling_price": 505,
       "mrp": 799,
+      "savings_amount": 294,
+      "coupon_code": "MAXDISC",
       "language": "English",
+      "rating": 5.0,
       "is_pre_order": false
     }
   },
   {
     "id": "SCR_46",
+    "screenName": "SMARTBOOK_DELIVERY_ADDRESS_SCREEN",
+    "referrerScreenName": "SMARTBOOK_DETAILS_SCREEN",
+    "flow": "8. SmartBooks Store",
+    "screenshot": "SMARTBOOK_DELIVERY_ADDRESS_SCREEN.png",
+    "description": "Shipping and recipient address capture form with live pincode verification and delivery date estimation.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Confirm Address & Continue\" CTA",
+        "target": "PAYMENT_GATEWAY_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "SMARTBOOK_DETAILS_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Delivery Header",
+        "type": "header",
+        "detail": "Add Delivery Details with English alphabet note and back button"
+      },
+      {
+        "name": "Contact Details Form",
+        "type": "form",
+        "detail": "Full Name, Mobile Number (6333995742), Registered Email"
+      },
+      {
+        "name": "Address Details Form",
+        "type": "form",
+        "detail": "Flat/Building, Area/Street, Landmark, Pincode with Check Delivery Date CTA, City"
+      },
+      {
+        "name": "Confirm Address CTA",
+        "type": "button",
+        "detail": "Confirm Address & Continue primary checkout button"
+      }
+    ],
+    "attributes": {
+      "book_id": "string",
+      "book_name": "SSC General Awareness SmartBook",
+      "payable_amount": 505,
+      "pincode": "string",
+      "city": "string",
+      "is_saved_address": false
+    }
+  },
+  {
+    "id": "SCR_47",
     "screenName": "SUPERCOACHING_LANDING_PAGE",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1808,7 +1864,7 @@
     }
   },
   {
-    "id": "SCR_47",
+    "id": "SCR_48",
     "screenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "referrerScreenName": "SUPERCOACHING_LANDING_PAGE",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1856,7 +1912,7 @@
     }
   },
   {
-    "id": "SCR_48",
+    "id": "SCR_49",
     "screenName": "PROMO_CODE_APPLY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -1894,7 +1950,7 @@
     }
   },
   {
-    "id": "SCR_49",
+    "id": "SCR_50",
     "screenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1939,7 +1995,7 @@
     }
   },
   {
-    "id": "SCR_50",
+    "id": "SCR_51",
     "screenName": "TESTBOOK_PASS_PLANS_SCREEN",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -1970,7 +2026,7 @@
     }
   },
   {
-    "id": "SCR_51",
+    "id": "SCR_52",
     "screenName": "DYNAMIC_UPI_QR_MODAL",
     "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -2006,7 +2062,7 @@
     }
   },
   {
-    "id": "SCR_52",
+    "id": "SCR_53",
     "screenName": "PAYMENT_GATEWAY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -2047,7 +2103,7 @@
     }
   },
   {
-    "id": "SCR_53",
+    "id": "SCR_54",
     "screenName": "PAYMENT_FAILURE_RECOVERY_SCREEN",
     "referrerScreenName": "DYNAMIC_UPI_QR_MODAL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -2087,7 +2143,7 @@
     }
   },
   {
-    "id": "SCR_54",
+    "id": "SCR_55",
     "screenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2159,7 +2215,7 @@
     }
   },
   {
-    "id": "SCR_55",
+    "id": "SCR_56",
     "screenName": "SUPER_PASS_EXPLORE_COURSES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2205,7 +2261,7 @@
     }
   },
   {
-    "id": "SCR_56",
+    "id": "SCR_57",
     "screenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2261,7 +2317,7 @@
     }
   },
   {
-    "id": "SCR_57",
+    "id": "SCR_58",
     "screenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2296,7 +2352,7 @@
     }
   },
   {
-    "id": "SCR_58",
+    "id": "SCR_59",
     "screenName": "CREATE_SUPER_PASS_SELECTION_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2333,7 +2389,7 @@
     }
   },
   {
-    "id": "SCR_59",
+    "id": "SCR_60",
     "screenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2401,7 +2457,7 @@
     }
   },
   {
-    "id": "SCR_60",
+    "id": "SCR_61",
     "screenName": "ENROLLED_COURSE_SEARCH_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2437,7 +2493,7 @@
     }
   },
   {
-    "id": "SCR_61",
+    "id": "SCR_62",
     "screenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2484,7 +2540,7 @@
     }
   },
   {
-    "id": "SCR_62",
+    "id": "SCR_63",
     "screenName": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2526,7 +2582,7 @@
     }
   },
   {
-    "id": "SCR_63",
+    "id": "SCR_64",
     "screenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2583,7 +2639,7 @@
     }
   },
   {
-    "id": "SCR_64",
+    "id": "SCR_65",
     "screenName": "COURSE_LESSON_CHAT_REPLAY_SHEET",
     "referrerScreenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2619,7 +2675,7 @@
     }
   },
   {
-    "id": "SCR_65",
+    "id": "SCR_66",
     "screenName": "LESSON_PROGRESS_LEAVING_MODAL",
     "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2660,7 +2716,7 @@
     }
   },
   {
-    "id": "SCR_66",
+    "id": "SCR_67",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2705,7 +2761,7 @@
     }
   },
   {
-    "id": "SCR_67",
+    "id": "SCR_68",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2740,7 +2796,7 @@
     }
   },
   {
-    "id": "SCR_68",
+    "id": "SCR_69",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2776,7 +2832,7 @@
     }
   },
   {
-    "id": "SCR_69",
+    "id": "SCR_70",
     "screenName": "ENROLLED_COURSE_DOWNLOADS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2812,7 +2868,7 @@
     }
   },
   {
-    "id": "SCR_70",
+    "id": "SCR_71",
     "screenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2857,7 +2913,7 @@
     }
   },
   {
-    "id": "SCR_71",
+    "id": "SCR_72",
     "screenName": "COURSE_ASK_A_DOUBT_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2898,7 +2954,7 @@
     }
   },
   {
-    "id": "SCR_72",
+    "id": "SCR_73",
     "screenName": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -2928,7 +2984,7 @@
     }
   },
   {
-    "id": "SCR_73",
+    "id": "SCR_74",
     "screenName": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -2964,7 +3020,7 @@
     }
   },
   {
-    "id": "SCR_74",
+    "id": "SCR_75",
     "screenName": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -3000,7 +3056,7 @@
     }
   },
   {
-    "id": "SCR_75",
+    "id": "SCR_76",
     "screenName": "MY_SUPER_PASS_PRACTICE_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -3032,7 +3088,7 @@
     }
   },
   {
-    "id": "SCR_76",
+    "id": "SCR_77",
     "screenName": "MY_SUPER_PASS_TEACHERS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -3062,7 +3118,7 @@
     }
   },
   {
-    "id": "SCR_77",
+    "id": "SCR_78",
     "screenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3096,7 +3152,7 @@
     }
   },
   {
-    "id": "SCR_78",
+    "id": "SCR_79",
     "screenName": "SAVED_NEWS_BOOKMARKS_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3121,7 +3177,7 @@
     }
   },
   {
-    "id": "SCR_79",
+    "id": "SCR_80",
     "screenName": "BLOG_ARTICLE_READER_SCREEN",
     "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3153,7 +3209,7 @@
     }
   },
   {
-    "id": "SCR_80",
+    "id": "SCR_81",
     "screenName": "REFER_AND_EARN_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3185,7 +3241,7 @@
     }
   },
   {
-    "id": "SCR_81",
+    "id": "SCR_82",
     "screenName": "TRANSACTIONS_LIST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3214,7 +3270,7 @@
     }
   },
   {
-    "id": "SCR_82",
+    "id": "SCR_83",
     "screenName": "ORDER_RECEIPT_SCREEN",
     "referrerScreenName": "TRANSACTIONS_LIST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3247,7 +3303,7 @@
     }
   },
   {
-    "id": "SCR_83",
+    "id": "SCR_84",
     "screenName": "APP_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3282,7 +3338,7 @@
     }
   },
   {
-    "id": "SCR_84",
+    "id": "SCR_85",
     "screenName": "SETTINGS_PASS_TAB_SCREEN",
     "referrerScreenName": "APP_SETTINGS_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3318,7 +3374,7 @@
     }
   },
   {
-    "id": "SCR_85",
+    "id": "SCR_86",
     "screenName": "USER_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -3349,7 +3405,7 @@
     }
   },
   {
-    "id": "SCR_86",
+    "id": "SCR_87",
     "screenName": "APP_LANGUAGE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
