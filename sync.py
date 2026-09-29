@@ -102,6 +102,7 @@ def main():
     fieldnames = [
         "Screen_ID",
         "Screen_Name",
+        "Event_Name",
         "Referrer_Screen_Name",
         "Flow_Group",
         "Event_Type",
@@ -119,13 +120,20 @@ def main():
             out_items.append(f"{act} -> {tgt}")
         outbound_str = " | ".join(out_items)
 
+        event_name = s.get("eventName", f"SV_{s['screenName']}")
+
+        # Build complete payload: Event Name + 6 Global Attributes + Screen-Specific Attributes
         schema_dict = {
-            "event": "screen_view",
+            "event": event_name,
             "screen_name": s["screenName"],
-            "referrer_screen_name": s.get("referrerScreenName", "UNKNOWN")
+            "referrer_screen_name": s.get("referrerScreenName", "UNKNOWN"),
+            "passExpiry": "2026-10-01",
+            "superPassExpiry": "2026-10-01",
+            "superExpiry": "2026-10-01",
+            "superProducts": ["6a510e035230b297c2e344a8"]
         }
-        if "attributes" in s and isinstance(s["attributes"], dict):
-            for k, v in s["attributes"].items():
+        if "eventAttributes" in s and isinstance(s["eventAttributes"], dict):
+            for k, v in s["eventAttributes"].items():
                 schema_dict[k] = v
 
         schema_str = json.dumps(schema_dict)
@@ -135,6 +143,7 @@ def main():
         csv_rows.append({
             "Screen_ID": s["id"],
             "Screen_Name": s["screenName"],
+            "Event_Name": event_name,
             "Referrer_Screen_Name": s.get("referrerScreenName", ""),
             "Flow_Group": s.get("flow", ""),
             "Event_Type": "screen_view",

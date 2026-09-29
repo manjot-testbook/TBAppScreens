@@ -28,10 +28,27 @@
       }
     ],
     "attributes": {
-      "app_version": "9.11.2",
-      "platform": "android",
-      "device_language": "en"
-    }
+      "screen_name": "LAUNCH_SPLASH_SCREEN",
+      "referrer_screen_name": "OS_LAUNCHER",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_LAUNCH_SPLASH_SCREEN",
+    "globalAttributes": {
+      "screen_name": "LAUNCH_SPLASH_SCREEN",
+      "referrer_screen_name": "OS_LAUNCHER",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_02",
@@ -59,9 +76,27 @@
       }
     ],
     "attributes": {
-      "auth_method": "phone",
-      "has_google_hint_used": false
-    }
+      "screen_name": "AUTH_MOBILE_LOGIN_SCREEN",
+      "referrer_screen_name": "LAUNCH_SPLASH_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_AUTH_MOBILE_LOGIN_SCREEN",
+    "globalAttributes": {
+      "screen_name": "AUTH_MOBILE_LOGIN_SCREEN",
+      "referrer_screen_name": "LAUNCH_SPLASH_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_03",
@@ -97,10 +132,27 @@
       }
     ],
     "attributes": {
-      "auth_method": "otp",
-      "otp_length": 6,
-      "is_auto_read_enabled": true
-    }
+      "screen_name": "AUTH_OTP_VERIFICATION_SCREEN",
+      "referrer_screen_name": "AUTH_MOBILE_LOGIN_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_AUTH_OTP_VERIFICATION_SCREEN",
+    "globalAttributes": {
+      "screen_name": "AUTH_OTP_VERIFICATION_SCREEN",
+      "referrer_screen_name": "AUTH_MOBILE_LOGIN_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_04",
@@ -137,10 +189,35 @@
       }
     ],
     "attributes": {
-      "target_id": "string",
-      "target_name": "string",
-      "category_name": "string",
-      "is_first_time": true
+      "screen_name": "ONBOARDING_GOAL_SELECTION_SCREEN",
+      "referrer_screen_name": "AUTH_OTP_VERIFICATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "defaultTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_ONBOARDING_GOAL_SELECTION_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ONBOARDING_GOAL_SELECTION_SCREEN",
+      "referrer_screen_name": "AUTH_OTP_VERIFICATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "defaultTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ]
     }
   },
   {
@@ -219,11 +296,57 @@
       }
     ],
     "attributes": {
-      "primary_exam_id": "string",
-      "primary_exam_name": "string",
-      "enrolled_exams_count": 3,
-      "subscription_status": "super_pass_active",
-      "days_to_expiry": 2
+      "screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "referrer_screen_name": "ONBOARDING_GOAL_SELECTION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "selectedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "recommendedProductIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "recommendedTestSeriesIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "paymentIncompleteCTA": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_HOME_FEED_DASHBOARD_SCREEN",
+    "globalAttributes": {
+      "screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "referrer_screen_name": "ONBOARDING_GOAL_SELECTION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "selectedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "recommendedProductIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "recommendedTestSeriesIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "paymentIncompleteCTA": [
+        "6a510e035230b297c2e344a8"
+      ]
     }
   },
   {
@@ -284,10 +407,27 @@
       }
     ],
     "attributes": {
-      "user_id": "string",
-      "is_paid_user": true,
-      "subscription_type": "super_pass_live"
-    }
+      "screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+    "globalAttributes": {
+      "screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_07",
@@ -315,8 +455,35 @@
       }
     ],
     "attributes": {
-      "unread_count": 0,
-      "notification_type": "all"
+      "screen_name": "NOTIFICATIONS_CENTER_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "notificationsShown": [
+        "asdads",
+        "assasa"
+      ]
+    },
+    "eventName": "SV_NOTIFICATIONS_CENTER_SCREEN",
+    "globalAttributes": {
+      "screen_name": "NOTIFICATIONS_CENTER_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "notificationsShown": [
+        "asdads",
+        "assasa"
+      ]
     }
   },
   {
@@ -349,10 +516,31 @@
       }
     ],
     "attributes": {
-      "selected_exam_id": "string",
-      "enrolled_exam_ids": [
-        "string"
+      "screen_name": "ENROLLED_EXAMS_MODAL",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetChecked": "string",
+      "targetUnchecked": "string"
+    },
+    "eventName": "SV_ENROLLED_EXAMS_MODAL",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_EXAMS_MODAL",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
       ]
+    },
+    "eventAttributes": {
+      "targetChecked": "string",
+      "targetUnchecked": "string"
     }
   },
   {
@@ -385,8 +573,37 @@
       }
     ],
     "attributes": {
-      "total_enrolled_count": 3,
-      "category": "all"
+      "screen_name": "ENROLLED_EXAMS_MANAGEMENT_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "enrolledExamsTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "suggestedExamIDs": "string"
+    },
+    "eventName": "SV_ENROLLED_EXAMS_MANAGEMENT_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_EXAMS_MANAGEMENT_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "enrolledExamsTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "suggestedExamIDs": "string"
     }
   },
   {
@@ -420,11 +637,27 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "string",
-      "total_tests_taken": 28,
-      "user_avg_score_pct": 4
-    }
+      "screen_name": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_SAMADHAN_AI_DOUBT_SOLVER_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SAMADHAN_AI_DOUBT_SOLVER_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_11",
@@ -456,8 +689,33 @@
       }
     ],
     "attributes": {
-      "search_entry_point": "home_top_bar",
-      "recent_searches_count": 1
+      "screen_name": "GLOBAL_SEARCH_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "trendingExamtargetIDs": [
+        "string"
+      ]
+    },
+    "eventName": "SV_GLOBAL_SEARCH_SCREEN",
+    "globalAttributes": {
+      "screen_name": "GLOBAL_SEARCH_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "trendingExamtargetIDs": [
+        "string"
+      ]
     }
   },
   {
@@ -507,9 +765,119 @@
       }
     ],
     "attributes": {
-      "search_term": "string",
-      "active_tab": "all",
-      "total_results_count": 12
+      "screen_name": "SEARCH_RESULTS_SCREEN",
+      "referrer_screen_name": "GLOBAL_SEARCH_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "searchTerm": "string",
+      "tabsListed": [
+        "All",
+        "Articles",
+        "Courses"
+      ],
+      "examsListedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "coursesListedCourseIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "testSeriesListedTSIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "studyNotesListedNames": [
+        "SSC CGL Notes",
+        "SSC CGL PassOne"
+      ],
+      "dailyLiveClassListedYTLink": [
+        "string"
+      ],
+      "smartBooksListedproductIDs": [
+        "string"
+      ],
+      "teachersListed": [
+        "Ananya Singh Ma'am"
+      ],
+      "supercoachingGoalListedgoalIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "testsListedTestIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "practiceListedPracticeIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "articlesListedTitles": [
+        "Descritive Paper SSC CGL..."
+      ]
+    },
+    "eventName": "SV_SEARCH_RESULTS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SEARCH_RESULTS_SCREEN",
+      "referrer_screen_name": "GLOBAL_SEARCH_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "searchTerm": "string",
+      "tabsListed": [
+        "All",
+        "Articles",
+        "Courses"
+      ],
+      "examsListedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "coursesListedCourseIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "testSeriesListedTSIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "studyNotesListedNames": [
+        "SSC CGL Notes",
+        "SSC CGL PassOne"
+      ],
+      "dailyLiveClassListedYTLink": [
+        "string"
+      ],
+      "smartBooksListedproductIDs": [
+        "string"
+      ],
+      "teachersListed": [
+        "Ananya Singh Ma'am"
+      ],
+      "supercoachingGoalListedgoalIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "testsListedTestIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "practiceListedPracticeIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "articlesListedTitles": [
+        "Descritive Paper SSC CGL..."
+      ]
     }
   },
   {
@@ -533,9 +901,29 @@
       }
     ],
     "attributes": {
-      "search_term": "string",
-      "category": "exams",
-      "view_count": 4
+      "screen_name": "SEARCH_SECTIONS_EXAMS_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedElements": "string"
+    },
+    "eventName": "SV_SEARCH_SECTIONS_EXAMS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SEARCH_SECTIONS_EXAMS_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedElements": "string"
     }
   },
   {
@@ -559,9 +947,29 @@
       }
     ],
     "attributes": {
-      "search_term": "string",
-      "category": "courses",
-      "view_count": 6
+      "screen_name": "SEARCH_SECTIONS_COURSES_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedElements": "string"
+    },
+    "eventName": "SV_SEARCH_SECTIONS_COURSES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SEARCH_SECTIONS_COURSES_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedElements": "string"
     }
   },
   {
@@ -585,9 +993,29 @@
       }
     ],
     "attributes": {
-      "search_term": "string",
-      "category": "test_series",
-      "view_count": 8
+      "screen_name": "SEARCH_SECTIONS_TESTS_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedElements": "string"
+    },
+    "eventName": "SV_SEARCH_SECTIONS_TESTS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SEARCH_SECTIONS_TESTS_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedElements": "string"
     }
   },
   {
@@ -650,10 +1078,35 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "students_enrolled_count": "14M+",
-      "is_user_enrolled": true
+      "screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string",
+      "testsListedTestIDs": "string",
+      "testSeriesListedTSIDs": "string"
+    },
+    "eventName": "SV_EXAM_PAGE_OVERVIEW_SCREEN",
+    "globalAttributes": {
+      "screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string",
+      "testsListedTestIDs": "string",
+      "testSeriesListedTSIDs": "string"
     }
   },
   {
@@ -695,10 +1148,31 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "vacancies_count": 10731,
-      "has_notification_pdf": true
+      "screen_name": "EXAM_INFO_AND_UPDATES_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string"
+    },
+    "eventName": "SV_EXAM_INFO_AND_UPDATES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "EXAM_INFO_AND_UPDATES_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string"
     }
   },
   {
@@ -736,10 +1210,33 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "active_tab": "SuperPass",
-      "live_batches_count": 4
+      "screen_name": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string",
+      "coursesListedCourseIDs": "string"
+    },
+    "eventName": "SV_EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN",
+    "globalAttributes": {
+      "screen_name": "EXAM_PAGE_SUPERPASS_LIVE_TAB_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string",
+      "coursesListedCourseIDs": "string"
     }
   },
   {
@@ -772,10 +1269,31 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "active_tab": "Study Notes",
-      "subjects_count": 6
+      "screen_name": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string"
+    },
+    "eventName": "SV_EXAM_PAGE_STUDY_NOTES_TAB_SCREEN",
+    "globalAttributes": {
+      "screen_name": "EXAM_PAGE_STUDY_NOTES_TAB_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string"
     }
   },
   {
@@ -803,10 +1321,33 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "active_tab": "Quizzes",
-      "quizzes_count": 24
+      "screen_name": "EXAM_PAGE_QUIZZES_TAB_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string",
+      "testsListedTestIDs": "string"
+    },
+    "eventName": "SV_EXAM_PAGE_QUIZZES_TAB_SCREEN",
+    "globalAttributes": {
+      "screen_name": "EXAM_PAGE_QUIZZES_TAB_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string",
+      "testsListedTestIDs": "string"
     }
   },
   {
@@ -848,11 +1389,33 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "selected_tier": "Tier II",
-      "selected_year": "2026",
-      "is_pdf_available": true
+      "screen_name": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string",
+      "pypsListed": "string"
+    },
+    "eventName": "SV_PREVIOUS_YEAR_PAPERS_LIST_SCREEN",
+    "globalAttributes": {
+      "screen_name": "PREVIOUS_YEAR_PAPERS_LIST_SCREEN",
+      "referrer_screen_name": "EXAM_PAGE_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string",
+      "pypsListed": "string"
     }
   },
   {
@@ -893,9 +1456,37 @@
       }
     ],
     "attributes": {
-      "selected_category": "all",
-      "total_series_count": 45,
-      "user_type": "paid"
+      "screen_name": "TESTS_EXPLORER_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "selectedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "testSeriesForYouRe": "string"
+    },
+    "eventName": "SV_TESTS_EXPLORER_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TESTS_EXPLORER_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "selectedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "testSeriesForYouRe": "string"
     }
   },
   {
@@ -937,12 +1528,29 @@
       }
     ],
     "attributes": {
-      "test_series_id": "string",
-      "test_series_name": "string",
-      "exam_id": "string",
-      "total_tests": 158,
-      "free_tests_count": 12,
-      "is_enrolled": true
+      "screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
+      "referrer_screen_name": "TESTS_EXPLORER_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string"
+    },
+    "eventName": "SV_TEST_SERIES_OVERVIEW_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
+      "referrer_screen_name": "TESTS_EXPLORER_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string"
     }
   },
   {
@@ -971,8 +1579,29 @@
       }
     ],
     "attributes": {
-      "test_series_id": "string",
-      "selected_level": "all"
+      "screen_name": "EXAM_LEVEL_MODAL",
+      "referrer_screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string"
+    },
+    "eventName": "SV_EXAM_LEVEL_MODAL",
+    "globalAttributes": {
+      "screen_name": "EXAM_LEVEL_MODAL",
+      "referrer_screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string"
     }
   },
   {
@@ -1010,14 +1639,31 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "test_name": "string",
-      "test_series_id": "string",
-      "duration_mins": 15,
-      "total_marks": 25.0,
-      "total_questions": 25,
-      "is_free": true,
-      "selected_language": "English"
+      "screen_name": "TEST_PRE_INSTRUCTIONS_SCREEN",
+      "referrer_screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string"
+    },
+    "eventName": "SV_TEST_PRE_INSTRUCTIONS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TEST_PRE_INSTRUCTIONS_SCREEN",
+      "referrer_screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string"
     }
   },
   {
@@ -1059,12 +1705,31 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "test_name": "string",
-      "current_question_index": 1,
-      "section_name": "General Science",
-      "test_type": "sectional",
-      "selected_language": "Hindi"
+      "screen_name": "LIVE_TEST_TAKING_INTERFACE",
+      "referrer_screen_name": "TEST_PRE_INSTRUCTIONS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string"
+    },
+    "eventName": "SV_LIVE_TEST_TAKING_INTERFACE",
+    "globalAttributes": {
+      "screen_name": "LIVE_TEST_TAKING_INTERFACE",
+      "referrer_screen_name": "TEST_PRE_INSTRUCTIONS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string"
     }
   },
   {
@@ -1101,11 +1766,31 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "active_section": "General Science",
-      "attempted_count": 1,
-      "unattempted_count": 24,
-      "marked_count": 0
+      "screen_name": "QUESTION_PALLET_DRAWER",
+      "referrer_screen_name": "LIVE_TEST_TAKING_INTERFACE",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string"
+    },
+    "eventName": "SV_QUESTION_PALLET_DRAWER",
+    "globalAttributes": {
+      "screen_name": "QUESTION_PALLET_DRAWER",
+      "referrer_screen_name": "LIVE_TEST_TAKING_INTERFACE",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string"
     }
   },
   {
@@ -1138,10 +1823,31 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "time_left_secs": 848,
-      "attempted_count": 1,
-      "unattempted_count": 24
+      "screen_name": "TEST_SUBMIT_CONFIRMATION_MODAL",
+      "referrer_screen_name": "QUESTION_PALLET_DRAWER",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string"
+    },
+    "eventName": "SV_TEST_SUBMIT_CONFIRMATION_MODAL",
+    "globalAttributes": {
+      "screen_name": "TEST_SUBMIT_CONFIRMATION_MODAL",
+      "referrer_screen_name": "QUESTION_PALLET_DRAWER",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string"
     }
   },
   {
@@ -1182,13 +1888,35 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "test_name": "string",
-      "user_score": -0.33,
-      "total_marks": 25.0,
-      "user_rank": 207614,
-      "accuracy_pct": 0,
-      "percentile": 12.4
+      "screen_name": "TEST_ANALYSIS_SCREEN",
+      "referrer_screen_name": "TEST_SUBMIT_CONFIRMATION_MODAL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string",
+      "marks": "string",
+      "totalMarks": "string"
+    },
+    "eventName": "SV_TEST_ANALYSIS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TEST_ANALYSIS_SCREEN",
+      "referrer_screen_name": "TEST_SUBMIT_CONFIRMATION_MODAL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string",
+      "marks": "string",
+      "totalMarks": "string"
     }
   },
   {
@@ -1221,11 +1949,35 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "active_filter": "all",
-      "question_id": "string",
-      "subject_name": "General Science",
-      "is_correct": false
+      "screen_name": "QUESTION_SOLUTIONS_SCREEN",
+      "referrer_screen_name": "TEST_ANALYSIS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string",
+      "marks": "string",
+      "totalMarks": "string"
+    },
+    "eventName": "SV_QUESTION_SOLUTIONS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "QUESTION_SOLUTIONS_SCREEN",
+      "referrer_screen_name": "TEST_ANALYSIS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string",
+      "marks": "string",
+      "totalMarks": "string"
     }
   },
   {
@@ -1258,12 +2010,35 @@
       }
     ],
     "attributes": {
-      "test_id": "string",
-      "user_rank": 207614,
-      "user_score": -0.33,
-      "rank_1_score": 25.0,
-      "rank_2_score": 24.0,
-      "rank_3_score": 23.5
+      "screen_name": "TEST_LEADERBOARD_PODIUM_SCREEN",
+      "referrer_screen_name": "TEST_ANALYSIS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "TSID": "string",
+      "testID": "string",
+      "marks": "string",
+      "totalMarks": "string"
+    },
+    "eventName": "SV_TEST_LEADERBOARD_PODIUM_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TEST_LEADERBOARD_PODIUM_SCREEN",
+      "referrer_screen_name": "TEST_ANALYSIS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "TSID": "string",
+      "testID": "string",
+      "marks": "string",
+      "totalMarks": "string"
     }
   },
   {
@@ -1296,10 +2071,27 @@
       }
     ],
     "attributes": {
-      "selected_exam_id": "string",
-      "selected_exam_name": "SSC CGL",
-      "total_quizzes_count": 18
-    }
+      "screen_name": "FREE_DAILY_QUIZZES_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_FREE_DAILY_QUIZZES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "FREE_DAILY_QUIZZES_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_33",
@@ -1326,10 +2118,31 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "last_attempted_chapter": "Analogy",
-      "total_subjects": 4
+      "screen_name": "FREE_PRACTICE_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string"
+    },
+    "eventName": "SV_FREE_PRACTICE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "FREE_PRACTICE_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string"
     }
   },
   {
@@ -1357,10 +2170,29 @@
       }
     ],
     "attributes": {
-      "subject_name": "General Intelligence",
-      "chapter_name": "Analogy",
-      "total_practice_questions": 80,
-      "user_accuracy_pct": 100
+      "screen_name": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+      "referrer_screen_name": "FREE_PRACTICE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "practiceID": "string"
+    },
+    "eventName": "SV_ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+      "referrer_screen_name": "FREE_PRACTICE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "practiceID": "string"
     }
   },
   {
@@ -1398,10 +2230,29 @@
       }
     ],
     "attributes": {
-      "chapter_name": "Analogy",
-      "practice_set": "Practice 2",
-      "question_index": 1,
-      "total_questions": 20
+      "screen_name": "PRACTICE_QUESTION_INTERFACE_SCREEN",
+      "referrer_screen_name": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "practiceID": "string"
+    },
+    "eventName": "SV_PRACTICE_QUESTION_INTERFACE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "PRACTICE_QUESTION_INTERFACE_SCREEN",
+      "referrer_screen_name": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "practiceID": "string"
     }
   },
   {
@@ -1425,10 +2276,29 @@
       }
     ],
     "attributes": {
-      "chapter_name": "Analogy",
-      "question_id": "string",
-      "is_correct": true,
-      "time_spent_secs": 33
+      "screen_name": "PRACTICE_QUESTION_ANSWERED_SCREEN",
+      "referrer_screen_name": "PRACTICE_QUESTION_INTERFACE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "practiceID": "string"
+    },
+    "eventName": "SV_PRACTICE_QUESTION_ANSWERED_SCREEN",
+    "globalAttributes": {
+      "screen_name": "PRACTICE_QUESTION_ANSWERED_SCREEN",
+      "referrer_screen_name": "PRACTICE_QUESTION_INTERFACE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "practiceID": "string"
     }
   },
   {
@@ -1461,9 +2331,31 @@
       }
     ],
     "attributes": {
-      "exam_id": "string",
-      "exam_name": "SSC CGL",
-      "total_subjects_count": 5
+      "screen_name": "STUDY_NOTES_OVERVIEW_SCREEN",
+      "referrer_screen_name": "TESTS_EXPLORER_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string"
+    },
+    "eventName": "SV_STUDY_NOTES_OVERVIEW_SCREEN",
+    "globalAttributes": {
+      "screen_name": "STUDY_NOTES_OVERVIEW_SCREEN",
+      "referrer_screen_name": "TESTS_EXPLORER_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string"
     }
   },
   {
@@ -1491,11 +2383,33 @@
       }
     ],
     "attributes": {
-      "note_id": "string",
-      "note_title": "Analogy Summary Notes",
-      "subject_name": "Reasoning",
-      "total_pages": 12,
-      "is_locked": false
+      "screen_name": "CHAPTER_PDF_NOTES_SCREEN",
+      "referrer_screen_name": "STUDY_NOTES_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string",
+      "chapterName": "string"
+    },
+    "eventName": "SV_CHAPTER_PDF_NOTES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "CHAPTER_PDF_NOTES_SCREEN",
+      "referrer_screen_name": "STUDY_NOTES_OVERVIEW_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string",
+      "chapterName": "string"
     }
   },
   {
@@ -1528,10 +2442,37 @@
       }
     ],
     "attributes": {
-      "note_id": "string",
-      "note_title": "string",
-      "required_pass": "pass_pro",
-      "plan_price": 749
+      "screen_name": "NOTES_LOCKED_PAYWALL_MODAL",
+      "referrer_screen_name": "CHAPTER_PDF_NOTES_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "targetId": "string",
+      "targetName": "string",
+      "chapterName": "string",
+      "notesId": "string",
+      "notesName": "string"
+    },
+    "eventName": "SV_NOTES_LOCKED_PAYWALL_MODAL",
+    "globalAttributes": {
+      "screen_name": "NOTES_LOCKED_PAYWALL_MODAL",
+      "referrer_screen_name": "CHAPTER_PDF_NOTES_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "targetId": "string",
+      "targetName": "string",
+      "chapterName": "string",
+      "notesId": "string",
+      "notesName": "string"
     }
   },
   {
@@ -1569,11 +2510,35 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_name": "SSC CGL Raftaar 2026 Crash Course",
-      "goal_id": "string",
-      "faculty_name": "Ananya Singh Ma'am",
-      "total_videos": 150
+      "screen_name": "COURSES_EXPLORE_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_COURSES_EXPLORE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "COURSES_EXPLORE_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -1606,10 +2571,27 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "SSC CGL",
-      "live_classes_today_count": 8
-    }
+      "screen_name": "DAILY_LIVE_CLASSES_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_DAILY_LIVE_CLASSES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "DAILY_LIVE_CLASSES_SCREEN",
+      "referrer_screen_name": "SEARCH_RESULTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_42",
@@ -1636,10 +2618,27 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "SSC CGL",
-      "total_educators": 18
-    }
+      "screen_name": "TEACHER_PROFILE_PAGE",
+      "referrer_screen_name": "DAILY_LIVE_CLASSES_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_TEACHER_PROFILE_PAGE",
+    "globalAttributes": {
+      "screen_name": "TEACHER_PROFILE_PAGE",
+      "referrer_screen_name": "DAILY_LIVE_CLASSES_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_43",
@@ -1676,11 +2675,37 @@
       }
     ],
     "attributes": {
-      "teacher_id": "string",
-      "teacher_name": "Ananya Singh Ma'am",
-      "subject": "Reasoning",
-      "students_count": "10,000+",
-      "selections_count": "1,000+"
+      "screen_name": "INDIVIDUAL_TEACHER_DETAILS_SCREEN",
+      "referrer_screen_name": "TEACHER_PROFILE_PAGE",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "teacherName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_INDIVIDUAL_TEACHER_DETAILS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "INDIVIDUAL_TEACHER_DETAILS_SCREEN",
+      "referrer_screen_name": "TEACHER_PROFILE_PAGE",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "teacherName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -1718,8 +2743,29 @@
       }
     ],
     "attributes": {
-      "store_category": "SSC Books",
-      "featured_books_count": 12
+      "screen_name": "SMARTBOOKS_STORE_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedProductIDs": "string"
+    },
+    "eventName": "SV_SMARTBOOKS_STORE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SMARTBOOKS_STORE_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedProductIDs": "string"
     }
   },
   {
@@ -1762,15 +2808,33 @@
       }
     ],
     "attributes": {
-      "book_id": "string",
-      "book_name": "SSC General Awareness SmartBook with 5000+ Chapterwise PYQs & MCQs",
-      "selling_price": 505,
-      "mrp": 799,
-      "savings_amount": 294,
-      "coupon_code": "MAXDISC",
-      "language": "English",
-      "rating": 5.0,
-      "is_pre_order": false
+      "screen_name": "SMARTBOOK_DETAILS_SCREEN",
+      "referrer_screen_name": "SMARTBOOKS_STORE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productId": "string",
+      "productName": "string",
+      "targetName": "string"
+    },
+    "eventName": "SV_SMARTBOOK_DETAILS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SMARTBOOK_DETAILS_SCREEN",
+      "referrer_screen_name": "SMARTBOOKS_STORE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productId": "string",
+      "productName": "string",
+      "targetName": "string"
     }
   },
   {
@@ -1813,12 +2877,33 @@
       }
     ],
     "attributes": {
-      "book_id": "string",
-      "book_name": "SSC General Awareness SmartBook",
-      "payable_amount": 505,
-      "pincode": "string",
-      "city": "string",
-      "is_saved_address": false
+      "screen_name": "SMARTBOOK_DELIVERY_ADDRESS_SCREEN",
+      "referrer_screen_name": "SMARTBOOK_DETAILS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productId": "string",
+      "productName": "string",
+      "targetName": "string"
+    },
+    "eventName": "SV_SMARTBOOK_DELIVERY_ADDRESS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SMARTBOOK_DELIVERY_ADDRESS_SCREEN",
+      "referrer_screen_name": "SMARTBOOK_DETAILS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productId": "string",
+      "productName": "string",
+      "targetName": "string"
     }
   },
   {
@@ -1856,11 +2941,31 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "SSC CGL",
-      "category_name": "SSC Exams",
-      "version": "v3",
-      "is_paid_subscriber": false
+      "screen_name": "SUPERCOACHING_LANDING_PAGE",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_SUPERCOACHING_LANDING_PAGE",
+    "globalAttributes": {
+      "screen_name": "SUPERCOACHING_LANDING_PAGE",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -1902,13 +3007,37 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "SSC CGL",
-      "product_id": "string",
-      "product_name": "SSC CGL 12 Months",
-      "selected_plan_duration": "12 Months",
-      "discounted_price": 1499,
-      "has_emi_option": true
+      "screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
+      "referrer_screen_name": "SUPERCOACHING_LANDING_PAGE",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "goalID": "string",
+      "goalName": "string",
+      "productID": "string",
+      "productName": "string",
+      "paymentPriceCTA": "string"
+    },
+    "eventName": "SV_SUPERCOACHING_PLAN_SELECTION_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
+      "referrer_screen_name": "SUPERCOACHING_LANDING_PAGE",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "goalID": "string",
+      "goalName": "string",
+      "productID": "string",
+      "productName": "string",
+      "paymentPriceCTA": "string"
     }
   },
   {
@@ -1942,11 +3071,37 @@
       }
     ],
     "attributes": {
-      "product_id": "string",
-      "product_name": "SSC CGL 12 Months",
-      "cart_value": 1499,
-      "product_type": "supercoaching",
-      "available_coupons_count": 3
+      "screen_name": "PROMO_CODE_APPLY_SCREEN",
+      "referrer_screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "goalID": "string",
+      "goalName": "string",
+      "productID": "string",
+      "productName": "string",
+      "listedCoupon": "string"
+    },
+    "eventName": "SV_PROMO_CODE_APPLY_SCREEN",
+    "globalAttributes": {
+      "screen_name": "PROMO_CODE_APPLY_SCREEN",
+      "referrer_screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "goalID": "string",
+      "goalName": "string",
+      "productID": "string",
+      "productName": "string",
+      "listedCoupon": "string"
     }
   },
   {
@@ -1988,10 +3143,35 @@
       }
     ],
     "attributes": {
-      "user_type": "free",
-      "active_pass_tier": "none",
-      "lowest_pass_price": 749,
-      "days_left": 2
+      "screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPriceCTA": "string"
+    },
+    "eventName": "SV_TESTBOOK_PASS_LANDING_PAYWALL",
+    "globalAttributes": {
+      "screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPriceCTA": "string"
     }
   },
   {
@@ -2020,9 +3200,35 @@
       }
     ],
     "attributes": {
-      "selected_tier": "Pass Pro",
-      "default_duration": "Yearly",
-      "plan_price": 749
+      "screen_name": "TESTBOOK_PASS_PLANS_SCREEN",
+      "referrer_screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPriceCTA": "string"
+    },
+    "eventName": "SV_TESTBOOK_PASS_PLANS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TESTBOOK_PASS_PLANS_SCREEN",
+      "referrer_screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPriceCTA": "string"
     }
   },
   {
@@ -2055,10 +3261,35 @@
       }
     ],
     "attributes": {
-      "transaction_id": "string",
-      "plan_id": "string",
-      "payable_amount": 749,
-      "qr_expiry_seconds": 300
+      "screen_name": "DYNAMIC_UPI_QR_MODAL",
+      "referrer_screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPrice": "string"
+    },
+    "eventName": "SV_DYNAMIC_UPI_QR_MODAL",
+    "globalAttributes": {
+      "screen_name": "DYNAMIC_UPI_QR_MODAL",
+      "referrer_screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPrice": "string"
     }
   },
   {
@@ -2095,11 +3326,35 @@
       }
     ],
     "attributes": {
-      "transaction_id": "string",
-      "product_id": "string",
-      "product_type": "test_pass",
-      "payable_amount": 749,
-      "coupon_applied": "none"
+      "screen_name": "PAYMENT_GATEWAY_SCREEN",
+      "referrer_screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPrice": "string"
+    },
+    "eventName": "SV_PAYMENT_GATEWAY_SCREEN",
+    "globalAttributes": {
+      "screen_name": "PAYMENT_GATEWAY_SCREEN",
+      "referrer_screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPrice": "string"
     }
   },
   {
@@ -2136,10 +3391,35 @@
       }
     ],
     "attributes": {
-      "transaction_id": "string",
-      "failure_reason": "payment_declined",
-      "payable_amount": 749,
-      "retry_option_default": "upi_qr"
+      "screen_name": "PAYMENT_FAILURE_RECOVERY_SCREEN",
+      "referrer_screen_name": "DYNAMIC_UPI_QR_MODAL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPrice": "string"
+    },
+    "eventName": "SV_PAYMENT_FAILURE_RECOVERY_SCREEN",
+    "globalAttributes": {
+      "screen_name": "PAYMENT_FAILURE_RECOVERY_SCREEN",
+      "referrer_screen_name": "DYNAMIC_UPI_QR_MODAL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "productID": "string",
+      "productName": "string",
+      "backend_user_type": "string",
+      "paymentPrice": "string"
     }
   },
   {
@@ -2206,12 +3486,43 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "DSSSB Junior Assistant",
-      "subscribed_exam_name": "DSSSB Junior Assistant",
-      "enrolled_courses_count": 1,
-      "primary_course_id": "string",
-      "primary_course_title": "MISSION DSSSB Complete Live Batch"
+      "screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "selectedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "coursesListedCourseIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "selectedTargetIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "coursesListedCourseIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ]
     }
   },
   {
@@ -2253,12 +3564,27 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "SSC CGL",
-      "exam_name": "SSC CGL",
-      "available_courses_count": 4,
-      "filter_language": "all"
-    }
+      "screen_name": "SUPER_PASS_EXPLORE_COURSES_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_SUPER_PASS_EXPLORE_COURSES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SUPER_PASS_EXPLORE_COURSES_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_57",
@@ -2308,13 +3634,27 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "DSSSB Junior Assistant",
-      "test_series_count": 2,
-      "notes_count": 450,
-      "practice_count": 13100,
-      "faculty_count": 7
-    }
+      "screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_MY_SUPER_PASS_OFFERINGS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_58",
@@ -2346,9 +3686,29 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "active_exam_name": "DSSSB Junior Assistant",
-      "enrolled_targets_count": 1
+      "screen_name": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "selectedTargetID": "6a510e035230b297c2e344a8\",\"6a510e035230b297c2e344a8"
+    },
+    "eventName": "SV_MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "selectedTargetID": "6a510e035230b297c2e344a8\",\"6a510e035230b297c2e344a8"
     }
   },
   {
@@ -2382,10 +3742,29 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "exam_name": "DSSSB Junior Assistant",
-      "selected_language": "Hinglish",
-      "selected_tier": "Junior Assistant"
+      "screen_name": "CREATE_SUPER_PASS_SELECTION_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "selectedTargetID": "6a510e035230b297c2e344a8\",\"6a510e035230b297c2e344a8"
+    },
+    "eventName": "SV_CREATE_SUPER_PASS_SELECTION_SCREEN",
+    "globalAttributes": {
+      "screen_name": "CREATE_SUPER_PASS_SELECTION_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "selectedTargetID": "6a510e035230b297c2e344a8\",\"6a510e035230b297c2e344a8"
     }
   },
   {
@@ -2448,12 +3827,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "batch_type": "live",
-      "completion_percentage": 0,
-      "next_activity_title": "Intro & Application of Grammar",
-      "active_tab": "Dashboard"
+      "screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "suggestedLessonId": "string",
+      "suggestLessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "suggestedLessonId": "string",
+      "suggestLessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2486,10 +3892,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "search_term": "string",
-      "results_count": 0
+      "screen_name": "ENROLLED_COURSE_SEARCH_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "searchTerm": "string",
+      "resultsCount": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_SEARCH_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_SEARCH_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "searchTerm": "string",
+      "resultsCount": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2531,12 +3966,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "module_id": "string",
-      "module_title": "Alphabet Test",
-      "activities_completed": 0,
-      "total_activities": 2
+      "screen_name": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2574,11 +4036,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "lesson_title": "Latest Budget",
-      "scheduled_start_time": "15:00",
-      "is_reminder_set": false
+      "screen_name": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_UPCOMING_LIVE_LESSON_REMINDER_SCREEN",
+    "globalAttributes": {
+      "screen_name": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2629,13 +4119,43 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "lesson_id": "string",
-      "lesson_title": "Intro & Application of Grammar",
-      "faculty_name": "Kaustubh Mahadik",
-      "video_duration_seconds": 3132,
-      "is_live_stream": false
+      "screen_name": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "entityID": "string",
+      "entityName": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+    "globalAttributes": {
+      "screen_name": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "entityID": "string",
+      "entityName": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2668,10 +4188,43 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "lesson_id": "string",
-      "is_chat_replay_enabled": true,
-      "total_messages_count": 184
+      "screen_name": "COURSE_LESSON_CHAT_REPLAY_SHEET",
+      "referrer_screen_name": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "entityID": "string",
+      "entityName": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_COURSE_LESSON_CHAT_REPLAY_SHEET",
+    "globalAttributes": {
+      "screen_name": "COURSE_LESSON_CHAT_REPLAY_SHEET",
+      "referrer_screen_name": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "entityID": "string",
+      "entityName": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2709,10 +4262,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "lesson_id": "string",
-      "remaining_activities_count": 2,
-      "percent_students_completed": 95
+      "screen_name": "LESSON_PROGRESS_LEAVING_MODAL",
+      "referrer_screen_name": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_LESSON_PROGRESS_LEAVING_MODAL",
+    "globalAttributes": {
+      "screen_name": "LESSON_PROGRESS_LEAVING_MODAL",
+      "referrer_screen_name": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2753,11 +4335,41 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "active_subtab": "Daily Plan",
-      "selected_date": "15th Jan, 2024",
-      "daily_modules_count": 5
+      "screen_name": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedDates": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedDates": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2789,10 +4401,41 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "active_subtab": "Subjectwise",
-      "total_subjects_count": 6
+      "screen_name": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedSubjects": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedSubjects": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2825,10 +4468,41 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "active_subtab": "Timetable",
-      "active_week_range": "01 Jun - 07 Jun"
+      "screen_name": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedEvents": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedEvents": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2861,10 +4535,41 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "total_downloads_count": 0,
-      "offline_storage_bytes": 0
+      "screen_name": "ENROLLED_COURSE_DOWNLOADS_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedDownloads": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_DOWNLOADS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_DOWNLOADS_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedDownloads": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2906,10 +4611,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "active_doubt_filter": "All Doubts",
-      "total_doubts_count": 48
+      "screen_name": "ENROLLED_COURSE_DOUBTS_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_DOUBTS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_DOUBTS_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2947,10 +4681,39 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "subject_name": "Quantitative aptitude",
-      "has_image_attached": false
+      "screen_name": "COURSE_ASK_A_DOUBT_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_DOUBTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_COURSE_ASK_A_DOUBT_SCREEN",
+    "globalAttributes": {
+      "screen_name": "COURSE_ASK_A_DOUBT_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_DOUBTS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -2978,9 +4741,41 @@
       }
     ],
     "attributes": {
-      "course_id": "string",
-      "course_title": "MISSION DSSSB Complete Live Batch",
-      "total_announcements_count": 0
+      "screen_name": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "listedAnnouncements": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
+      "referrer_screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "listedAnnouncements": "string",
+      "lessonID": "string",
+      "lessonName": "string",
+      "courseId": "string",
+      "courseName": "string",
+      "goalID": "string",
+      "goalName": "string"
     }
   },
   {
@@ -3013,10 +4808,39 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "DSSSB Junior Assistant",
-      "test_series_count": 2,
-      "pyp_count": 1
+      "screen_name": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "testSeriesListedTSIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "goalId": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_MY_SUPER_PASS_TEST_SERIES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "testSeriesListedTSIDs": [
+        "6a510e035230b297c2e344a8",
+        "6a510e035230b297c2e344a8"
+      ],
+      "goalId": "string",
+      "goalName": "string"
     }
   },
   {
@@ -3049,10 +4873,33 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "DSSSB Junior Assistant",
-      "recently_viewed_chapter": "Analogy",
-      "total_subjects": 4
+      "screen_name": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "studyNotesListedNames": "string",
+      "goalId": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_MY_SUPER_PASS_STUDY_NOTES_SCREEN",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "studyNotesListedNames": "string",
+      "goalId": "string",
+      "goalName": "string"
     }
   },
   {
@@ -3080,11 +4927,33 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "DSSSB Junior Assistant",
-      "active_chapter": "Analogy",
-      "user_accuracy_pct": 100,
-      "user_speed_seconds": 33
+      "screen_name": "MY_SUPER_PASS_PRACTICE_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "practiceListedPracticeIDs": "string",
+      "goalId": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_MY_SUPER_PASS_PRACTICE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_PRACTICE_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "practiceListedPracticeIDs": "string",
+      "goalId": "string",
+      "goalName": "string"
     }
   },
   {
@@ -3112,9 +4981,31 @@
       }
     ],
     "attributes": {
-      "goal_id": "string",
-      "goal_name": "DSSSB Junior Assistant",
-      "faculty_count": 7
+      "screen_name": "MY_SUPER_PASS_TEACHERS_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "goalId": "string",
+      "goalName": "string"
+    },
+    "eventName": "SV_MY_SUPER_PASS_TEACHERS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "MY_SUPER_PASS_TEACHERS_SCREEN",
+      "referrer_screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "goalId": "string",
+      "goalName": "string"
     }
   },
   {
@@ -3146,10 +5037,27 @@
       }
     ],
     "attributes": {
-      "selected_date": "Today",
-      "language": "English",
-      "total_articles_count": 10
-    }
+      "screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_CURRENT_AFFAIRS_DIGEST_SCREEN",
+    "globalAttributes": {
+      "screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_79",
@@ -3172,9 +5080,27 @@
       }
     ],
     "attributes": {
-      "total_bookmarks_count": 3,
-      "category": "all"
-    }
+      "screen_name": "SAVED_NEWS_BOOKMARKS_SCREEN",
+      "referrer_screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_SAVED_NEWS_BOOKMARKS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SAVED_NEWS_BOOKMARKS_SCREEN",
+      "referrer_screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_80",
@@ -3202,11 +5128,27 @@
       }
     ],
     "attributes": {
-      "article_id": "string",
-      "article_title": "SSC JE Vacancy 2025-26",
-      "category_name": "SSC Exams",
-      "read_time_mins": 5
-    }
+      "screen_name": "BLOG_ARTICLE_READER_SCREEN",
+      "referrer_screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_BLOG_ARTICLE_READER_SCREEN",
+    "globalAttributes": {
+      "screen_name": "BLOG_ARTICLE_READER_SCREEN",
+      "referrer_screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_81",
@@ -3234,11 +5176,27 @@
       }
     ],
     "attributes": {
-      "is_paid_user": true,
-      "referral_code": "TESTBOOK10",
-      "total_cashback_earned": 250,
-      "payout_pending": 0
-    }
+      "screen_name": "REFER_AND_EARN_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_REFER_AND_EARN_SCREEN",
+    "globalAttributes": {
+      "screen_name": "REFER_AND_EARN_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_82",
@@ -3265,9 +5223,27 @@
       }
     ],
     "attributes": {
-      "total_orders_count": 2,
-      "has_pending_transaction": false
-    }
+      "screen_name": "TRANSACTIONS_LIST_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_TRANSACTIONS_LIST_SCREEN",
+    "globalAttributes": {
+      "screen_name": "TRANSACTIONS_LIST_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_83",
@@ -3295,11 +5271,35 @@
       }
     ],
     "attributes": {
-      "order_id": "string",
-      "transaction_id": "string",
-      "product_name": "Yearly Testbook Pass",
-      "amount_paid": 749,
-      "payment_method": "UPI QR"
+      "screen_name": "ORDER_RECEIPT_SCREEN",
+      "referrer_screen_name": "TRANSACTIONS_LIST_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "transId": "string",
+      "productID": "string",
+      "productName": "string",
+      "amount": "string"
+    },
+    "eventName": "SV_ORDER_RECEIPT_SCREEN",
+    "globalAttributes": {
+      "screen_name": "ORDER_RECEIPT_SCREEN",
+      "referrer_screen_name": "TRANSACTIONS_LIST_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "transId": "string",
+      "productID": "string",
+      "productName": "string",
+      "amount": "string"
     }
   },
   {
@@ -3332,10 +5332,27 @@
       }
     ],
     "attributes": {
-      "app_version": "9.11.2",
-      "theme_mode": "dark",
-      "app_language": "English"
-    }
+      "screen_name": "APP_SETTINGS_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_APP_SETTINGS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "APP_SETTINGS_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_85",
@@ -3367,11 +5384,27 @@
       }
     ],
     "attributes": {
-      "active_pass_tier": "Pass Pro",
-      "pass_expiry_date": "2026-10-01",
-      "days_left": 2,
-      "auto_renewal_enabled": false
-    }
+      "screen_name": "SETTINGS_PASS_TAB_SCREEN",
+      "referrer_screen_name": "APP_SETTINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_SETTINGS_PASS_TAB_SCREEN",
+    "globalAttributes": {
+      "screen_name": "SETTINGS_PASS_TAB_SCREEN",
+      "referrer_screen_name": "APP_SETTINGS_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_86",
@@ -3399,10 +5432,27 @@
       }
     ],
     "attributes": {
-      "user_id": "string",
-      "is_phone_verified": true,
-      "is_email_verified": true
-    }
+      "screen_name": "USER_SETTINGS_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventName": "SV_USER_SETTINGS_SCREEN",
+    "globalAttributes": {
+      "screen_name": "USER_SETTINGS_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {}
   },
   {
     "id": "SCR_87",
@@ -3425,8 +5475,29 @@
       }
     ],
     "attributes": {
-      "current_language": "English",
-      "available_languages_count": 10
+      "screen_name": "APP_LANGUAGE_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "currentLanguage": "string"
+    },
+    "eventName": "SV_APP_LANGUAGE_SCREEN",
+    "globalAttributes": {
+      "screen_name": "APP_LANGUAGE_SCREEN",
+      "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "currentLanguage": "string"
     }
   }
 ]
