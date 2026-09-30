@@ -4,7 +4,7 @@
 **Application Version:** 9.11.x  
 **Author:** Product & Analytics Core Team  
 **Live Interactive Hub:** [https://manjot-testbook.github.io/TBAppScreens/](https://manjot-testbook.github.io/TBAppScreens/)  
-**Specification Spreadsheet:** [`event_tracking_spec.csv`](./event_tracking_spec.csv) (87 screens)  
+**Specification Spreadsheet:** [`event_tracking_spec.csv`](./event_tracking_spec.csv) (94 screens)  
 **Single Source of Truth Catalog:** [`screens_data.json`](./screens_data.json)  
 **How to Add/Update Screens:** [See CONTRIBUTING.md](./CONTRIBUTING.md)  
 
@@ -14,19 +14,19 @@
 
 This repository provides an authoritative, interactive visual screen wireflow tree and event tracking specification for the **Testbook Android App (v9.11.x)**.
 
-It organizes **87 unique production screens** into **12 structured product flow lanes**:
+It organizes **94 unique production screens** into **12 structured product flow lanes**, standardizing all bottom navigation destinations under the **`*_DASHBOARD_SCREEN`** convention and fully mapping the Tests Quick Access Bar (QAB) features:
 1. **Acquisition, Auth & Onboarding (4)** — Launch splash, phone login, OTP verification, goal onboarding.
-2. **Home Hub & Navigation (6)** — Personalized dashboard, Notifications center, hamburger drawer (16 destinations), enrolled exam switcher, enrolled exams manager, Samadhan AI Doubt Solver & performance dashboard.
+2. **Home Hub & Navigation (6)** — `HOME_FEED_DASHBOARD_SCREEN` (verified real Home feed with active Home tab indicator, incomplete payment card, and enrolled exam goals), `NOTIFICATIONS_CENTER_SCREEN`, `HAMBURGER_DRAWER_NAVIGATION_SCREEN` (16 destinations), `ENROLLED_EXAMS_MODAL`, `ENROLLED_EXAMS_MANAGEMENT_SCREEN`, and `SAMADHAN_AI_DOUBT_SOLVER_SCREEN`.
 3. **Discovery & Search Sections (5)** — Global search input, multi-category results, and dedicated filtered category tabs (Exams, Courses, Test Series).
-4. **Exam Portals & Preparation (6)** — SSC CGL / RRB NTPC hubs, top action buttons (`Exam Info`, `Previous Year Papers`, `Free Test`, `Tricky Test`), section tabs (`Test Series`, `testbook LIVE`, `Study Notes`, `Quizzes`), and official notification updates.
-5. **Assessment & Live Testing Funnel (10)** — Tests explorer, test series overview, difficulty modal, pre-test instructions, live exam engine, question pallet drawer, submit confirmation, comprehensive analysis, question solutions, and rank podium leaderboard.
-6. **Practice & Free Quizzes (8)** — Daily quizzes directory, adaptive practice hub, active question interface, answered feedback states, study notes overview, chapter PDF viewer, and Pass paywall.
-7. **Courses & Masterclasses (4)** — Video course explore, masterclass timeline, educators directory, and individual teacher profile.
-8. **SmartBooks Store (3)** — Physical printed smart books storefront, product details page (5000+ PYQs & MCQs SmartBook, savings badge, 5.0 rating), and shipping delivery address checkout form (`AddressDetailsScreen`).
-9. **SuperCoaching Pre-Purchase (3)** — SuperCoaching value proposition, multi-tier plan picker, and coupon discount engine.
-10. **Pass Paywalls & QR Checkout (5)** — Pass landing paywall, plan duration switcher, dynamic UPI QR modal, payment gateway, and failure recovery.
-11. **Post-Purchase Super Pass Live Ecosystem (23)** — Active subscriber dashboard ("My Super Pass for DSSSB"), Explore Courses ("+ Add Course"), Manage Exams switcher, Course Language & Tier Selector, Enrolled Course Study Hub ("MISSION DSSSB"), Course In-Module Search, Lessons & Activities Timeline ("Alphabet Test"), Upcoming Live Class Reminder ("Latest Budget - Live at 3 PM"), Interactive Video Lecture Player (Kaustubh Mahadik, scrubber, 10s controls), Synchronized Chat Replay Sheet, Lesson Progress Leaving Modal ("Only 2 Activities Left"), Study Plan Daily date-wise schedule, Study Plan Subjectwise curriculum, Study Plan Weekly Timetable calendar, Offline Downloads storage manager, Course Doubt Discussion forum, Ask a Doubt Editor (`📎` photo capture), Batch Announcements bulletin, post-purchase test series, study notes, practice, and faculty directory.
-12. **Daily Retention & Utilities (10)** — Current affairs digest, saved news bookmarks, blog reader, refer & earn cashback, transactions list, order receipt, app settings, Pass settings tab, user settings, and app language selector.
+4. **Exam Portals & Preparation (6)** — SSC CGL / RRB NTPC hubs (`EXAM_PAGE_OVERVIEW_SCREEN`), top action buttons (`Exam Info`, `Previous Year Papers`, `Free Test`, `Tricky Test`), section tabs (`Test Series`, `testbook LIVE`, `Study Notes`, `Quizzes`), and official notification updates.
+5. **Assessment & Live Testing Funnel (15)** — `TESTS_DASHBOARD_SCREEN` (Tests bottom navigation tab with enrolled test series and QAB rail), `LIVE_TESTS_DIRECTORY_SCREEN` (Live Panel ongoing/attempted tests), `LIVE_QUIZZES_DIRECTORY_SCREEN` (Daily live quizzes directory), `WEAK_AREAS_IMPROVEMENT_SCREEN` (AI-powered weak areas improvement portal), `ATTEMPTED_TESTS_HISTORY_SCREEN` (Attempted mock test log with marks and rank), `RANK_PREDICTOR_SCREEN` (Answer key URL analyzer and rank calculator), test series overview, difficulty modal, pre-test instructions, live exam engine, question pallet drawer, submit confirmation, comprehensive analysis, question solutions, and rank podium leaderboard.
+6. **Practice & Free Quizzes (8)** — Daily quizzes directory, adaptive practice hub (`FREE_PRACTICE_SCREEN`), active question interface, answered feedback states, study notes overview, chapter PDF viewer, and Pass paywall.
+7. **Courses & Masterclasses (5)** — `COURSES_EXPLORE_SCREEN`, `SKILL_ACADEMY_DASHBOARD_SCREEN` (Skill Academy bottom tab), masterclass timeline (`DAILY_LIVE_CLASSES_SCREEN`), educators directory, and individual teacher profile.
+8. **SmartBooks Store (3)** — Physical printed smart books storefront, product details page (5000+ PYQs & MCQs SmartBook, savings badge, 5.0 rating), and shipping delivery address checkout form (`SMARTBOOK_DELIVERY_ADDRESS_SCREEN`).
+9. **SuperCoaching Pre-Purchase (3)** — `SUPER_COACHING_DASHBOARD_SCREEN` (Super bottom navigation tab with 375+ govt exams coaching and pricing), multi-tier plan picker, and coupon discount engine.
+10. **Pass Paywalls & QR Checkout (6)** — `PASS_DASHBOARD_SCREEN` (Pass bottom navigation tab paywall), `PASS_ELITE_DASHBOARD_SCREEN` (Pass Elite catalogue and FAQs), plan duration switcher, dynamic UPI QR modal, payment gateway, and failure recovery.
+11. **Post-Purchase Super Pass Live Ecosystem (23)** — `SUPER_PASS_DASHBOARD_SCREEN` (Super Pass bottom navigation tab: active subscriber dashboard), Explore Courses (`SUPER_PASS_EXPLORE_COURSES_SCREEN`), Manage Exams switcher, Course Language & Tier Selector, Enrolled Course Study Hub (`ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN`), Course In-Module Search, Lessons & Activities Timeline, Upcoming Live Class Reminder, Interactive Video Lecture Player, Synchronized Chat Replay Sheet, Lesson Progress Leaving Modal, Study Plan Daily date-wise schedule, Study Plan Subjectwise curriculum, Study Plan Weekly Timetable calendar, Offline Downloads storage manager, Course Doubt Discussion forum, Ask a Doubt Editor, Batch Announcements bulletin, post-purchase test series, study notes, practice, and faculty directory.
+12. **Daily Retention & Utilities (10)** — `NEWS_DASHBOARD_SCREEN` (News bottom navigation tab: daily news digest, date switcher, exam tips), saved news bookmarks, blog reader, refer & earn cashback, transactions list, order receipt, app settings, Pass settings tab, user settings, and app language selector.
 
 ---
 
@@ -35,9 +35,9 @@ It organizes **87 unique production screens** into **12 structured product flow 
 * 🌐 **[Live Interactive Wireflow Tree Hub](https://manjot-testbook.github.io/TBAppScreens/):**
   * **Tree Canvas Mode:** Pan & zoom across all 12 color-themed flow lanes with hierarchical card layout.
   * **Pinch-to-Zoom:** Native support for Mac trackpad two-finger pinch (`ctrlKey + wheel`) and mobile multi-touch pinch gestures with focal-point scaling (20% – 250%).
-  * **Screen Inspector Mode:** Select any screen to open the slide-out inspector displaying the phone screenshot, copyable `screen_view` JSON contract, and clickable outbound flow pills.
+  * **Screen Inspector Mode:** Select any screen to open the slide-out inspector displaying the phone screenshot, copyable `SV_` contract JSON, dedicated tables for **Global Attributes** (6 standard fields) and **Event Attributes** (mapped parameters), and clickable outbound flow pills.
 * 📥 **[Download Companion Tracking CSV (`event_tracking_spec.csv`)](./event_tracking_spec.csv):**
-  * 71 rows matching every production screen with direct links to screenshot assets and `screen_view` JSON schemas.
+  * 89 rows matching every production screen with direct links to screenshot assets and `SV_` JSON schemas.
 * 📋 **[Single Source of Truth Catalog (`screens_data.json`)](./screens_data.json):**
   * Clean JSON catalog containing all screen metadata, referrers, descriptions, components, and outbound transitions.
 

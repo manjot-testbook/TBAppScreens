@@ -225,7 +225,7 @@
     "screenName": "HOME_FEED_DASHBOARD_SCREEN",
     "referrerScreenName": "ONBOARDING_GOAL_SELECTION_SCREEN",
     "flow": "2. Home Hub & Navigation",
-    "screenshot": "06_home_feed.png",
+    "screenshot": "HOME_FEED_DASHBOARD_SCREEN.png",
     "description": "Central application dashboard with promotional carousels, QAB, and feed items.",
     "outboundPaths": [
       {
@@ -242,19 +242,19 @@
       },
       {
         "action": "Tap bottom tab 'Tests'",
-        "target": "TESTS_EXPLORER_SCREEN"
+        "target": "TESTS_DASHBOARD_SCREEN"
       },
       {
         "action": "Tap bottom tab 'Super'",
-        "target": "SUPERCOACHING_LANDING_PAGE"
+        "target": "SUPER_COACHING_DASHBOARD_SCREEN"
       },
       {
         "action": "Tap bottom tab 'Pass' or renew card",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Tap bottom tab 'Super Pass'",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Tap QAB 'Free Quizzes'",
@@ -371,7 +371,7 @@
       },
       {
         "action": "Tap 'Daily Current Affairs'",
-        "target": "CURRENT_AFFAIRS_DIGEST_SCREEN"
+        "target": "NEWS_DASHBOARD_SCREEN"
       },
       {
         "action": "Tap 'Refer & Earn'",
@@ -1364,7 +1364,7 @@
       },
       {
         "action": "Tap 'Get Pass' bottom bar",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Press back arrow",
@@ -1420,39 +1420,56 @@
   },
   {
     "id": "SCR_22",
-    "screenName": "TESTS_EXPLORER_SCREEN",
+    "screenName": "TESTS_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
-    "screenshot": "SCR_TESTS_EXPLORE_SCROLLED.png",
-    "description": "Test series exploration hub with enrolled test progress, toppers streak, and quick filter pills.",
+    "screenshot": "TESTS_DASHBOARD_SCREEN.png",
+    "description": "Tests bottom navigation dashboard: Enrolled test series, Quick Access Bar (Live Test, Live Quizzes, Weak Areas, Attempted, Rank Predictor), and Toppers Streak.",
     "outboundPaths": [
       {
-        "action": "Tap any enrolled test card",
+        "action": "Tap \"Live Test\" in Quick Access Bar",
+        "target": "LIVE_TESTS_DIRECTORY_SCREEN"
+      },
+      {
+        "action": "Tap \"Live Quizzes\" in Quick Access Bar",
+        "target": "LIVE_QUIZZES_DIRECTORY_SCREEN"
+      },
+      {
+        "action": "Tap \"Weak Areas\" in Quick Access Bar",
+        "target": "WEAK_AREAS_IMPROVEMENT_SCREEN"
+      },
+      {
+        "action": "Tap \"Attempted\" in Quick Access Bar",
+        "target": "ATTEMPTED_TESTS_HISTORY_SCREEN"
+      },
+      {
+        "action": "Tap \"Rank Predictor\" in Quick Access Bar",
+        "target": "RANK_PREDICTOR_SCREEN"
+      },
+      {
+        "action": "Tap enrolled test series card",
         "target": "TEST_SERIES_OVERVIEW_SCREEN"
       },
       {
-        "action": "Tap 'Study Notes' filter pill",
-        "target": "STUDY_NOTES_OVERVIEW_SCREEN"
-      },
-      {
-        "action": "Tap 'Live Quizzes' filter pill",
-        "target": "FREE_DAILY_QUIZZES_SCREEN"
-      },
-      {
-        "action": "Tap Pass expired renewal card",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "action": "Tap bottom tab \"Home\"",
+        "target": "HOME_FEED_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
       {
-        "name": "Enrolled Series Progress Cards",
+        "name": "Enrolled Test Series Section",
         "type": "cards",
-        "detail": "SSC Selection Post (1/609), SSC MTS (1/2002)"
+        "detail": "SSC CGL Mock Test Series 2026 (0/2491), SSC CHSL (0/2553)"
+      },
+      {
+        "name": "Quick Access Bar (QAB)",
+        "type": "rail",
+        "detail": "Live Test, Live Quizzes, Weak Areas, Attempted, Rank Predictor, Study Notes"
       },
       {
         "name": "Toppers Streak Widget",
         "type": "card",
-        "detail": "Kickstarter badge with 7-day attempt streak"
+        "detail": "Start your streak (1 test unlocks Kickstarter)"
       }
     ],
     "attributes": {
@@ -1470,9 +1487,9 @@
       ],
       "testSeriesForYouRe": "string"
     },
-    "eventName": "SV_TESTS_EXPLORER_SCREEN",
+    "eventName": "SV_TESTS_DASHBOARD_SCREEN",
     "globalAttributes": {
-      "screen_name": "TESTS_EXPLORER_SCREEN",
+      "screen_name": "TESTS_DASHBOARD_SCREEN",
       "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
@@ -1491,8 +1508,334 @@
   },
   {
     "id": "SCR_23",
+    "screenName": "LIVE_TESTS_DIRECTORY_SCREEN",
+    "eventName": "SV_LIVE_TESTS_DIRECTORY_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
+    "flow": "5. Assessment & Live Testing Funnel",
+    "screenshot": "LIVE_TESTS_DIRECTORY_SCREEN.png",
+    "description": "Live test and quiz portal displaying ongoing/attempted live tests, category filters, and live exam countdowns.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Start Now\" on live test",
+        "target": "TEST_PRE_INSTRUCTIONS_SCREEN"
+      },
+      {
+        "action": "Tap \"Get Pass\" unlimited banner",
+        "target": "PASS_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "TESTS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Live Panel Tabs",
+        "type": "tab",
+        "detail": "Ongoing, Attempted tabs"
+      },
+      {
+        "name": "Category Filter Cards",
+        "type": "chips",
+        "detail": "Recommended (9 Tests), SSC Exams (64 Tests)"
+      },
+      {
+        "name": "Live Test Item Card",
+        "type": "card",
+        "detail": "Territorial Army: Maths Live Test with Start Now CTA and countdown timer"
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "LIVE_TESTS_DIRECTORY_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "category": "Live Tests",
+      "activeTab": "Ongoing",
+      "totalLiveTests": 9,
+      "isPassActive": false
+    },
+    "attributes": {
+      "screen_name": "LIVE_TESTS_DIRECTORY_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "category": "Live Tests",
+      "activeTab": "Ongoing",
+      "totalLiveTests": 9,
+      "isPassActive": false
+    }
+  },
+  {
+    "id": "SCR_24",
+    "screenName": "LIVE_QUIZZES_DIRECTORY_SCREEN",
+    "eventName": "SV_LIVE_QUIZZES_DIRECTORY_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
+    "flow": "5. Assessment & Live Testing Funnel",
+    "screenshot": "LIVE_QUIZZES_DIRECTORY_SCREEN.png",
+    "description": "Daily live quiz hub with date filters, user attempt tracking, and instant quiz starts.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Start Quiz\" button",
+        "target": "PRACTICE_QUESTION_INTERFACE_SCREEN"
+      },
+      {
+        "action": "Tap \"All Your Attempted Quizzes\"",
+        "target": "ATTEMPTED_TESTS_HISTORY_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "TESTS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Exam Filter Chips",
+        "type": "chips",
+        "detail": "SSC CGL, RRB NTPC, RRB Group D"
+      },
+      {
+        "name": "Daily Quiz Card",
+        "type": "card",
+        "detail": "Daily Current Affairs Quiz with 10 Qs, 7 mins, and Start Quiz CTA"
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "LIVE_QUIZZES_DIRECTORY_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "selectedExam": "SSC CGL",
+      "quizDate": "30-September-2026",
+      "questionsCount": 10,
+      "durationMins": 7
+    },
+    "attributes": {
+      "screen_name": "LIVE_QUIZZES_DIRECTORY_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "selectedExam": "SSC CGL",
+      "quizDate": "30-September-2026",
+      "questionsCount": 10,
+      "durationMins": 7
+    }
+  },
+  {
+    "id": "SCR_25",
+    "screenName": "WEAK_AREAS_IMPROVEMENT_SCREEN",
+    "eventName": "SV_WEAK_AREAS_IMPROVEMENT_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
+    "flow": "5. Assessment & Live Testing Funnel",
+    "screenshot": "WEAK_AREAS_IMPROVEMENT_SCREEN.png",
+    "description": "AI-powered Weak Areas Improvement portal analyzing weak chapters and exam readiness relative to peer benchmarks.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Unlock With Testbook PASS\" CTA",
+        "target": "PASS_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "TESTS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "WAI Header & Tagline",
+        "type": "header",
+        "detail": "Weak Areas Improvement with AI generated performance insights"
+      },
+      {
+        "name": "Video Introduction Player",
+        "type": "media_player",
+        "detail": "Explainer video detailing peer benchmarking algorithm"
+      },
+      {
+        "name": "Unlock Pass CTA",
+        "type": "button",
+        "detail": "Unlock With Testbook PASS primary conversion button"
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "WEAK_AREAS_IMPROVEMENT_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "feature": "Weak Areas Improvement",
+      "isPassProUser": false,
+      "ctaText": "Unlock With Testbook PASS"
+    },
+    "attributes": {
+      "screen_name": "WEAK_AREAS_IMPROVEMENT_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "feature": "Weak Areas Improvement",
+      "isPassProUser": false,
+      "ctaText": "Unlock With Testbook PASS"
+    }
+  },
+  {
+    "id": "SCR_26",
+    "screenName": "ATTEMPTED_TESTS_HISTORY_SCREEN",
+    "eventName": "SV_ATTEMPTED_TESTS_HISTORY_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
+    "flow": "5. Assessment & Live Testing Funnel",
+    "screenshot": "ATTEMPTED_TESTS_HISTORY_SCREEN.png",
+    "description": "Chronological log of all attempted mock tests with user score, rank, and reattempt mode launcher.",
+    "outboundPaths": [
+      {
+        "action": "Tap \"Reattempt \u2794\" button",
+        "target": "LIVE_TEST_TAKING_INTERFACE"
+      },
+      {
+        "action": "Tap \"Unlock Reattempt Mode\" banner",
+        "target": "PASS_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "TESTS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Top Ranker Promo Card",
+        "type": "banner",
+        "detail": "Get Unlimited Reattempts for All Tests -> Unlock Reattempt Mode"
+      },
+      {
+        "name": "Attempted Test Card",
+        "type": "card",
+        "detail": "General Science Sectional Test 1 with marks, rank, and Reattempt CTA"
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "ATTEMPTED_TESTS_HISTORY_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "totalAttemptedTests": 28,
+      "latestAttemptDate": "Sep 25, 2026",
+      "canReattempt": true
+    },
+    "attributes": {
+      "screen_name": "ATTEMPTED_TESTS_HISTORY_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "totalAttemptedTests": 28,
+      "latestAttemptDate": "Sep 25, 2026",
+      "canReattempt": true
+    }
+  },
+  {
+    "id": "SCR_27",
+    "screenName": "RANK_PREDICTOR_SCREEN",
+    "eventName": "SV_RANK_PREDICTOR_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
+    "flow": "5. Assessment & Live Testing Funnel",
+    "screenshot": "RANK_PREDICTOR_SCREEN.png",
+    "description": "Government exam rank predictor accepting answer key URLs to calculate expected All India Rank and category percentiles.",
+    "outboundPaths": [
+      {
+        "action": "Select exam and submit URL",
+        "target": "TEST_ANALYSIS_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "TESTS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Rank Predictor Header",
+        "type": "header",
+        "detail": "Government Exams Rank Predictor 2026"
+      },
+      {
+        "name": "Exam Dropdown Picker",
+        "type": "dropdown",
+        "detail": "Select Your Given Exam"
+      },
+      {
+        "name": "Answer Key URL Input",
+        "type": "input",
+        "detail": "Paste Here answer key link input box"
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "RANK_PREDICTOR_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "feature": "Rank Predictor",
+      "examYear": 2026,
+      "supportedExamsCount": 25
+    },
+    "attributes": {
+      "screen_name": "RANK_PREDICTOR_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "feature": "Rank Predictor",
+      "examYear": 2026,
+      "supportedExamsCount": 25
+    }
+  },
+  {
+    "id": "SCR_28",
     "screenName": "TEST_SERIES_OVERVIEW_SCREEN",
-    "referrerScreenName": "TESTS_EXPLORER_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
     "screenshot": "13_tests_landing.png",
     "description": "Test series package landing with 600+ test breakdowns, exam level filter, and free test cards.",
@@ -1507,7 +1850,7 @@
       },
       {
         "action": "Tap locked test card",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -1541,7 +1884,7 @@
     "eventName": "SV_TEST_SERIES_OVERVIEW_SCREEN",
     "globalAttributes": {
       "screen_name": "TEST_SERIES_OVERVIEW_SCREEN",
-      "referrer_screen_name": "TESTS_EXPLORER_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -1554,7 +1897,7 @@
     }
   },
   {
-    "id": "SCR_24",
+    "id": "SCR_29",
     "screenName": "EXAM_LEVEL_MODAL",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1605,7 +1948,7 @@
     }
   },
   {
-    "id": "SCR_25",
+    "id": "SCR_30",
     "screenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "referrerScreenName": "TEST_SERIES_OVERVIEW_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1618,7 +1961,7 @@
       },
       {
         "action": "Tap 'Get Pass' upsell banner",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -1667,7 +2010,7 @@
     }
   },
   {
-    "id": "SCR_26",
+    "id": "SCR_31",
     "screenName": "LIVE_TEST_TAKING_INTERFACE",
     "referrerScreenName": "TEST_PRE_INSTRUCTIONS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1733,7 +2076,7 @@
     }
   },
   {
-    "id": "SCR_27",
+    "id": "SCR_32",
     "screenName": "QUESTION_PALLET_DRAWER",
     "referrerScreenName": "LIVE_TEST_TAKING_INTERFACE",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1794,7 +2137,7 @@
     }
   },
   {
-    "id": "SCR_28",
+    "id": "SCR_33",
     "screenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "referrerScreenName": "QUESTION_PALLET_DRAWER",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1851,7 +2194,7 @@
     }
   },
   {
-    "id": "SCR_29",
+    "id": "SCR_34",
     "screenName": "TEST_ANALYSIS_SCREEN",
     "referrerScreenName": "TEST_SUBMIT_CONFIRMATION_MODAL",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1868,7 +2211,7 @@
       },
       {
         "action": "Tap 'Restore Now at \u20b9749'",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Press back arrow",
@@ -1920,7 +2263,7 @@
     }
   },
   {
-    "id": "SCR_30",
+    "id": "SCR_35",
     "screenName": "QUESTION_SOLUTIONS_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -1981,7 +2324,7 @@
     }
   },
   {
-    "id": "SCR_31",
+    "id": "SCR_36",
     "screenName": "TEST_LEADERBOARD_PODIUM_SCREEN",
     "referrerScreenName": "TEST_ANALYSIS_SCREEN",
     "flow": "5. Assessment & Live Testing Funnel",
@@ -2042,7 +2385,7 @@
     }
   },
   {
-    "id": "SCR_32",
+    "id": "SCR_37",
     "screenName": "FREE_DAILY_QUIZZES_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2094,7 +2437,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_33",
+    "id": "SCR_38",
     "screenName": "FREE_PRACTICE_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2146,7 +2489,7 @@
     }
   },
   {
-    "id": "SCR_34",
+    "id": "SCR_39",
     "screenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
     "referrerScreenName": "FREE_PRACTICE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2196,7 +2539,7 @@
     }
   },
   {
-    "id": "SCR_35",
+    "id": "SCR_40",
     "screenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
     "referrerScreenName": "ADAPTIVE_PRACTICE_INTERFACE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2256,7 +2599,7 @@
     }
   },
   {
-    "id": "SCR_36",
+    "id": "SCR_41",
     "screenName": "PRACTICE_QUESTION_ANSWERED_SCREEN",
     "referrerScreenName": "PRACTICE_QUESTION_INTERFACE_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2302,9 +2645,9 @@
     }
   },
   {
-    "id": "SCR_37",
+    "id": "SCR_42",
     "screenName": "STUDY_NOTES_OVERVIEW_SCREEN",
-    "referrerScreenName": "TESTS_EXPLORER_SCREEN",
+    "referrerScreenName": "TESTS_DASHBOARD_SCREEN",
     "flow": "6. Practice & Free Quizzes",
     "screenshot": "SCR_STUDY_NOTES.png",
     "description": "Subject-wise study notes directory with chapter counts and pass renewal paywall strips.",
@@ -2315,7 +2658,7 @@
       },
       {
         "action": "Tap Pass renewal strip",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -2345,7 +2688,7 @@
     "eventName": "SV_STUDY_NOTES_OVERVIEW_SCREEN",
     "globalAttributes": {
       "screen_name": "STUDY_NOTES_OVERVIEW_SCREEN",
-      "referrer_screen_name": "TESTS_EXPLORER_SCREEN",
+      "referrer_screen_name": "TESTS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -2359,7 +2702,7 @@
     }
   },
   {
-    "id": "SCR_38",
+    "id": "SCR_43",
     "screenName": "CHAPTER_PDF_NOTES_SCREEN",
     "referrerScreenName": "STUDY_NOTES_OVERVIEW_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2413,7 +2756,7 @@
     }
   },
   {
-    "id": "SCR_39",
+    "id": "SCR_44",
     "screenName": "NOTES_LOCKED_PAYWALL_MODAL",
     "referrerScreenName": "CHAPTER_PDF_NOTES_SCREEN",
     "flow": "6. Practice & Free Quizzes",
@@ -2476,7 +2819,7 @@
     }
   },
   {
-    "id": "SCR_40",
+    "id": "SCR_45",
     "screenName": "COURSES_EXPLORE_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -2542,7 +2885,7 @@
     }
   },
   {
-    "id": "SCR_41",
+    "id": "SCR_46",
     "screenName": "DAILY_LIVE_CLASSES_SCREEN",
     "referrerScreenName": "SEARCH_RESULTS_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -2594,7 +2937,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_42",
+    "id": "SCR_47",
     "screenName": "TEACHER_PROFILE_PAGE",
     "referrerScreenName": "DAILY_LIVE_CLASSES_SCREEN",
     "flow": "7. Courses & Masterclasses",
@@ -2641,7 +2984,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_43",
+    "id": "SCR_48",
     "screenName": "INDIVIDUAL_TEACHER_DETAILS_SCREEN",
     "referrerScreenName": "TEACHER_PROFILE_PAGE",
     "flow": "7. Courses & Masterclasses",
@@ -2709,7 +3052,7 @@
     }
   },
   {
-    "id": "SCR_44",
+    "id": "SCR_49",
     "screenName": "SMARTBOOKS_STORE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -2769,7 +3112,7 @@
     }
   },
   {
-    "id": "SCR_45",
+    "id": "SCR_50",
     "screenName": "SMARTBOOK_DETAILS_SCREEN",
     "referrerScreenName": "SMARTBOOKS_STORE_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -2838,7 +3181,7 @@
     }
   },
   {
-    "id": "SCR_46",
+    "id": "SCR_51",
     "screenName": "SMARTBOOK_DELIVERY_ADDRESS_SCREEN",
     "referrerScreenName": "SMARTBOOK_DETAILS_SCREEN",
     "flow": "8. SmartBooks Store",
@@ -2907,11 +3250,11 @@
     }
   },
   {
-    "id": "SCR_47",
-    "screenName": "SUPERCOACHING_LANDING_PAGE",
+    "id": "SCR_52",
+    "screenName": "SUPER_COACHING_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
-    "screenshot": "38_super_coaching_tab.png",
+    "screenshot": "SUPER_COACHING_DASHBOARD_SCREEN.png",
     "description": "Sales landing page for coaching goals with faculty videos and limited-time offer timers.",
     "outboundPaths": [
       {
@@ -2952,9 +3295,9 @@
       "goalID": "string",
       "goalName": "string"
     },
-    "eventName": "SV_SUPERCOACHING_LANDING_PAGE",
+    "eventName": "SV_SUPER_COACHING_DASHBOARD_SCREEN",
     "globalAttributes": {
-      "screen_name": "SUPERCOACHING_LANDING_PAGE",
+      "screen_name": "SUPER_COACHING_DASHBOARD_SCREEN",
       "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
@@ -2969,9 +3312,9 @@
     }
   },
   {
-    "id": "SCR_48",
+    "id": "SCR_53",
     "screenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
-    "referrerScreenName": "SUPERCOACHING_LANDING_PAGE",
+    "referrerScreenName": "SUPER_COACHING_DASHBOARD_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
     "screenshot": "41_super_plan_selection_full.png",
     "description": "Subscription duration picker (6 Months, 12 Months), EMI switch, and coupon discount code.",
@@ -2986,7 +3329,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "SUPERCOACHING_LANDING_PAGE"
+        "target": "SUPER_COACHING_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -3024,7 +3367,7 @@
     "eventName": "SV_SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "globalAttributes": {
       "screen_name": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
-      "referrer_screen_name": "SUPERCOACHING_LANDING_PAGE",
+      "referrer_screen_name": "SUPER_COACHING_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3041,7 +3384,7 @@
     }
   },
   {
-    "id": "SCR_49",
+    "id": "SCR_54",
     "screenName": "PROMO_CODE_APPLY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "9. SuperCoaching Pre-Purchase",
@@ -3105,11 +3448,11 @@
     }
   },
   {
-    "id": "SCR_50",
-    "screenName": "TESTBOOK_PASS_LANDING_PAYWALL",
+    "id": "SCR_55",
+    "screenName": "PASS_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
-    "screenshot": "48_pass_landing.png",
+    "screenshot": "PASS_DASHBOARD_SCREEN.png",
     "description": "Testbook Pass renewal and purchase paywall with benefit grid and price escalation timers.",
     "outboundPaths": [
       {
@@ -3156,9 +3499,9 @@
       "backend_user_type": "string",
       "paymentPriceCTA": "string"
     },
-    "eventName": "SV_TESTBOOK_PASS_LANDING_PAYWALL",
+    "eventName": "SV_PASS_DASHBOARD_SCREEN",
     "globalAttributes": {
-      "screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "screen_name": "PASS_DASHBOARD_SCREEN",
       "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
@@ -3175,9 +3518,71 @@
     }
   },
   {
-    "id": "SCR_51",
+    "id": "SCR_56",
+    "screenName": "PASS_ELITE_DASHBOARD_SCREEN",
+    "eventName": "SV_PASS_ELITE_DASHBOARD_SCREEN",
+    "referrerScreenName": "PASS_DASHBOARD_SCREEN",
+    "flow": "10. Pass Paywalls & QR Checkout",
+    "screenshot": "PASS_ELITE_DASHBOARD_SCREEN.png",
+    "description": "Pass Elite catalogue displaying premium access features for tough-to-crack exams and comprehensive FAQs.",
+    "outboundPaths": [
+      {
+        "action": "Tap FAQ accordion item",
+        "target": "PASS_ELITE_DASHBOARD_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "PASS_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Pass Elite Header",
+        "type": "header",
+        "detail": "Pass Elite title with back arrow"
+      },
+      {
+        "name": "Pass Elite Crest Banner",
+        "type": "banner",
+        "detail": "Premium Access to Advanced Preparation for Tough to crack exams"
+      },
+      {
+        "name": "FAQs Section",
+        "type": "accordion",
+        "detail": "1. What is Testbook Pass Elite?, 2. When will my Pass Elite expire?..."
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "PASS_ELITE_DASHBOARD_SCREEN",
+      "referrer_screen_name": "PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "userType": "free",
+      "isEliteSubscribed": false
+    },
+    "attributes": {
+      "screen_name": "PASS_ELITE_DASHBOARD_SCREEN",
+      "referrer_screen_name": "PASS_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "userType": "free",
+      "isEliteSubscribed": false
+    }
+  },
+  {
+    "id": "SCR_57",
     "screenName": "TESTBOOK_PASS_PLANS_SCREEN",
-    "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
+    "referrerScreenName": "PASS_DASHBOARD_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "50_pass_plan_durations.png",
     "description": "Included test series preview and social proof breakdown for Pass subscriptions.",
@@ -3216,7 +3621,7 @@
     "eventName": "SV_TESTBOOK_PASS_PLANS_SCREEN",
     "globalAttributes": {
       "screen_name": "TESTBOOK_PASS_PLANS_SCREEN",
-      "referrer_screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "referrer_screen_name": "PASS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3232,9 +3637,9 @@
     }
   },
   {
-    "id": "SCR_52",
+    "id": "SCR_58",
     "screenName": "DYNAMIC_UPI_QR_MODAL",
-    "referrerScreenName": "TESTBOOK_PASS_LANDING_PAYWALL",
+    "referrerScreenName": "PASS_DASHBOARD_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
     "screenshot": "53_pass_checkout.png",
     "description": "On-screen dynamic BharatQR / UPI QR code modal with 10-minute expiry clock.",
@@ -3277,7 +3682,7 @@
     "eventName": "SV_DYNAMIC_UPI_QR_MODAL",
     "globalAttributes": {
       "screen_name": "DYNAMIC_UPI_QR_MODAL",
-      "referrer_screen_name": "TESTBOOK_PASS_LANDING_PAYWALL",
+      "referrer_screen_name": "PASS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3293,7 +3698,7 @@
     }
   },
   {
-    "id": "SCR_53",
+    "id": "SCR_59",
     "screenName": "PAYMENT_GATEWAY_SCREEN",
     "referrerScreenName": "SUPERCOACHING_PLAN_SELECTION_SCREEN",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -3358,7 +3763,7 @@
     }
   },
   {
-    "id": "SCR_54",
+    "id": "SCR_60",
     "screenName": "PAYMENT_FAILURE_RECOVERY_SCREEN",
     "referrerScreenName": "DYNAMIC_UPI_QR_MODAL",
     "flow": "10. Pass Paywalls & QR Checkout",
@@ -3371,7 +3776,7 @@
       },
       {
         "action": "Tap 'View Plans'",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Press back arrow",
@@ -3423,11 +3828,11 @@
     }
   },
   {
-    "id": "SCR_55",
-    "screenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "id": "SCR_61",
+    "screenName": "SUPER_PASS_DASHBOARD_SCREEN",
     "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
-    "screenshot": "MY_SUPER_PASS_DASHBOARD_SCREEN.png",
+    "screenshot": "SUPER_PASS_DASHBOARD_SCREEN.png",
     "description": "Active subscriber dashboard for Super Pass Live: Manage exams chip, Enrolled live courses with 'Start Learning', and 'Other Offerings'.",
     "outboundPaths": [
       {
@@ -3503,9 +3908,9 @@
         "6a510e035230b297c2e344a8"
       ]
     },
-    "eventName": "SV_MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "eventName": "SV_SUPER_PASS_DASHBOARD_SCREEN",
     "globalAttributes": {
-      "screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "screen_name": "SUPER_PASS_DASHBOARD_SCREEN",
       "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
@@ -3526,9 +3931,9 @@
     }
   },
   {
-    "id": "SCR_56",
+    "id": "SCR_62",
     "screenName": "SUPER_PASS_EXPLORE_COURSES_SCREEN",
-    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "referrerScreenName": "SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
     "screenshot": "SUPER_PASS_EXPLORE_COURSES_SCREEN.png",
     "description": "Explore and add coaching courses for target exam (SSC CGL) with multi-criteria filters for Language, Course Type, and Faculty.",
@@ -3539,11 +3944,11 @@
       },
       {
         "action": "Tap \"+ Add Course\"",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -3576,7 +3981,7 @@
     "eventName": "SV_SUPER_PASS_EXPLORE_COURSES_SCREEN",
     "globalAttributes": {
       "screen_name": "SUPER_PASS_EXPLORE_COURSES_SCREEN",
-      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "referrer_screen_name": "SUPER_PASS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3587,9 +3992,9 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_57",
+    "id": "SCR_63",
     "screenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
-    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "referrerScreenName": "SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
     "screenshot": "MY_SUPER_PASS_OFFERINGS_SCREEN.png",
     "description": "Full view of the 'Other Offerings' 4-tile grid (Test Series, Study Notes, Practice, Teachers) under Super Pass Live.",
@@ -3646,7 +4051,7 @@
     "eventName": "SV_MY_SUPER_PASS_OFFERINGS_SCREEN",
     "globalAttributes": {
       "screen_name": "MY_SUPER_PASS_OFFERINGS_SCREEN",
-      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "referrer_screen_name": "SUPER_PASS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3657,9 +4062,9 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_58",
+    "id": "SCR_64",
     "screenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
-    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "referrerScreenName": "SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
     "screenshot": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL.png",
     "description": "Bottom sheet allowing subscribers to switch between enrolled Super Pass exams or add more exams.",
@@ -3670,7 +4075,7 @@
       },
       {
         "action": "Dismiss sheet",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -3699,7 +4104,7 @@
     "eventName": "SV_MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "globalAttributes": {
       "screen_name": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
-      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "referrer_screen_name": "SUPER_PASS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3712,7 +4117,7 @@
     }
   },
   {
-    "id": "SCR_59",
+    "id": "SCR_65",
     "screenName": "CREATE_SUPER_PASS_SELECTION_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_MANAGE_EXAMS_MODAL",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -3721,7 +4126,7 @@
     "outboundPaths": [
       {
         "action": "Tap 'Find Courses'",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -3768,9 +4173,9 @@
     }
   },
   {
-    "id": "SCR_60",
+    "id": "SCR_66",
     "screenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
-    "referrerScreenName": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+    "referrerScreenName": "SUPER_PASS_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
     "screenshot": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN.png",
     "description": "Comprehensive enrolled course study hub (MISSION DSSSB): Course progress, Resume Lesson CTA, module chapters, and sub-section tabs.",
@@ -3801,7 +4206,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -3845,7 +4250,7 @@
     "eventName": "SV_ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "globalAttributes": {
       "screen_name": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
-      "referrer_screen_name": "MY_SUPER_PASS_DASHBOARD_SCREEN",
+      "referrer_screen_name": "SUPER_PASS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -3863,7 +4268,7 @@
     }
   },
   {
-    "id": "SCR_61",
+    "id": "SCR_67",
     "screenName": "ENROLLED_COURSE_SEARCH_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -3928,7 +4333,7 @@
     }
   },
   {
-    "id": "SCR_62",
+    "id": "SCR_68",
     "screenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4002,7 +4407,7 @@
     }
   },
   {
-    "id": "SCR_63",
+    "id": "SCR_69",
     "screenName": "UPCOMING_LIVE_LESSON_REMINDER_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4072,7 +4477,7 @@
     }
   },
   {
-    "id": "SCR_64",
+    "id": "SCR_70",
     "screenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4159,7 +4564,7 @@
     }
   },
   {
-    "id": "SCR_65",
+    "id": "SCR_71",
     "screenName": "COURSE_LESSON_CHAT_REPLAY_SHEET",
     "referrerScreenName": "COURSE_LESSON_VIDEO_PLAYER_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4228,7 +4633,7 @@
     }
   },
   {
-    "id": "SCR_66",
+    "id": "SCR_72",
     "screenName": "LESSON_PROGRESS_LEAVING_MODAL",
     "referrerScreenName": "ENROLLED_COURSE_LESSONS_TIMELINE_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4298,7 +4703,7 @@
     }
   },
   {
-    "id": "SCR_67",
+    "id": "SCR_73",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4373,7 +4778,7 @@
     }
   },
   {
-    "id": "SCR_68",
+    "id": "SCR_74",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_SUBJECTWISE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4439,7 +4844,7 @@
     }
   },
   {
-    "id": "SCR_69",
+    "id": "SCR_75",
     "screenName": "ENROLLED_COURSE_STUDY_PLAN_TIMETABLE_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_PLAN_DAILY_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4506,7 +4911,7 @@
     }
   },
   {
-    "id": "SCR_70",
+    "id": "SCR_76",
     "screenName": "ENROLLED_COURSE_DOWNLOADS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4519,7 +4924,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -4573,7 +4978,7 @@
     }
   },
   {
-    "id": "SCR_71",
+    "id": "SCR_77",
     "screenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4590,7 +4995,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -4647,7 +5052,7 @@
     }
   },
   {
-    "id": "SCR_72",
+    "id": "SCR_78",
     "screenName": "COURSE_ASK_A_DOUBT_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_DOUBTS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4717,7 +5122,7 @@
     }
   },
   {
-    "id": "SCR_73",
+    "id": "SCR_79",
     "screenName": "ENROLLED_COURSE_ANNOUNCEMENTS_SCREEN",
     "referrerScreenName": "ENROLLED_COURSE_STUDY_DASHBOARD_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live Ecosystem",
@@ -4730,7 +5135,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -4779,7 +5184,7 @@
     }
   },
   {
-    "id": "SCR_74",
+    "id": "SCR_80",
     "screenName": "MY_SUPER_PASS_TEST_SERIES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -4792,7 +5197,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -4844,7 +5249,7 @@
     }
   },
   {
-    "id": "SCR_75",
+    "id": "SCR_81",
     "screenName": "MY_SUPER_PASS_STUDY_NOTES_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -4857,7 +5262,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -4903,7 +5308,7 @@
     }
   },
   {
-    "id": "SCR_76",
+    "id": "SCR_82",
     "screenName": "MY_SUPER_PASS_PRACTICE_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -4916,7 +5321,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -4957,7 +5362,7 @@
     }
   },
   {
-    "id": "SCR_77",
+    "id": "SCR_83",
     "screenName": "MY_SUPER_PASS_TEACHERS_SCREEN",
     "referrerScreenName": "MY_SUPER_PASS_OFFERINGS_SCREEN",
     "flow": "11. Post-Purchase Super Pass Live",
@@ -4970,7 +5375,7 @@
       },
       {
         "action": "Press back arrow",
-        "target": "MY_SUPER_PASS_DASHBOARD_SCREEN"
+        "target": "SUPER_PASS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -5009,11 +5414,11 @@
     }
   },
   {
-    "id": "SCR_78",
-    "screenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+    "id": "SCR_84",
+    "screenName": "NEWS_DASHBOARD_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
-    "screenshot": "SCR_CURRENT_AFFAIRS.png",
+    "screenshot": "NEWS_DASHBOARD_SCREEN.png",
     "description": "Daily national and international news digest with bookmarking and daily quiz CTA.",
     "outboundPaths": [
       {
@@ -5046,9 +5451,9 @@
         "6a510e035230b297c2e344a8"
       ]
     },
-    "eventName": "SV_CURRENT_AFFAIRS_DIGEST_SCREEN",
+    "eventName": "SV_NEWS_DASHBOARD_SCREEN",
     "globalAttributes": {
-      "screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "screen_name": "NEWS_DASHBOARD_SCREEN",
       "referrer_screen_name": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
@@ -5060,16 +5465,16 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_79",
+    "id": "SCR_85",
     "screenName": "SAVED_NEWS_BOOKMARKS_SCREEN",
-    "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+    "referrerScreenName": "NEWS_DASHBOARD_SCREEN",
     "flow": "12. Daily Retention & Utilities",
     "screenshot": "SCR_CA_BOOKMARKS.png",
     "description": "List of user-saved articles and daily news bookmarks.",
     "outboundPaths": [
       {
         "action": "Press back arrow",
-        "target": "CURRENT_AFFAIRS_DIGEST_SCREEN"
+        "target": "NEWS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -5092,7 +5497,7 @@
     "eventName": "SV_SAVED_NEWS_BOOKMARKS_SCREEN",
     "globalAttributes": {
       "screen_name": "SAVED_NEWS_BOOKMARKS_SCREEN",
-      "referrer_screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "referrer_screen_name": "NEWS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -5103,16 +5508,16 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_80",
+    "id": "SCR_86",
     "screenName": "BLOG_ARTICLE_READER_SCREEN",
-    "referrerScreenName": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+    "referrerScreenName": "NEWS_DASHBOARD_SCREEN",
     "flow": "12. Daily Retention & Utilities",
     "screenshot": "BLOG_ARTICLE_READER_SCREEN.png",
     "description": "Full long-form editorial and exam vacancy article reader with offline save and share actions.",
     "outboundPaths": [
       {
         "action": "Press back arrow",
-        "target": "CURRENT_AFFAIRS_DIGEST_SCREEN"
+        "target": "NEWS_DASHBOARD_SCREEN"
       }
     ],
     "keyComponents": [
@@ -5140,7 +5545,7 @@
     "eventName": "SV_BLOG_ARTICLE_READER_SCREEN",
     "globalAttributes": {
       "screen_name": "BLOG_ARTICLE_READER_SCREEN",
-      "referrer_screen_name": "CURRENT_AFFAIRS_DIGEST_SCREEN",
+      "referrer_screen_name": "NEWS_DASHBOARD_SCREEN",
       "passExpiry": "2026-10-01",
       "superPassExpiry": "2026-10-01",
       "superExpiry": "2026-10-01",
@@ -5151,7 +5556,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_81",
+    "id": "SCR_87",
     "screenName": "REFER_AND_EARN_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5199,7 +5604,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_82",
+    "id": "SCR_88",
     "screenName": "TRANSACTIONS_LIST_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5246,7 +5651,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_83",
+    "id": "SCR_89",
     "screenName": "ORDER_RECEIPT_SCREEN",
     "referrerScreenName": "TRANSACTIONS_LIST_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5303,7 +5708,7 @@
     }
   },
   {
-    "id": "SCR_84",
+    "id": "SCR_90",
     "screenName": "APP_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5355,7 +5760,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_85",
+    "id": "SCR_91",
     "screenName": "SETTINGS_PASS_TAB_SCREEN",
     "referrerScreenName": "APP_SETTINGS_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5364,7 +5769,7 @@
     "outboundPaths": [
       {
         "action": "Tap 'Renew Pass'",
-        "target": "TESTBOOK_PASS_LANDING_PAYWALL"
+        "target": "PASS_DASHBOARD_SCREEN"
       },
       {
         "action": "Press back arrow",
@@ -5407,7 +5812,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_86",
+    "id": "SCR_92",
     "screenName": "USER_SETTINGS_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5455,7 +5860,7 @@
     "eventAttributes": {}
   },
   {
-    "id": "SCR_87",
+    "id": "SCR_93",
     "screenName": "APP_LANGUAGE_SCREEN",
     "referrerScreenName": "HAMBURGER_DRAWER_NAVIGATION_SCREEN",
     "flow": "12. Daily Retention & Utilities",
@@ -5498,6 +5903,68 @@
     },
     "eventAttributes": {
       "currentLanguage": "string"
+    }
+  },
+  {
+    "id": "SCR_94",
+    "screenName": "SKILL_ACADEMY_DASHBOARD_SCREEN",
+    "eventName": "SV_SKILL_ACADEMY_DASHBOARD_SCREEN",
+    "referrerScreenName": "HOME_FEED_DASHBOARD_SCREEN",
+    "flow": "7. Courses & Masterclasses",
+    "screenshot": "SKILL_ACADEMY_DASHBOARD_SCREEN.png",
+    "description": "Skill Academy career dashboard with in-demand professional skills, job readiness programs, and free placement tests.",
+    "outboundPaths": [
+      {
+        "action": "Tap career program path",
+        "target": "COURSES_EXPLORE_SCREEN"
+      },
+      {
+        "action": "Press back arrow",
+        "target": "HOME_FEED_DASHBOARD_SCREEN"
+      }
+    ],
+    "keyComponents": [
+      {
+        "name": "Skill Academy Header",
+        "type": "header",
+        "detail": "Skill Academy branding and notification bell"
+      },
+      {
+        "name": "Free Placement Tests Card",
+        "type": "card",
+        "detail": "Free Job Placement Tests CTA"
+      },
+      {
+        "name": "Programs Sheet",
+        "type": "sheet",
+        "detail": "Programs to Make You Job Ready - Select Career Path"
+      }
+    ],
+    "globalAttributes": {
+      "screen_name": "SKILL_ACADEMY_DASHBOARD_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ]
+    },
+    "eventAttributes": {
+      "careerProgramSelected": "none",
+      "isEnrolledInCareerProgram": false
+    },
+    "attributes": {
+      "screen_name": "SKILL_ACADEMY_DASHBOARD_SCREEN",
+      "referrer_screen_name": "HOME_FEED_DASHBOARD_SCREEN",
+      "passExpiry": "2026-10-01",
+      "superPassExpiry": "2026-10-01",
+      "superExpiry": "2026-10-01",
+      "superProducts": [
+        "6a510e035230b297c2e344a8"
+      ],
+      "careerProgramSelected": "none",
+      "isEnrolledInCareerProgram": false
     }
   }
 ]
